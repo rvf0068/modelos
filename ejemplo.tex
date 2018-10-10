@@ -363,6 +363,48 @@ D_{n}=\cos(\frac{n\pi}{2}).
 \end{equation}
 
 
+\subsubsection{Ejemplo}
+
+Para cada $n$, considera $D_{n}$ el determinante $n\times n$ dado por:
+
+\begin{equation*}
+\begin{pmatrix}
+1 & 1 & 0 & 0 &\ldots & 0 & 0 & 0 & 0\\
+1 & 1 & 1 & 0 &\ldots & 0 & 0 & 0 & 0\\
+0 & 1 & 1 & 1 &\ldots & 0 & 0 & 0 & 0\\
+0 & 0 & 1 & 1 &\ldots & 0 & 0 & 0 & 0\\
+\ldots\\
+0 & 0 & 0 & 0 &\ldots & 1 & 1 & 0 & 0\\
+0 & 0 & 0 & 0 &\ldots & 1 & 1 & 1 & 0\\
+0 & 0 & 0 & 0 &\ldots & 0 & 1 & 1 & 1\\
+0 & 0 & 0 & 0 &\ldots & 0 & 0 & 1 & 1
+\end{pmatrix}
+\end{equation*}
+
+
+Para calcular $D_{n}$ utilisamos la ecuación en diferencias;
+\begin{equation}
+  \label{determinante}
+D_{n+2}=(b)D_{n+1}-(b^2)D_{n}
+\end{equation}
+ y además $D_{1}=b$ y $D_{2}=0$.
+Resolvemos la ecuación resolvente $$r^{2}-br+b^2=0$$ y así las solución es $r=\frac{b(1+i \sqrt{3})}{2}$.
+
+De ahí que
+  $$r=b(\cos(\frac{\pi}{3})+i\sin(\frac{\pi}{3}))$$
+  $$r^n=b^n(\cos(\frac{n\pi}{3})+i\sin(\frac{n\pi}{3}))$$
+  $$D_{n}=\alpha_{1}b^n\cos(\frac{n\pi}{3})+\alpha_{2}b^n\sin(\frac{n\pi}{3})$$
+  $$D_{1}=\alpha_{1}(1)+\alpha_{2}(\sqrt{3})$$
+  $$D_{2}=\alpha_{1}(-1)+\alpha_{2}(\sqrt{3})$$
+  $$\alpha_{1}=1$$
+  $$\alpha_{2}=\frac{1}{\sqrt{3}}$$
+Finalmente la solución es:
+\begin{equation}
+  \label{solucion determinante}
+D_{n}=b^n(\cos(\frac{n\pi}{3})+\frac{\sin(\frac{n\pi}{3})}{\sqrt{3}}).
+\end{equation}
+
+
 \subsection{Ecuaciones de segundo orden no homogéneas}
 \label{sec:nohomogeneas}
 
@@ -456,3 +498,5 @@ $a_n=\frac{n(n+1)(2n+1)}{6}$.
 %%% ???????????
 
 \end{document}
+
+
