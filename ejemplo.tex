@@ -385,7 +385,7 @@ $x_{n+2}+3x_{n+1}+2x_n=3^n$ al resolver el sistema homogéneo
 obtenemos la solucion: $x-n=\lambda_1(-2)^n+\lambda_2(-1)^n$, ahora,
 para el sistema no homogéneo, debemos proponer una solución la
 cual es un múltiplo del termino exponencial, en este ejemplo la
-solución del sisstema no homogéneo es de la forma $A(3)^n$, ya que
+solución del sistema no homogéneo es de la forma $A(3)^n$, ya que
 tenemos una propuesta, debemos resolver el sistema con $x_n=A(3)^n$,
 veamos la solución:
 
@@ -454,5 +454,33 @@ Con lo cual, evaluando con las condiciones iniciales, se obtiene que $\lambda$$=
 Así, la solución del problema es:
 $a_n=\frac{n(n+1)(2n+1)}{6}$.
 %%% ???????????
-
 \end{document}
+\section{Ecuaciones en diferencias no homogéneas}
+\subsection{EJEMPLO}
+Encuentre la solución a la siguiente ecuación en diferencias $a_{n+1}=2a_{n}+1$.Con condición inicial a_{0}=1.
+solución homogénea es $a_{n}=C*2^n$
+Observe que la solución homogénea de la ecuación en diferencias  es $a_{n}h=C*2^n$.
+Ahora, tenemos que proponer una solución particular a la ecuación no homogénea, veamos el procedimiento:
+\begin{align*}
+  a_{n+1}-2a_{n}&=1^n&=1
+  a_{n}&=A
+  a_{n+1}&=A
+  A-2A&=1
+  A&=-1
+\end{align*}           
+De ahi, concluimos que $A=-1$.
+Luego, nuestra solucion $a_np=-1$ la tenemos que sumar a las soluciones del sistema homogéneo las cuales quedaran así:
+$a_{n}h=C*2^n-1$
+Recuerde nuestra condición inicial $a_{0}=1$. Veamos que:
+$1=a_{1}=2C-1$
+$2C=2$
+$C=1$
+por lo tanto, la solución general a la ecuación en diferencias no homogénea es:
+$a_{n}=2^n-1$
+
+
+
+
+
+
+
