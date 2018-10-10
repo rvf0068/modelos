@@ -396,11 +396,12 @@ veamos la solución:
   20A&=1
 \end{align*}
 De ahí, concluimos que $A=\frac{1}{20}$.
-Luego, nuestra solucion $x_n=\frac{1}{20}(3)^n$ la debemos que sumar a las soluciones del sistema homogéneo las cuales quedaran así:
-$$x_n=\lambda_1(-2)^n+\lambda_2(-1)^n+\frac{1}{20}(3)^n$$.
-Lo unico que nos hace falta es encontrar los valores de $\lambda_1$ y $\lambda_2$ de acuerdo a las condiciones iniciales tal y como se a realizado en ejemplos anteriores.
+Luego, a nuestra solución del sistema no homogéneo  $x_n=\frac{1}{20}(3)^n$ le debemos sumar las soluciones del sistema homogéneo, de lo cual se obtiene:
+$$x_n=\alpha_1(-2)^n+\alpha_2(-1)^n+\frac{1}{20}(3)^n.$$
 
-Tambíen puede pasar que la solución del sistema homogéneo sea la misma del sistema no homogéneo. Por ejemplo: tomando el ejemplo de arriba pero cambiandolo un poco tenemos la ecuacion en diferencias $x_{n+2}+3x_{n+1}+2x_n=(-2)^n$, vemos que $(-2)^n$ es solucion del sistema homogéneo y del no homogéneo, en este caso, la solucion del sistema no homogéneo se propone así $x_n=An(-2)^n$ (el mismo argumento es para cuando el sistema homogéneo tiene un sola solución y el sistema no homogéneo tiene la misma solución, en ese caso la solucion de sistema no homogéneo se propone como $x_n=An^2(-2)^n$), y al resolver queda así:
+Lo único que nos hace falta es encontrar los valores de $\alpha_1$ y $\alpha_2$ de acuerdo a las condiciones iniciales tal y como se ha realizado en ejemplos anteriores.
+
+También puede pasar que la solución del sistema homogéneo sea la misma del sistema no homogéneo. Por ejemplo: tomando el ejemplo de arriba pero cambiándolo un poco tenemos la ecuacion en diferencias $x_{n+2}+3x_{n+1}+2x_n=(-2)^n$, vemos que $(-2)^n$ es solución del sistema homogéneo y del no homogéneo, en este caso, la solución del sistema no homogéneo se propone así $x_n=An(-2)^n$ (el mismo argumento es para cuando el sistema homogéneo tiene un sola solución y el sistema no homogéneo tiene la misma solución, en ese caso la solución de sistema no homogéneo se propone como $x_n=An^2(-2)^n$), y al resolver queda la siguiente manera:
 \begin{align*}
   A(n+2)(-2)^{n+2}+3A(n+1)(-2)^{n+1}+2An(-2)^n&=(-2)^n\\
   A(n+2)(-2)^2+3A(n+1)(-2)+2An&=1\\
@@ -410,12 +411,12 @@ Tambíen puede pasar que la solución del sistema homogéneo sea la misma del si
   A(2)&=1\\
   A&=\frac{1}{2}
 \end{align*}
-Ahora, procedemos igual que en el ejemplo anterior, es decir, a las soluciones del sistema homogéneo le sumamos una solución del sistema no homogéneo y así ya tendremos todas las soluciones del sistema no homogéneo, quedando así, la solución del sistema homogéneo:
-$$x_n=\lambda_1(-2)^n+\lambda_2(-1)^n+\frac{n}{2}(-2)^n$$
+Ahora, procedemos igual que en el ejemplo anterior. Es decir, a las soluciones del sistema homogéneo le sumamos una solución del sistema no homogéneo (la solución particular). De esta manera ya tendrémos todas las soluciones del sistema no homogéneo, quedando así, la solución del sistema homogéneo:
+$$x_n=\alpha_1(-2)^n+\alpha_2(-1)^n+\frac{n}{2}(-2)^n$$
 \subsubsection{El término no homogéneo es polinomial}
 \label{sec:polinomial}
 
-Hay ecuaciones en diferencias que son de la siguiente forma: $a_{n+2}+ba_{n+1}+ca_n=f(n)$, donde $f(n)$ es un polinomio. Por ejemplo, la siguiente suma: $1^2+2^2+...+n^2$, su fórmula puede obtenerse usando una relación de recurrencia, notando que:
+Hay ecuaciones en diferencias que son de la siguiente forma: $ax_{n+2}+bx_{n+1}+cx_n=f(n)$, donde $f(n)$ es un polinomio. Por ejemplo, la siguiente suma: $1^2+2^2+...+n^2$, su fórmula puede obtenerse usando una relación de recurrencia, notando que:
 $a_1=1$, $a_2=a_1+2^2$, \dots, $a_n=a_{n-1}+n^2$.
 
 
