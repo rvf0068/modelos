@@ -1,7 +1,7 @@
 
 \documentclass{article}
 
-% \usepackage[spanish]{babel}
+\usepackage[spanish]{babel}
 
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -141,13 +141,13 @@ ecuación resolvente tenga dos raíces distintas es mediante la
 siguiente formula:
 \begin{equation}
  \label{raicesdistintas}
- a_n=\lambda_1x_1^n +\lambda_2x_2^n,
+ a_n=\alpha_1r_1^n +\alpha_2r_2^n,
 \end{equation}
-donde $x_1$ y $x_2$ son soluciones de la ecuación de segundo orden y
-$\lambda_1$ y $\lambda_2$ son escalares reales.
+donde $r_1$ y $r_2$ son soluciones de la ecuación de segundo orden y
+$\alpha_1$ y $\alpha_2$ son escalares reales.
 \subsubsection{Ejemplo}
 
-La ecuación de segundo grado más conocida es la \textit{sucesión de
+Una de las ecuaciones de segundo grado más famosas es la \textit{sucesión de
   Fibonacci}, la cual se ve de la forma:
 \begin{equation}
   \label{eq:fibonacci}
@@ -166,14 +166,15 @@ $r_{1}= \frac{1+\sqrt{5}}{2}$ y $r_{2}=\frac{1-\sqrt{5}}{2}$. La
 solución general es entonces:
 $a_{k}=\alpha_{1}(\frac{1+\sqrt{5}}{2})^{k} +
 \alpha_{2}(\frac{1-\sqrt{5}}{2})^k$
-
 Ahora resolvemos un sistema de ecuaciones tal que:
-$\alpha_{1} + \alpha_{2}= 1$ y
-$\alpha_{1}(\frac{1+\sqrt{5}}{2}) + \alpha_{2}(\frac{1+\sqrt{5}}{2})=1$
 
+\begin{align*}
+\alpha_{1} + \alpha_{2} &= 1\\
+\alpha_{1}(\frac{1+\sqrt{5}}{2}) + \alpha_{2}(\frac{1+\sqrt{5}}{2})&=1
+\end{align*}
 Para obtener finalmente:
-$F_{n}= \frac{5+\sqrt{5}}{10}\frac{(1+\sqrt{5})^n}{2} +
-\frac{5-\sqrt{5}}{10}\frac{(1-\sqrt{5})^n}{2}$
+$F_{n}= \frac{5+\sqrt{5}}{10}(\frac{1+\sqrt{5}}{2})^n +
+\frac{5-\sqrt{5}}{10}(\frac{1-\sqrt{5}}{2})^n$
 
 \subsubsection{Ejemplo}
 \label{sec:fichas}
@@ -181,7 +182,7 @@ $F_{n}= \frac{5+\sqrt{5}}{10}\frac{(1+\sqrt{5})^n}{2} +
 ¿De cuántas maneras se puede cubrir un tablero de $2\times n$ usando
 fichas de $1\times 2$ y $2\times 1$?
 
-\textit{Solución:} Sea $a_n$ la cantidad de maneras con las cuales se
+\textit{Solución:}Sea $a_n$ la cantidad de maneras con las cuales se
 puede cubrir el tablero $2\times n$. Ahora, si tenemos un tablero
 $2\times (n+1)$, observemos que hay una sola manera de cubrir la
 casilla que se le agregó y esta es usando una ficha $2\times 1$.
@@ -191,11 +192,53 @@ cubrir de 2 formas, sin embargo, una es usando fichas $1\times 2$ y la
 otra es usando fichas $2\times 1$, la cual ya se contempló en el caso
 anterior. Por lo tanto solo consideramos el caso restante, obteniendo
 así la siguiente ecuación en diferencias de segundo orden:
-$a_{n+2}=a_{n+1}+a_n$.  Por la ecuación \eqref{eq:fibonacci}, tenemos
-que
-$a_n=\frac{5+\sqrt{5}}{10}\frac{(1+\sqrt{5})^n}{2} +
-\frac{5-\sqrt{5}}{10}\frac{(1-\sqrt{5})^n}{2}$.
+$a_{n+2}=a_{n+1}+a_n$. Por la ecuación \eqref{eq:fibonacci}, tenemos
+que $r_1=(\frac{1+\sqrt{5}}{2})^n$ y $r_2=(\frac{1-\sqrt{5}}{2})^n$ son soluciones de la ecuacion, por lo tanto $a_n=\alpha_1(\frac{1+\sqrt{5}}{2})^n + \alpha_2(\frac{1-\sqrt{5}}{2})^n$ es solucion general de la ecuacion.
 
+
+Es facil deducir que para $n=1$ solo hay una manera de cubrir el tablero, y para $n=2$ hay 2 maneras de cubrir eltrablero, por lo tanto las condiciones iniciales son $a_1=1$ y $a_2=2$
+
+Ahora, para resolver el problema tenemos que encontrar $\alpha_1$ y $\alpha_2$ que cumplan con las condiciones iniciales, entonces hay que resolver el sistema:
+
+\begin{align*}
+\alpha_{1} + \alpha_{2} &= 1\\
+\alpha_{1}(\frac{1+\sqrt{5}}{2}) + \alpha_{2}(\frac{1+\sqrt{5}}{2})&=1
+\end{align*}
+Para obtener finalmente:
+$F_{n}= \frac{5+\sqrt{5}}{10}(\frac{1+\sqrt{5}}{2})^n +
+\frac{5-\sqrt{5}}{10}(\frac{1-\sqrt{5}}{2})^n$
+
+\subsubsection{Ejemplo}
+\label{sec:fichas}
+
+¿De cuántas maneras se puede cubrir un tablero de $2\times n$ usando
+fichas de $1\times 2$ y $2\times 1$?
+
+\textit{Solución:}Sea $a_n$ la cantidad de maneras con las cuales se
+puede cubrir el tablero $2\times n$. Ahora, si tenemos un tablero
+$2\times (n+1)$, observemos que hay una sola manera de cubrir la
+casilla que se le agregó y esta es usando una ficha $2\times 1$.
+Después utilizando el mismo razonamiento con un tablero
+$2\times (n+2)$ tenemos que las dos casillas agregadas se pueden
+cubrir de 2 formas, sin embargo, una es usando fichas $1\times 2$ y la
+otra es usando fichas $2\times 1$, la cual ya se contempló en el caso
+anterior. Por lo tanto solo consideramos el caso restante, obteniendo
+así la siguiente ecuación en diferencias de segundo orden:
+$a_{n+2}=a_{n+1}+a_n$. Por la ecuación \eqref{eq:fibonacci}, tenemos
+que $r_1=(\frac{1+\sqrt{5}}{2})^n$ y $r_2=(\frac{1-\sqrt{5}}{2})^n$ son soluciones de la ecuacion, por lo tanto $a_n=\alpha_1(\frac{1+\sqrt{5}}{2})^n + \alpha_2(\frac{1-\sqrt{5}}{2})^n$ es solucion general de la ecuacion.
+
+
+Es facil deducir que para $n=1$ solo hay una manera de cubrir el tablero, y para $n=2$ hay 2 maneras de cubrir eltrablero, por lo tanto las condiciones iniciales son $a_1=1$ y $a_2=2$
+
+Ahora, para resolver el problema tenemos que encontrar $\alpha_1$ y $\alpha_2$ que cumplan con las condiciones iniciales, entonces hay que resolver el sistema:
+
+\begin{align*}
+\alpha_{1} + \alpha_{2} &= 1\\
+\alpha_{1}(\frac{1+\sqrt{5}}{2}) + \alpha_{2}(\frac{1+\sqrt{5}}{2})&=2
+\end{align*}
+
+$a_n=(\frac{5+\sqrt{5}}{10}(\frac{1+\sqrt{5}}{2})^n)+
+(\frac{5-\sqrt{5}}{10}(\frac{1-\sqrt{5}}{2})^n)$.
 
 %% 
 
