@@ -341,22 +341,28 @@ Para cada $n$, considera $D_{n}$ el determinante $n\times n$ dado por:
 
 
 Para encontrar $D_{n}$ usamos la ecuación en diferencias que se deduce de observar
-que $D_{n}=(0)D_{n-1}-(1)D_{n-2}$ quedandonos;
+que $D_{n}=(0)D_{n-1}-(1)D_{n-2}$ entonces;
 \begin{equation}
   \label{determinante}
 D_{n}=-D_{n-2}
 \end{equation}
- y además $D_{1}=0$ y $D_{2}=-1$.
-Resolvamos la ecuación resolvente de que es $$r^{2}=-1$$ y asi las soluciones son $y_{n}=i$ y  $z_{n}=-i$.
+ y además $D_{0}=0$ y $D_{1}=-1$.
+Resolvamos la ecuación resolvente que es $$r^{2}=-1$$ y asi las soluciones son $y_{n}=i$ y  $z_{n}=-i$.
 
-Veamos que  $|i|=\sqrt{1}=1$ y que $\arg(\theta)$ y $\theta= \frac{\pi}{2}$ de ahí
-  $$i=\cos(\frac{\pi}{2})+i\sin(\frac{\pi}{2})$$
-  $$i^n=\cos(\frac{n\pi}{2})+i\sin(\frac{n\pi}{2})$$
-  $$D_{n}=\lambda_{1}\cos(\frac{n\pi}{2})+\lambda_{2}\sin(\frac{n\pi}{2})$$
+Veamos que  $|i|=\sqrt{1}=1$ y que $\arg(\theta)$ y $\theta= \frac{\pi}{2}$, de ahí:
+$$i=\cos(\frac{\pi}{2})+i\sin(\frac{\pi}{2})$$
+Elevando a la $n$ se obtiene
+$$i^n=\cos(\frac{\pi}{2})+i\sin(\frac{\pi}{2})$$
+Usando la Formula de Moivre se obtiene:
+$$i^n=(\cos(\frac{n\pi}{2})+i\sin(\frac{n\pi}{2}))$$
+
+$\cos(\frac{\pi}{2})$ y  $\sin(\frac{\pi}{2})$ son soluciones de la ecuacion en diferencias, entonces: 
+$$D_{n}=\lambda_{1}\cos(\frac{n\pi}{2})+\lambda_{2}\sin(\frac{n\pi}{2})$$
+Ahora resolvamos un pequeño sistema de ecuaciones para conocer los valores de $\lambda_1$ y $\lambda_2$:
   $$D_{0}=\lambda_{1}(1)+\lambda_{2}(0)=\lambda_{1}=1$$
-  $$D_{0}=\lambda_{1}(0)+\lambda_{2}(1)=\lambda_{2}=0$$
+  $$D_{1}=\lambda_{1}(0)+\lambda_{2}(1)=\lambda_{2}=0$$
 
-Finalmente la solución es:
+Finalmente la solución general a la ecuacion en diferencias es:
 \begin{equation}
   \label{solucion determinante}
 D_{n}=\cos(\frac{n\pi}{2}).
@@ -367,12 +373,12 @@ D_{n}=\cos(\frac{n\pi}{2}).
 \label{sec:nohomogeneas}
 
 Para resolver la ecuación representada por la expresión
-$$a_{n+2}+ba_{n+1}+ca_{n}=f(n)$$ debemos sumar una solución particular
-del problema no homogeneo a la solución obtenida de resolver la parte
-homogenea.
+$$ax_{n+2}+bx_{n+1}+cx_{n}=f(n)$$ debemos sumar una solución particular
+del problema no homogéneo a la solución obtenida de resolver la parte
+homogénea.
 
-Cuando la solución particular del problema no homogeneo que estamos
-presentando también es solucion de la parte homogenea, se multiplica
+Cuando la solución particular del problema no homogéneo que estamos
+presentando también es solución de la parte homogénea, se multiplica
 por la menor potencia entera positiva de $n$ hasta eliminar toda
 duplicación.
 
@@ -382,12 +388,12 @@ duplicación.
 Cuando el término no homogéneo es exponencial debemos proponer una
 solución de dicho sistema. Por ejemplo: la ecuacion en diferencias
 $x_{n+2}+3x_{n+1}+2x_n=3^n$ al resolver el sistema homogéneo
-obtenemos la solucion: $x-n=\lambda_1(-2)^n+\lambda_2(-1)^n$, ahora,
+obtenemos la solucion: $x_n=\lambda_1(-2)^n+\lambda_2(-1)^n$, ahora,
 para el sistema no homogéneo, debemos proponer una solución la
-cual es un múltiplo del termino exponencial, en este ejemplo la
-solución del sisstema no homogéneo es de la forma $A(3)^n$, ya que
-tenemos una propuesta, debemos resolver el sistema con $x_n=A(3)^n$,
-veamos la solución:
+cual es un múltiplo del término exponencial.En este ejemplo la
+solución del sistema no homogéneo es de la forma $A(3)^n$, ya que
+tenemos una propuesta, debemos resolver el sistema con $x_n=A(3)^n$.
+Veamos la solución:
 
 \begin{align*}
   A(3)^{n+2}+3A(3)^{n+1}+2A(3)^n&=(3)^n\\
