@@ -1,7 +1,7 @@
 
 \documentclass{article}
 
-% \usepackage[spanish]{babel}
+\usepackage[spanish]{babel}
 
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -22,15 +22,18 @@
 \section{Ecuaciones en diferencias}
 \label{sec:ecuaciones}
 
-En esta sección veremos ecuaciones en diferencias, en especial de
+En este documento veremos ecuaciones en diferencias, en especial de
 primer y segundo orden homógeneas, al igual que la solución de una
 ecuación en diferencias no homógenea que se representa como una suma
-de una solución homógenea y una partícular.  Para dar solución a las
-ecuaciónes tanto de primer como de segundo orden calcularemos su
-polinomio caracteristico. En el caso de las de segundo orden tenemos
+de una solución homógenea y una particular.  Para dar solución a las
+ecuaciones tanto de primer como de segundo orden calcularemos su
+polinomio característico. En el caso de las de segundo orden tenemos
 los casos en donde tenemos una o dos soluciones y tendremos que
-distinguir los casos en donde obtenemos raíces reales distintas,
-reales de multiplicidad o complejas.
+distinguir los casos en donde obtenemos raíces reales distintas, raíces
+reales de multiplicidad dos o raíces complejas.
+
+Una ecución en diferencia es de la forma $$X_{n+k}=f(n,X_n,...,X_{n+(k-1)})$$
+$k$ es fijo y $n$ varía en $\mathbb{N}\cup\{0\}$
 
 Si en una ecuación en diferencias, la función $f$ no depende de $n$,
 la ecuación en diferencias es autónoma.
@@ -80,7 +83,7 @@ respecto a al valor anterior, entonces la ecuación de diferencias de
 primer orden se ve de la forma:
 $$x_{n}=(.98)^n(165).$$
 
-Ahora solo sustituimos la n por el numero deseado, en este caso
+Ahora solo sustituimos la $n$ por el número deseado, en este caso
 buscamos el valor del elemento cuando han pasado 60 años,
 equivalentemente a $n=3$, quedando finalmente:
 $$x_{3}=(.98)^3(165)= 155.29.$$
@@ -94,9 +97,11 @@ persona que ya lo conoce se le agrega otra (nueva).
 Si $X_n$ es la cantidad de personas con información nueva al día $n$,
 determinar $X_n$ en términos de $n$ y $X_0$.
 
-\textit{Solución:} La ecuación resolvente está dada por
-$X_{n+1}=aX_n$, entonces, tomando $a=2$ y $X_0=13$, tendríamos el
-siguiente razonamiento:
+\textit{Solución:} La ecuación en diferencias está dada por
+$X_{n+1}=aX_n$, entonces, tomando $a=2$ (Note que es conveniente tomar
+$a$=2 porque se observa que el cambio esta dado por la ecuación
+$x_{n+1}-x_{n}=x_{n}$, entonces despejando $x_{n+1}$ se tiene que
+$x_{n+1}=2x_n$) y $X_0=13$, tendríamos el siguiente razonamiento:
 \begin{itemize}
 \item $X_0=2^013=13$,
 \item $X_1=2^113=26$, siguiendo, llegamos a:
@@ -105,32 +110,35 @@ siguiente razonamiento:
 
 \section{Ecuaciones de segundo orden}
 
-Hablaremos sobre la ecuación reaolvente.
+Hablaremos sobre la ecuación resolvente.
 
-Una ecuación en diferencias de segundo orden tiene la forma $a_{k+2}=f(a_k,a_{k+1})$.
-El método para resolver estas ecuaciones está inspirado en la fórmula \ref{lineal}.
+Una ecuación en diferencias de segundo orden tiene la forma
+\begin{equation}
+  \label{ecsegorden1}
+  a_{k+2}=f(a_k,a_{k+1}),
+\end{equation}
+El método para resolver estas ecuaciones está inspirado en la fórmula \eqref{lineal} 
 
 Para resolver una ecuación en diferencias de segundo orden se usa la
 ecuación resolvente, la cual se dedujo de la siguiente manera:
 
 En general una ecuación en diferencias de segundo orden se ve de la
-siguiente manera $x_{k+2}=px_{k+1}+qx_{k}$, ésto implica que
-$x_{k+2}-px_{k+1}-qx_{k}=0$, ahora sean $-p=a$ y $-q=b$. Así:
+siguiente manera $ax_{n+2}=-bx_{n+1}-cx_{n}$, ésto implica que
 \begin{equation}
   \label{ecsegorden}
-  x_{k+2}+ax_{k+1}+bx_{k}=0,
+  ax_{n+2}+bx_{n+1}+cx_{n}=0,
 \end{equation}
-con $a$ y $b$ en los reales, entonces cómo ya mencionamos, el método
-para resolver éstas ecuaciones está inspirado en la fórmula
-\ref{lineal}. Ahora, ¿qué deben cumplir $r$ y~$c$ para que $x_k=cr^k$
+con $a$,$b$ y $c$ en los reales, entonces cómo ya mencionamos, el método
+para resolver éstas ecuaciones está inspirado en la fórmula \eqref{lineal}
+. Ahora, ¿Qué deben cumplir $r$ y~$s$ para que $x_n=sr^n$
 sea solución de la ecuación \eqref{ecsegorden}?
 
-Tenemos entonces que: $x_{k+2}=cr^{k+2}$, $x_{k+1}=cr^{k+1}$ y
-$x_{k}=cr^{k}$, luego $cr^{k+2}+acr^{k+1}+bcr^k=0$, ésto implica que
-$c(r^{k+2}+ar^{k+1}+br^k)=0$, se sigue $r^k(r^2+ar+b)=0$, para todo
-$k$, así tenemos que $r^2+ar+b=0$ a la cual llamaremos
+Tenemos entonces que: $x_{n+2}=sr^{n+2}$, $x_{n+1}=sr^{n+1}$ y
+$x_{n}=sr^{n}$, luego $sr^{n+2}+bsr^{n+1}+csr^n=0$, ésto implica que
+$s(r^{n+2}+br^{n+1}+cr^n)=0$, se sigue $r^n(r^2+br+c)=0$, para todo
+$n$, así tenemos que $r^2+br+c=0$ a la cual llamaremos
 \textit{ecuación resolvente} de la ecuación \eqref{ecsegorden} y
-$x^k=r^k$ es solución de la ecuación \eqref{ecsegorden}.
+$x^n=r^n$ es solución de la ecuación \eqref{ecsegorden}.
 
 
 
@@ -209,8 +217,8 @@ ecuación resolvente tenga dos raíces iguales usamos la siguiente fórmula:
  \label{raicesiguales}
  a_n=\lambda_1x_1^n +\lambda_2nx_2^n,
 \end{equation}
-donde $x_1=x_2$ son soluciones de la ecuación de segundo orden y
-$\lambda_1$ y $\lambda_2$ son escalares reales.
+donde $r_1=r_2$ son soluciones de la ecuación de segundo orden y
+$\alpha_1$ y $\alpha_2$ son escalares reales.
 
 \subsubsection{Ejemplo}
 
@@ -223,9 +231,9 @@ veremos que la ecuación resolvente $r^2-4r+4=0$ tiene una sola raíz, a
 saber: $r=2$.
 
 La solución general es entonces:
-$$x_n=\lambda_12^n+\lambda_2n2^n$$
+$$x_n=\alpha_12^n+\alpha_2n2^n$$
 y a continuación se deben considerar los valores iniciales para que
-nos dé los valores de $\lambda_1$ y $\lambda_2$.
+nos dé los valores de $\alpha_1$ y $\alpha_2$.
 
 \subsubsection{Ejemplo}
 
@@ -239,32 +247,33 @@ Esto último nos genera una ecuación resolvente. Al factorizarlos y
 resolverlo se obtiene: $r^2-2r+1=0$, $(r-1)^2=0}$, ${r=1}$.
 
 La solución general a esta ecuación en diferencias sería:
-$a_{n}=\lambda_{1}+n\lambda_{2}$.
+
+$$a_{n}=\alpha_{1}(1)^n+n\alpha_{2}(1)^n=\alpha_{1}+n\alpha_{2}$$
 
 Sin embargo, el problema nos da condiciones iniciales
 específicas. Entonces procedemos a plantear un sistema de ecuaciones
 para poder satisfacer las condiciones iniciales.
 \begin{align*}
-  a_{0}&=4=\lambda_{1}(1)^0+0\lambda_{2}(1)^0\\
-  a_{1}&=7=\lambda_{1}(1)^1+1\lambda_{2}(1)^1
+  a_{0}&=4=\alpha_{1}(1)^0+0\alpha_{2}(1)^0\\
+  a_{1}&=7=\alpha_{1}(1)^1+1\alpha_{2}(1)^1
 \end{align*}
 
 Al resolver lo anterior obtenemos los siguientes valores:
-$\lambda_{1}=4$ y $\lambda_{2}=3$, con lo que la solución final será:
+$\alpha_{1}=4$ y $\alpha_{2}=3$, con lo que la solución final será:
 $a_{n}=4+3n$.
 
 
 \subsection{Los números  complejos}
 
-Un complejo es un número de la forma $z=a+bi$, $a,b\in\mathbb{R}$ ,
-con $i^2=-1$, y donde $a$ recibe el nombre de parte real y $b$ el de
-parte imaginaria.
+Un \textit{complejo} es un número de la forma $z=a+bi$, $a,b\in\mathbb{R}$ ,
+con $i^2=-1$, y donde $a$ recibe el nombre de \textit{parte real} y $b$ el de
+\textit{parte imaginaria}
 
-El módulo de un número complejo se define como:
+El \textit{módulo} de un número complejo se define como:
 $|a+bi|=\sqrt{a^2+b^2}$, agarrando las partes reales, el módulo
 siempre es positivo.
 
-El argumento de un número complejo se denota así: $\arg(z)=\theta$. Es
+El \textit{argumento} de un número complejo se denota así: $\arg(z)=\theta$. Es
 el ángulo comprendido en el plano tanto en el eje real
 ($x\in\mathbb{R}$) como el eje imaginario ($y\in\mathbb{R}$).
 
@@ -369,22 +378,28 @@ Para cada $n$, considera $D_{n}$ el determinante $n\times n$ dado por:
 
 
 Para encontrar $D_{n}$ usamos la ecuación en diferencias que se deduce de observar
-que $D_{n}=(0)D_{n-1}-(1)D_{n-2}$ quedandonos;
+que $D_{n}=(0)D_{n-1}-(1)D_{n-2}$ entonces;
 \begin{equation}
   \label{determinante}
 D_{n}=-D_{n-2}
 \end{equation}
- y además $D_{1}=0$ y $D_{2}=-1$.
-Resolvamos la ecuación resolvente de que es $$r^{2}=-1$$ y asi las soluciones son $y_{n}=i$ y  $z_{n}=-i$.
+ y además $D_{0}=0$ y $D_{1}=-1$.
+Resolvamos la ecuación resolvente que es $$r^{2}=-1$$ y asi las soluciones son $y_{n}=i$ y  $z_{n}=-i$.
 
-Veamos que  $|i|=\sqrt{1}=1$ y que $\arg(\theta)$ y $\theta= \frac{\pi}{2}$ de ahí
-  $$i=\cos(\frac{\pi}{2})+i\sin(\frac{\pi}{2})$$
-  $$i^n=\cos(\frac{n\pi}{2})+i\sin(\frac{n\pi}{2})$$
-  $$D_{n}=\lambda_{1}\cos(\frac{n\pi}{2})+\lambda_{2}\sin(\frac{n\pi}{2})$$
+Veamos que  $|i|=\sqrt{1}=1$ y que $\arg(\theta)$ y $\theta= \frac{\pi}{2}$, de ahí:
+$$i=\cos(\frac{\pi}{2})+i\sin(\frac{\pi}{2})$$
+Elevando a la $n$ se obtiene
+$$i^n=\cos(\frac{\pi}{2})+i\sin(\frac{\pi}{2})$$
+Usando la Formula de Moivre se obtiene:
+$$i^n=(\cos(\frac{n\pi}{2})+i\sin(\frac{n\pi}{2}))$$
+
+$\cos(\frac{\pi}{2})$ y  $\sin(\frac{\pi}{2})$ son soluciones de la ecuacion en diferencias, entonces: 
+$$D_{n}=\lambda_{1}\cos(\frac{n\pi}{2})+\lambda_{2}\sin(\frac{n\pi}{2})$$
+Ahora resolvamos un pequeño sistema de ecuaciones para conocer los valores de $\lambda_1$ y $\lambda_2$:
   $$D_{0}=\lambda_{1}(1)+\lambda_{2}(0)=\lambda_{1}=1$$
-  $$D_{0}=\lambda_{1}(0)+\lambda_{2}(1)=\lambda_{2}=0$$
+  $$D_{1}=\lambda_{1}(0)+\lambda_{2}(1)=\lambda_{2}=0$$
 
-Finalmente la solución es:
+Finalmente la solución general a la ecuacion en diferencias es:
 \begin{equation}
   \label{solucion determinante}
 D_{n}=\cos(\frac{n\pi}{2}).
@@ -395,12 +410,12 @@ D_{n}=\cos(\frac{n\pi}{2}).
 \label{sec:nohomogeneas}
 
 Para resolver la ecuación representada por la expresión
-$$a_{n+2}+ba_{n+1}+ca_{n}=f(n)$$ debemos sumar una solución particular
-del problema no homogeneo a la solución obtenida de resolver la parte
-homogenea.
+$$ax_{n+2}+bx_{n+1}+cx_{n}=f(n)$$ debemos sumar una solución particular
+del problema no homogéneo a la solución obtenida de resolver la parte
+homogénea.
 
-Cuando la solución particular del problema no homogeneo que estamos
-presentando también es solucion de la parte homogenea, se multiplica
+Cuando la solución particular del problema no homogéneo que estamos
+presentando también es solución de la parte homogénea, se multiplica
 por la menor potencia entera positiva de $n$ hasta eliminar toda
 duplicación.
 
@@ -410,12 +425,12 @@ duplicación.
 Cuando el término no homogéneo es exponencial debemos proponer una
 solución de dicho sistema. Por ejemplo: la ecuacion en diferencias
 $x_{n+2}+3x_{n+1}+2x_n=3^n$ al resolver el sistema homogéneo
-obtenemos la solucion: $x-n=\lambda_1(-2)^n+\lambda_2(-1)^n$, ahora,
+obtenemos la solucion: $x_n=\lambda_1(-2)^n+\lambda_2(-1)^n$, ahora,
 para el sistema no homogéneo, debemos proponer una solución la
-cual es un múltiplo del termino exponencial, en este ejemplo la
-solución del sisstema no homogéneo es de la forma $A(3)^n$, ya que
-tenemos una propuesta, debemos resolver el sistema con $x_n=A(3)^n$,
-veamos la solución:
+cual es un múltiplo del término exponencial.En este ejemplo la
+solución del sistema no homogéneo es de la forma $A(3)^n$, ya que
+tenemos una propuesta, debemos resolver el sistema con $x_n=A(3)^n$.
+Veamos la solución:
 
 \begin{align*}
   A(3)^{n+2}+3A(3)^{n+1}+2A(3)^n&=(3)^n\\
@@ -424,11 +439,12 @@ veamos la solución:
   20A&=1
 \end{align*}
 De ahí, concluimos que $A=\frac{1}{20}$.
-Luego, nuestra solucion $x_n=\frac{1}{20}(3)^n$ la debemos que sumar a las soluciones del sistema homogéneo las cuales quedaran así:
-$$x_n=\lambda_1(-2)^n+\lambda_2(-1)^n+\frac{1}{20}(3)^n$$.
-Lo unico que nos hace falta es encontrar los valores de $\lambda_1$ y $\lambda_2$ de acuerdo a las condiciones iniciales tal y como se a realizado en ejemplos anteriores.
+Luego, a nuestra solución del sistema no homogéneo  $x_n=\frac{1}{20}(3)^n$ le debemos sumar las soluciones del sistema homogéneo, de lo cual se obtiene:
+$$x_n=\alpha_1(-2)^n+\alpha_2(-1)^n+\frac{1}{20}(3)^n.$$
 
-Tambíen puede pasar que la solución del sistema homogéneo sea la misma del sistema no homogéneo. Por ejemplo: tomando el ejemplo de arriba pero cambiandolo un poco tenemos la ecuacion en diferencias $x_{n+2}+3x_{n+1}+2x_n=(-2)^n$, vemos que $(-2)^n$ es solucion del sistema homogéneo y del no homogéneo, en este caso, la solucion del sistema no homogéneo se propone así $x_n=An(-2)^n$ (el mismo argumento es para cuando el sistema homogéneo tiene un sola solución y el sistema no homogéneo tiene la misma solución, en ese caso la solucion de sistema no homogéneo se propone como $x_n=An^2(-2)^n$), y al resolver queda así:
+Lo único que nos hace falta es encontrar los valores de $\alpha_1$ y $\alpha_2$ de acuerdo a las condiciones iniciales tal y como se ha realizado en ejemplos anteriores.
+
+También puede pasar que la solución del sistema homogéneo sea la misma del sistema no homogéneo. Por ejemplo: tomando el ejemplo de arriba pero cambiándolo un poco tenemos la ecuacion en diferencias $x_{n+2}+3x_{n+1}+2x_n=(-2)^n$, vemos que $(-2)^n$ es solución del sistema homogéneo y del no homogéneo, en este caso, la solución del sistema no homogéneo se propone así $x_n=An(-2)^n$ (el mismo argumento es para cuando el sistema homogéneo tiene un sola solución y el sistema no homogéneo tiene la misma solución, en ese caso la solución de sistema no homogéneo se propone como $x_n=An^2(-2)^n$), y al resolver queda la siguiente manera:
 \begin{align*}
   A(n+2)(-2)^{n+2}+3A(n+1)(-2)^{n+1}+2An(-2)^n&=(-2)^n\\
   A(n+2)(-2)^2+3A(n+1)(-2)+2An&=1\\
@@ -438,25 +454,25 @@ Tambíen puede pasar que la solución del sistema homogéneo sea la misma del si
   A(2)&=1\\
   A&=\frac{1}{2}
 \end{align*}
-Ahora, procedemos igual que en el ejemplo anterior, es decir, a las soluciones del sistema homogéneo le sumamos una solución del sistema no homogéneo y así ya tendremos todas las soluciones del sistema no homogéneo, quedando así, la solución del sistema homogéneo:
-$$x_n=\lambda_1(-2)^n+\lambda_2(-1)^n+\frac{n}{2}(-2)^n$$
+Ahora, procedemos igual que en el ejemplo anterior. Es decir, a las soluciones del sistema homogéneo le sumamos una solución del sistema no homogéneo (la solución particular). De esta manera ya tendrémos todas las soluciones del sistema no homogéneo, quedando así, la solución del sistema homogéneo:
+$$x_n=\alpha_1(-2)^n+\alpha_2(-1)^n+\frac{n}{2}(-2)^n$$
 \subsubsection{El término no homogéneo es polinomial}
 \label{sec:polinomial}
 
-Hay ecuaciones en diferencias que son de la siguiente forma: $a_{n+2}+ba_{n+1}+ca_n=f(n)$, donde $f(n)$ es un polinomio. Por ejemplo, la siguiente suma: $1^2+2^2+...+n^2$, su fórmula puede obtenerse usando una relación de recurrencia, notando que:
+Hay ecuaciones en diferencias que son de la siguiente forma: $ax_{n+2}+bx_{n+1}+cx_n=f(n)$, donde $f(n)$ es un polinomio. Por ejemplo, la siguiente suma: $1^2+2^2+...+n^2$, su fórmula puede obtenerse usando una relación de recurrencia, notando que:
 $a_1=1$, $a_2=a_1+2^2$, \dots, $a_n=a_{n-1}+n^2$.
 
 
 De este modo, la relación recursiva queda como sigue:
 $a_{n}-a_{n-1}=n^2$.  Como se vio antes, debe resolverse la parte
 homogénea de la ecuación ($a_n-a_{n-1}=0$), proponer una solución
-particular para la parte no homogénea y posteriormente sumar ambas
-soluciones, así, podemos resolver el problema de la siguiente manera:
+particular para la parte no homogénea. Posteriormente sumar ambas
+soluciones; mediante este procedimiento se llega a la solución del problema.
 Resolviendo la parte homogénea de la solución, la ecuación resultante
-es: $y_n=\lambda$.
+es: $a^h_n=\lambda$.
 
 Ahora, usando el método de coeficientes indeterminados, se propone el
-siguiente polinomio: $z_n=An^3+Bn^2+Cn$, donde sustituyéndola en
+siguiente polinomio: $a^p_n=An^3+Bn^2+Cn$, donde sustituyéndola en
 $a_n-a_{n-1}=0$, se obtienen los valores de $A,B,C$.
 
 Usaremos la siguiente expresión:
@@ -473,8 +489,8 @@ $-3A+2B=0$,
 $A-B+C=0$,
 Con lo cual: $A=\frac{1}{3}$, $B=\frac{1}{2}$, $C=\frac{1}{6}$.
 
-Sustituyendo los valores en $Z_n$
-$z_n=\frac{n^3}{3}$$+\frac{n^2}{2}$$+\frac{n}{6}=$$\frac{n(n+1)(2n+1)}{6}$
+Sustituyendo los valores en $a^p_n$, se tiene que:
+$a^p_n=\frac{n^3}{3}$$+\frac{n^2}{2}$$+\frac{n}{6}=$$\frac{n(n+1)(2n+1)}{6}$
 
 Para concluir con el problema, se suman ambas soluciones, obteniendo que:
 $a_n=\frac{n(n+1)(2n+1)}{6}$$+\lambda$.
