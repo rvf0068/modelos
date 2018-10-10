@@ -236,7 +236,7 @@ Para resolver este problema, primero igualamos la ecuación en diferencias a
 cero: $a_{n+2}-2a_{n+1}+a_{n}=0$.
 
 Esto último nos genera una ecuación resolvente. Al factorizarlos y
-resolverlo se obtiene: $r^2-2r+1=0$, ${(r-1)^2=0}$, ${r=1}$.
+resolverlo se obtiene: $r^2-2r+1=0$, $(r-1)^2=0}$, ${r=1}$.
 
 La solución general a esta ecuación en diferencias sería:
 $a_{n}=\lambda_{1}+n\lambda_{2}$.
@@ -312,13 +312,41 @@ $\lambda_1=1;\lambda_2=0$
 con lo que la solución final es:
 
 $x_n=2^n\cos(\frac{n\pi}{2})$
+\bigskip
 
-Otro ejemplo: $x_{n+2}=4x_{n+1}-8x_n$ con condiciones iniciales
-$x_0=1$ y $x_1=0$. Para encontrar sus raíces se lleva a cabo el
-procedimiento habitual. En este caso sus raíces son: $r=2\pm2i$
+\subsubsection{Ejemplo}
 
-El siguiente paso es encontrar su módulo: $|r|=\sqrt{2^2+2^2}$
+Ecuación en diferencias con suluciones complejas
+$x_{n+2}=4x_{n+1}-8x_{n}$ , con condiciones iniciales $x_{0}=-1$ y $x_{1}=1$
 
+La ecuación resolvente del problema es $r^2-4r+8=0$ con suluciones $r_{1}=2+2i$ $r_{2}=2-2i$.
+Tomamos a $r_{1}$ para que una solución partuclar de la ecuación en diferecias sea $x_{n}=(2+2i)^n$.
+
+Necesitamos a la parte real y la parte imagiaria de $(2+2i)^n$. Obtenemos el módulo de $r_{1}$ que resultaría $|r|= \sqrt{32}$ y obtenemos el $arg(r_{1})=\frac{\pi}{4}$.
+
+Entonces, ocupando la fórmula de Moivre, se tiene que
+
+$r_{1}^n=(\sqrt{32})^n(\cos{\frac{n\pi}{4}}+i\sin{\frac{n\pi}{4}})$
+
+Tomamos la parte real y la parte entera de $r_{1}^n$.
+
+$Re(r_{1})=(\sqrt{32})^n\cos{\frac{n\pi}{4}}$ y $Im(r_{1})=(\sqrt{32})^n\sin{\frac{n\pi}{4}$
+
+  Entonces haciendo uso de la fórmula resolvente obtenemos que
+
+  $x_{n}=\alpha_{1}(\sqrt{32})^n\cos{\frac{n\pi}{4}} + \alpha_{2}(\sqrt{32})^n\sin{\frac{n\pi}{4}$
+
+    Encontramos a los alphas con un sistema de ecuaciones planteado usando a las condiciones iniciales
+
+    $x_{0}=-1=\alpha_{1}(\sqrt{32})^0\cos{\frac{0\pi}{4}} + \alpha_{2}(\sqrt{32})^0\sin{\frac{0\pi}{4}$
+      
+      $x_{1}=1=\alpha_{1}(\sqrt{32})^1\cos{\frac{1\pi}{4}} + \alpha_{2}(\sqrt{32})^1\sin{\frac{1\pi}{4}$
+
+        Obteniendo que $\alpha_{1}=-1$ y que $\alpha_{2}=\frac{5}{4}$
+
+        Por último la fórmula resolvente es:
+
+         $x_{n}=\-(\sqrt{32})^n\cos{\frac{n\pi}{4}} + \frac{5}{4}(\sqrt{32})^n\sin{\frac{n\pi}{4}$$$
 %%%% ???????????
 
 \subsubsection{Ejemplo}
