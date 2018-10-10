@@ -209,8 +209,8 @@ ecuación resolvente tenga dos raíces iguales usamos la siguiente fórmula:
  \label{raicesiguales}
  a_n=\lambda_1x_1^n +\lambda_2nx_2^n,
 \end{equation}
-donde $x_1=x_2$ son soluciones de la ecuación de segundo orden y
-$\lambda_1$ y $\lambda_2$ son escalares reales.
+donde $r_1=r_2$ son soluciones de la ecuación de segundo orden y
+$\alpha_1$ y $\alpha_2$ son escalares reales.
 
 \subsubsection{Ejemplo}
 
@@ -223,9 +223,9 @@ veremos que la ecuación resolvente $r^2-4r+4=0$ tiene una sola raíz, a
 saber: $r=2$.
 
 La solución general es entonces:
-$$x_n=\lambda_12^n+\lambda_2n2^n$$
+$$x_n=\alpha_12^n+\alpha_2n2^n$$
 y a continuación se deben considerar los valores iniciales para que
-nos dé los valores de $\lambda_1$ y $\lambda_2$.
+nos dé los valores de $\alpha_1$ y $\alpha_2$.
 
 \subsubsection{Ejemplo}
 
@@ -239,32 +239,33 @@ Esto último nos genera una ecuación resolvente. Al factorizarlos y
 resolverlo se obtiene: $r^2-2r+1=0$, ${(r-1)^2=0}$, ${r=1}$.
 
 La solución general a esta ecuación en diferencias sería:
-$a_{n}=\lambda_{1}+n\lambda_{2}$.
+
+$$a_{n}=\alpha_{1}(1)^n+n\alpha_{2}(1)^n=\alpha_{1}+n\alpha_{2}$$
 
 Sin embargo, el problema nos da condiciones iniciales
 específicas. Entonces procedemos a plantear un sistema de ecuaciones
 para poder satisfacer las condiciones iniciales.
 \begin{align*}
-  a_{0}&=4=\lambda_{1}(1)^0+0\lambda_{2}(1)^0\\
-  a_{1}&=7=\lambda_{1}(1)^1+1\lambda_{2}(1)^1
+  a_{0}&=4=\alpha_{1}(1)^0+0\alpha_{2}(1)^0\\
+  a_{1}&=7=\alpha_{1}(1)^1+1\alpha_{2}(1)^1
 \end{align*}
 
 Al resolver lo anterior obtenemos los siguientes valores:
-$\lambda_{1}=4$ y $\lambda_{2}=3$, con lo que la solución final será:
+$\alpha_{1}=4$ y $\alpha_{2}=3$, con lo que la solución final será:
 $a_{n}=4+3n$.
 
 
 \subsection{Los números  complejos}
 
-Un complejo es un número de la forma $z=a+bi$, $a,b\in\mathbb{R}$ ,
-con $i^2=-1$, y donde $a$ recibe el nombre de parte real y $b$ el de
-parte imaginaria.
+Un \textit{complejo} es un número de la forma $z=a+bi$, $a,b\in\mathbb{R}$ ,
+con $i^2=-1$, y donde $a$ recibe el nombre de \textit{parte real} y $b$ el de
+\textit{parte imaginaria}
 
-El módulo de un número complejo se define como:
+El \textit{módulo} de un número complejo se define como:
 $|a+bi|=\sqrt{a^2+b^2}$, agarrando las partes reales, el módulo
 siempre es positivo.
 
-El argumento de un número complejo se denota así: $\arg(z)=\theta$. Es
+El \textit{argumento} de un número complejo se denota así: $\arg(z)=\theta$. Es
 el ángulo comprendido en el plano tanto en el eje real
 ($x\in\mathbb{R}$) como el eje imaginario ($y\in\mathbb{R}$).
 
