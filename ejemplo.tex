@@ -1,7 +1,6 @@
-
 \documentclass{article}
 
-\usepackage[spanish]{babel}
+\usepackage[spanish, mexico]{babel}
 
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -10,9 +9,9 @@
 
 \title{Ecuaciones en diferencias}
 
-\author{Alumnos de 3er semestre grupo 2}
+\author{Alumnos de 3er semestre}
 
-\date{18 de septiembre de 2017}
+\date{\today}
  
 \begin{document}
 
@@ -25,15 +24,16 @@
 En este documento veremos ecuaciones en diferencias, en especial de
 primer y segundo orden homógeneas, al igual que la solución de una
 ecuación en diferencias no homógenea que se representa como una suma
-de una solución homógenea y una particular.  Para dar solución a las
+de una solución homógenea y una particular. Para dar solución a las
 ecuaciones tanto de primer como de segundo orden calcularemos su
 polinomio característico. En el caso de las de segundo orden tenemos
 los casos en donde tenemos una o dos soluciones y tendremos que
-distinguir los casos en donde obtenemos raíces reales distintas, raíces
-reales de multiplicidad dos o raíces complejas.
+distinguir los casos en donde obtenemos raíces reales distintas,
+raíces reales de multiplicidad dos o raíces complejas.
 
-Una ecución en diferencia es de la forma $$X_{n+k}=f(n,X_n,...,X_{n+(k-1)})$$
-$k$ es fijo y $n$ varía en $\mathbb{N}\cup\{0\}$
+Una ecuación en diferencias es de la forma:
+$$X_{n+k}=f(n,X_n,...,X_{n+k-1}),$$
+donde $k$ es fijo y $n$ varía en $\mathbb{N}\cup\{0\}$.
 
 Si en una ecuación en diferencias, la función $f$ no depende de $n$,
 la ecuación en diferencias es autónoma.
@@ -42,22 +42,22 @@ la ecuación en diferencias es autónoma.
 
 \subsection{Ecuaciones lineales}
 
-Una ecuación lineal en diferencias de primer orden tiene la forma:
+Una \emph{ecuación lineal en diferencias de primer orden} tiene la forma:
 \begin{equation}
   \label{lineal}
-  x_{n+1}=ax_n
+  x_{n+1}=ax_n,
 \end{equation}
 donde $a$ es una constante.
 
 La fórmula para resolver ecuaciones lineales es:
 \begin{equation}
   \label{lineal}
-  x_n=a^nx_0.xc
+  x_n=a^nx_0.
 \end{equation}
 
-Por ejemplo, si consideramos el valor de  una inversión de $1000$ pesos que acumula un interés
-mensual de $1\%$, obtenemos la gráfica mostrada en la figura
-\ref{inversion}.
+Por ejemplo, si consideramos el valor de una inversión de $1000$ pesos
+que acumula un interés mensual de $1\%$, obtenemos la gráfica mostrada
+en la figura~\ref{inversion}.
 
 \begin{figure}
   \centering
@@ -66,28 +66,30 @@ mensual de $1\%$, obtenemos la gráfica mostrada en la figura
   \label{inversion}
 \end{figure}
 
-Siguiendo con el ejemplo, nos consideramos a $x_{n+1}$ como el monto
-de la inversión cuando han pasado n meses.  Note que:
+Siguiendo con el ejemplo, consideramos a $x_{n+1}$ como el monto
+de la inversión cuando han pasado $n$ meses.  Note que:
 \begin{equation}
   \label{eq:2}
-  cambio=valor futuro-valorpresente
+  \text{cambio}=\text{valor futuro}-\text{valor presente},
 \end{equation}
-donde $x_n=cambio$ y $x_{n+1}=valor futuro$.  Como el cambio es de
-$1\%$ entonces $cambio=0.01x_n$.  Ocupando \eqref{eq:2} nos queda que:
+donde $x_n=\text{cambio}$ y $x_{n+1}=\text{valor futuro}$.  Como el
+cambio es de $1\%$ entonces $\text{cambio}=0.01x_n$.  Ocupando
+\eqref{eq:2} nos queda que:
 \begin{align*}
   0.01x_n&=x_{n+1}-x_n\\
-  x_{n+1}&=x_n+0.01\\
+  x_{n+1}&=x_n+0.01x_n\\
  x_{n+1}&=1.01x_n
 \end{align*}
 
 Sabemos que las ecuaciones que se ven de esta forma se resuelven con
 la fórmula (2).  Entonces $x_n=(1.01)^nx_0$ donde $x_0=1000$.
 
-\subsection{Ejemplo}
+\subsection{Ejemplo de elemento radioactivo}
 
 Un elemento radioactivo decae a una razón de $2\%$ cada 20 años.
 \begin{itemize}
- \item Si inicialmente se tenían 165 gramos de este elemento, ¿cuánto se tendrá en 60 años?
+\item Si inicialmente se tenían 165 gramos de este elemento, ¿cuánto
+  se tendrá en 60 años?
  \item ¿Cuál es la vida media de este elemento?
 \end{itemize}
 
@@ -103,24 +105,27 @@ buscamos el valor del elemento cuando han pasado 60 años,
 equivalentemente a $n=3$, quedando finalmente:
 $$x_{3}=(.98)^3(165)= 155.29.$$
 
-\subsection{Ejemplo}
+\subsection{Ejemplo de propagación de rumor}
 
 Se esparce nuestro trabajo colaborativo dentro de la universidad. Al
-tiempo 0, el trabajo es conocido por 13 personas. Cada día, por
+tiempo~0, el trabajo es conocido por 13 personas. Cada día, por
 persona que ya lo conoce se le agrega otra (nueva).
 
 Si $X_n$ es la cantidad de personas con información nueva al día $n$,
-determinar $X_n$ en términos de $n$ y $X_0$.
+determinar~$X_n$ en términos de $n$ y $X_0$.
 
 \textit{Solución:} La ecuación en diferencias está dada por
-$X_{n+1}=aX_n$, entonces, tomando $a=2$ (Note que es conveniente tomar
-$a$=2 porque se observa que el cambio esta dado por la ecuación
-$x_{n+1}-x_{n}=x_{n}$, entonces despejando $x_{n+1}$ se tiene que
-$x_{n+1}=2x_n$) y $X_0=13$, tendríamos el siguiente razonamiento:
+$X_{n+1}=aX_n$, con el valor~$a=2$.
+
+Note que es conveniente tomar $a=2$ porque se observa que el cambio
+está dado por la ecuación $X_{n+1}-X_{n}=X_{n}$, entonces despejando
+$X_{n+1}$ se tiene que~$X_{n+1}=2X_n$.
+
+Como $X_0=13$, tendríamos el siguiente razonamiento:
 \begin{itemize}
 \item $X_0=2^013=13$,
 \item $X_1=2^113=26$, siguiendo, llegamos a:
-\item $X_n=2^n13=a^nX_0$, quedando de esta manera la ecuación resolvente.
+\item $X_n=2^n13=a^nX_0$, quedando de esta manera la solución.
 \end{itemize}
 
 \section{Ecuaciones de segundo orden}
