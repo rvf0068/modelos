@@ -54,7 +54,21 @@ La fórmula para resolver ecuaciones lineales es:
   \label{lineal}
   x_n=a^nx_0.
 \end{equation}
+Demostración (Por inducción):
 
+Tenemos la condición inicial $x_0$, note que $x_1=ax_0$.  Supongamos
+válida la forma para n, es decir $x_n=a^nx_0$ ahora falta mostrar que
+la fórmula es válida para n+1.
+
+Entonces
+\begin{align*}
+  x_{n+1}&=ax_n\\
+        &=a(a^nx_0)\\
+       &=a^{n+1}x_0
+\end{align*}
+
+Por lo tanto la fórmula $x_n=a^nx_0$ resuelve la ecuacion en
+diferencias $$x_{n+1}=ax_n.$$
 Por ejemplo, si consideramos el valor de una inversión de $1000$ pesos
 que acumula un interés mensual de $1\%$, obtenemos la gráfica mostrada
 en la figura~\ref{inversion}.
@@ -66,14 +80,14 @@ en la figura~\ref{inversion}.
   \label{inversion}
 \end{figure}
 
-Siguiendo con el ejemplo, consideramos a $x_{n+1}$ como el monto
+Siguiendo con el ejemplo, consideramos a $x_n$ como el monto
 de la inversión cuando han pasado $n$ meses.  Note que:
 \begin{equation}
   \label{eq:2}
   \text{cambio}=\text{valor futuro}-\text{valor presente},
 \end{equation}
-donde $x_n=\text{cambio}$ y $x_{n+1}=\text{valor futuro}$.  Como el
-cambio es de $1\%$ entonces $\text{cambio}=0.01x_n$.  Ocupando
+donde $x_n=\text{valor presente}$ y $x_{n+1}=\text{valor futuro}$.
+Como el cambio es de $1\%$ entonces $\text{cambio}=0.01x_n$.  Ocupando
 \eqref{eq:2} nos queda que:
 \begin{align*}
   0.01x_n&=x_{n+1}-x_n\\
