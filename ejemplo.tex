@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{tikz}
 
 \title{Ecuaciones en diferencias}
 
@@ -26,17 +27,15 @@ primer y segundo orden homógeneas, al igual que la solución de una
 ecuación en diferencias no homógenea que se representa como una suma
 de una solución homógenea y una particular. Para dar solución a las
 ecuaciones tanto de primer como de segundo orden calcularemos su
-polinomio característico. En el caso de las de segundo orden tenemos
-los casos en donde tenemos una o dos soluciones y tendremos que
-distinguir los casos en donde obtenemos raíces reales distintas,
-raíces reales de multiplicidad dos o raíces complejas.
+ecuación resolvente.
+En el caso de las de segundo orden tenemos los casos en donde tenemos una o dos soluciones y tendremos que distinguir los casos en donde obtenemos raíces reales distintas, raíces reales de multiplicidad dos o raíces complejas.
 
 Una ecuación en diferencias es de la forma:
 $$X_{n+k}=f(n,X_n,...,X_{n+k-1}),$$
-donde $k$ es fijo y $n$ varía en $\mathbb{N}\cup\{0\}$.
-
+donde $k,n$ son fijos.
+\section{Ejemplo}
 Si en una ecuación en diferencias, la función $f$ no depende de $n$,
-la ecuación en diferencias es autónoma.
+la ecuación en diferencias es \emph{autónoma}.
 
 \chapter{Ecuaciones de primer orden}
 
@@ -54,7 +53,21 @@ La fórmula para resolver ecuaciones lineales es:
   \label{lineal}
   x_n=a^nx_0.
 \end{equation}
+Demostración (Por inducción):
 
+Tenemos la condición inicial $x_0$, note que $x_1=ax_0$.  Supongamos
+válida la forma para n, es decir $x_n=a^nx_0$ ahora falta mostrar que
+la fórmula es válida para n+1.
+
+Entonces
+\begin{align*}
+  x_{n+1}&=ax_n\\
+        &=a(a^nx_0)\\
+       &=a^{n+1}x_0
+\end{align*}
+
+Por lo tanto la fórmula $x_n=a^nx_0$ resuelve la ecuacion en
+diferencias $$x_{n+1}=ax_n.$$
 Por ejemplo, si consideramos el valor de una inversión de $1000$ pesos
 que acumula un interés mensual de $1\%$, obtenemos la gráfica mostrada
 en la figura~\ref{inversion}.
@@ -66,14 +79,14 @@ en la figura~\ref{inversion}.
   \label{inversion}
 \end{figure}
 
-Siguiendo con el ejemplo, consideramos a $x_{n+1}$ como el monto
+Siguiendo con el ejemplo, consideramos a $x_n$ como el monto
 de la inversión cuando han pasado $n$ meses.  Note que:
 \begin{equation}
   \label{eq:2}
   \text{cambio}=\text{valor futuro}-\text{valor presente},
 \end{equation}
-donde $x_n=\text{cambio}$ y $x_{n+1}=\text{valor futuro}$.  Como el
-cambio es de $1\%$ entonces $\text{cambio}=0.01x_n$.  Ocupando
+donde $x_n=\text{valor presente}$ y $x_{n+1}=\text{valor futuro}$.
+Como el cambio es de $1\%$ entonces $\text{cambio}=0.01x_n$.  Ocupando
 \eqref{eq:2} nos queda que:
 \begin{align*}
   0.01x_n&=x_{n+1}-x_n\\
@@ -93,26 +106,25 @@ Un elemento radioactivo decae a una razón de $2\%$ cada 20 años.
  \item ¿Cuál es la vida media de este elemento?
 \end{itemize}
 
-\textit{Solución:}  
-Sabemos que la condición inicial es de 165 gramos y que decae un $2\%$
-cada 20 años, lo cual implica que se mantiene en un $98\%$ con
-respecto a al valor anterior, entonces la ecuación de diferencias de
-primer orden se ve de la forma:
+\textit{Solución:} Sabemos que la condición inicial es de 165 gramos y
+que decae un $2\%$ cada 20 años, lo cual implica que se mantiene en un
+$98\%$ con respecto a al valor anterior, entonces la solución de la
+ecuación en diferencia es la siguiente:
+
 $$x_{n}=(.98)^n(165).$$
 
-Ahora solo sustituimos la $n$ por el número deseado, en este caso
-buscamos el valor del elemento cuando han pasado 60 años,
-equivalentemente a $n=3$, quedando finalmente:
+Donde $n=3$, pues buscamos el valor del elemento cuando han pasado 60
+años, y éste, decae cada 20 años, por lo tanto el resultado es:
 $$x_{3}=(.98)^3(165)= 155.29.$$
 
 \section{Ejemplo de propagación de rumor}
 
 Se esparce nuestro trabajo colaborativo dentro de la universidad. Al
-tiempo~0, el trabajo es conocido por 13 personas. Cada día, por
-persona que ya lo conoce se le agrega otra (nueva).
+tiempo~0, el trabajo es conocido por 13 personas, además cada persona que
+conoce el trabajo le trasmite la informacion a una nueva.
 
-Si $X_n$ es la cantidad de personas con información nueva al día $n$,
-determinar~$X_n$ en términos de $n$ y $X_0$.
+Si $X_n$ es la cantidad de personas que conoce eln trabajo al dia  $n$,
+determinar~$X_n$ en términos de $n$ y $X_0=13$.
 
 \textit{Solución:} La ecuación en diferencias está dada por
 $X_{n+1}=aX_n$, con el valor~$a=2$.
@@ -164,19 +176,19 @@ El método para resolver estas ecuaciones está inspirado en la fórmula \eqref{
 Para resolver una ecuación en diferencias de segundo orden se usa la
 ecuación resolvente, la cual se dedujo de la siguiente manera:
 
-En general una ecuación en diferencias de segundo orden se ve de la
+En general una ecuación en diferencias de segundo orden líneal y homogénea con coeficientes constates se ve de la
 siguiente manera $ax_{n+2}=-bx_{n+1}-cx_{n}$, ésto implica que
 \begin{equation}
   \label{ecsegorden}
   ax_{n+2}+bx_{n+1}+cx_{n}=0,
 \end{equation}
-con $a$,$b$ y $c$ en los reales, entonces cómo ya mencionamos, el método
+con $a$, $b$ y $c$ en los reales, entonces como ya mencionamos, el método
 para resolver éstas ecuaciones está inspirado en la fórmula \eqref{lineal}
-. Ahora, ¿Qué deben cumplir $r$ y~$s$ para que $x_n=sr^n$
+. Ahora, ¿qué deben cumplir $r$ y~$s$ para que $x_n=sr^n$
 sea solución de la ecuación \eqref{ecsegorden}?
 
 Tenemos entonces que: $x_{n+2}=sr^{n+2}$, $x_{n+1}=sr^{n+1}$ y
-$x_{n}=sr^{n}$, luego $sr^{n+2}+bsr^{n+1}+csr^n=0$, ésto implica que
+$x_{n}=sr^{n}$, luego $asr^{n+2}+bsr^{n+1}+csr^n=0$, ésto implica que
 $s(r^{n+2}+br^{n+1}+cr^n)=0$, se sigue $r^n(r^2+br+c)=0$, para todo
 $n$, así tenemos que $r^2+br+c=0$ a la cual llamaremos
 \textit{ecuación resolvente} de la ecuación \eqref{ecsegorden} y
@@ -219,7 +231,7 @@ $a_{k}=\alpha_{1}(\frac{1+\sqrt{5}}{2})^{k} +
 Ahora resolvemos un sistema de ecuaciones tal que:
 \begin{align*}
 \alpha_{1} + \alpha_{2} &= 1\\
-\alpha_{1}(\frac{1+\sqrt{5}}{2}) + \alpha_{2}(\frac{1+\sqrt{5}}{2})&=1
+(\frac{1+\sqrt{5}}{2})\alpha_{1} + (\frac{1+\sqrt{5}}{2})\alpha_{2}&=1
 \end{align*}
 Para obtener finalmente:
 $F_{n}= \frac{5+\sqrt{5}}{10}(\frac{1+\sqrt{5}}{2})^n +
@@ -243,13 +255,13 @@ anterior. Por lo tanto solo consideramos el caso restante, obteniendo
 así la siguiente ecuación en diferencias de segundo orden:
 $a_{n+2}=a_{n+1}+a_n$. Por la ecuación \eqref{eq:fibonacci}, tenemos
 que $r_1=(\frac{1+\sqrt{5}}{2})^n$ y $r_2=(\frac{1-\sqrt{5}}{2})^n$
-son soluciones de la ecuacion, por lo tanto
+son soluciones de la ecuación, por lo tanto
 $a_n=\alpha_1(\frac{1+\sqrt{5}}{2})^n +
-\alpha_2(\frac{1-\sqrt{5}}{2})^n$ es solucion general de la ecuacion.
+\alpha_2(\frac{1-\sqrt{5}}{2})^n$ es solución general de la ecuación.
 
 
-Es facil deducir que para $n=1$ solo hay una manera de cubrir el
-tablero, y para $n=2$ hay 2 maneras de cubrir eltrablero, por lo tanto
+Es fácil deducir que para $n=1$ solo hay una manera de cubrir el
+tablero, y para $n=2$ hay 2 maneras de cubrir el tablero, por lo tanto
 las condiciones iniciales son $a_1=1$ y $a_2=2$
 
 Ahora, para resolver el problema tenemos que encontrar $\alpha_1$ y
@@ -258,7 +270,7 @@ resolver el sistema:
 
 \begin{align*}
 \alpha_{1} + \alpha_{2} &= 1\\
-\alpha_{1}(\frac{1+\sqrt{5}}{2}) + \alpha_{2}(\frac{1+\sqrt{5}}{2})&=1
+(\frac{1+\sqrt{5}}{2})\alpha_{1} + (\frac{1+\sqrt{5}}{2})\alpha_{2}&=1
 \end{align*}
 Para obtener finalmente:
 $a_{n}= \frac{5+\sqrt{5}}{10}(\frac{1+\sqrt{5}}{2})^n +
@@ -337,8 +349,19 @@ siempre es positivo.
 
 El \textit{argumento} de un número complejo se denota así: $\arg(z)=\theta$. Es
 el ángulo comprendido en el plano tanto en el eje real
-($x\in\mathbb{R}$) como el eje imaginario ($y\in\mathbb{R}$).
-
+($x\in\mathbb{R}$) como el eje imaginario ($y\in\mathbb{R}$), como se puede observar en la siguiente figura:
+\begin{center}
+\begin{tikzpicture}
+  \draw (0,0) circle(2);
+  \draw[brown, very thick] (0,0) -- (2.5,0);
+  \draw(-2.5,0) -- (0,0);
+  \draw (0,2.5) -- (0,-2.5);
+  \draw[brown, very thick] (0,0) -- (45:2);
+  \draw[brown, very thick] (0.5,0) arc (0:45:0.5);
+  \draw(1,0.3) node {$\arg z$};
+  \draw(1.8,1.5) node {$z$};
+\end{tikzpicture}
+\end{center}
 Para calcularlo decimos que:
 $z=|z|*\frac{z}{|z|}$, ahora que tenemos eso podemos ver a $z$ como
 $z=\cos(\theta)+i\sin(\theta)$.
@@ -371,7 +394,7 @@ se ve como:
 $2i=|2|(cos((\frac{\pi}{2}))+isen((\frac{n\pi}{2}))$
 
 
-Ahora buscaremos su módulo: $|r|=\sqrt{2^2}=2$
+Ahora buscaremos su módulo: $|r_{1}|=\sqrt{2^2}=2$
 
 Llegado a este punto hacemos uso de la fórmula resolvente y la fórmula de De Moivre para obtener lo siguiente:
 
@@ -392,62 +415,53 @@ con lo que la solución final es:
 
 $x_n=2^n\cos(\frac{n\pi}{2})$
 \bigskip
-
+\bigskip
 \subsection{Ejemplo}
 
 Ecuación en diferencias con suluciones complejas
-$x_{n+2}=4x_{n+1}-8x_{n}$ , con condiciones iniciales $x_{0}=-1$ y $x_{1}=1$
 
-La ecuación resolvente del problema es $r^2-4r+8=0$ con suluciones $r_{1}=2+2i$ $r_{2}=2-2i$.
-Tomamos a $r_{1}$ para que una solución partuclar de la ecuación en diferecias sea $x_{n}=(2+2i)^n$.
+$$x_{n+2}=4x_{n+1}-8x_{n}$$,
 
-Necesitamos a la parte real y la parte imagiaria de $(2+2i)^n$. Obtenemos el módulo de $r_{1}$ que resultaría $|r|= \sqrt{32}$ y obtenemos el $arg(r_{1})=\frac{\pi}{4}$.
+con condiciones iniciales $x_{0}=-1$ y $x_{1}=1$
+
+ La ecuación resolvente del problema es
+
+ $$r^2-4r+8=0$$
+
+ con soluciones $r_{1}=2+2i$ $r_{2}=2-2i$.
+
+\bigskip
+
+ Tomamos a $r_{1}$ para que una solución particular de la ecuación en diferencias sea $$x_{n}=(2+2i)^n$$
+
+Necesitamos a la parte real y la parte imaginaria de $(2+2i)^n$. Obtenemos el módulo de $r_{1}$ que resultaría $|r|= \sqrt{32}$ y obtenemos el $\arg(r_{1})=\frac{\pi}{4}$.
 
 Entonces, ocupando la fórmula de Moivre, se tiene que
 
-$r_{1}^n=(\sqrt{32})^n(\cos{\frac{n\pi}{4}}+i\sin{\frac{n\pi}{4}})$
+$$r_{1}^n=(\sqrt{32})^n(\cos{\frac{n\pi}{4}}+i\sin{\frac{n\pi}{4}})$$
 
 
-Tomamos la parte real y la parte entera de $r_{1}^n$.
+Tomamos la parte real y la parte entera de $r_{1}^n$:
 
-$Re(r_{1})=(\sqrt{32})^n\cos{\frac{n\pi}{4}}$ y $Im(r_{1})=(\sqrt{32})^n\sin{\frac{n\pi}{4}}$
+$\mathrm{Re}(r_{1})=(\sqrt{32})^n\cos{\frac{n\pi}{4}}$ y $\mathrm{Im}(r_{1})=(\sqrt{32})^n\sin{\frac{n\pi}{4}}$
 
   Entonces haciendo uso de la fórmula resolvente obtenemos que
 
-  $x_{n}=\alpha_{1}(\sqrt{32})^n\cos{\frac{n\pi}{4}} + \alpha_{2}(\sqrt{32})^n\sin{\frac{n\pi}{4}}$
+  $$x_{n}=\alpha_{1}(\sqrt{32})^n\cos{\frac{n\pi}{4}} + \alpha_{2}(\sqrt{32})^n\sin{\frac{n\pi}{4}}$$
 
     Encontramos a los alphas con un sistema de ecuaciones planteado usando a las condiciones iniciales
 
-    $x_{0}=-1=\alpha_{1}(\sqrt{32})^0\cos{\frac{0\pi}{4}} + \alpha_{2}(\sqrt{32})^0\sin{\frac{0\pi}{4}}$
+    $$x_{0}=-1=\alpha_{1}(\sqrt{32})^0\cos{\frac{0\pi}{4}} + \alpha_{2}(\sqrt{32})^0\sin{\frac{0\pi}{4}}$$
       
-      $x_{1}=1=\alpha_{1}(\sqrt{32})^1\cos{\frac{1\pi}{4}} + \alpha_{2}(\sqrt{32})^1\sin{\frac{1\pi}{4}}$
+     $$x_{1}=1=\alpha_{1}(\sqrt{32})^1\cos{\frac{1\pi}{4}} + \alpha_{2}(\sqrt{32})^1\sin{\frac{1\pi}{4}}$$
 
         Obteniendo que $\alpha_{1}=-1$ y que $\alpha_{2}=\frac{5}{4}$
 
-        Por último la fórmula resolvente es:
+        Por último la solución
+ es:
 
          $$x_{n}=\-(\sqrt{32})^n\cos{\frac{n\pi}{4}} + \frac{5}{4}(\sqrt{32})^n\sin{\frac{n\pi}{4}}$$
-%%%% ???????????
-El siguiente paso es encontrar su módulo: $|r|=\sqrt{2^2+2^2}=\sqrt{8}$
 
-Llegado a este punto hacemos uso de la fórmula resolvente y la fórmula de De Moivre para obtener lo siguiente:
-
-$x_n=\lambda_1\sqrt{8}^n\cos(\frac{n\pi}{2})+\lambda_2\sqrt{8}^n\sin(\frac{n\pi}{2})$.
-
-Y buscamos el valor de los lambdas con un sistema de ecuaciones:
-
-$\lambda_1\sqrt{8}^0\cos(\frac{0\pi}{2})+\lambda_2\sqrt{8}^0\sin(\frac{0\pi}{2})=1$
-
-$\lambda_1\sqrt{8}^1\cos(\frac{1\pi}{2})+\lambda_2\sqrt{8}^1\sin(\frac{1\pi}{2})=0$
-
-
-al resolver el sistema obtenemos:
-
-$\lambda_1=1,\lambda_2=0.$
-
-con lo que la solución final es:
-
-$x_n=\lambda_1\sqrt{8}^1\cos(\frac{1\pi}{2})$.
 
 \subsection{Ejemplo}
 
@@ -475,22 +489,22 @@ que $D_{n}=(0)D_{n-1}-(1)D_{n-2}$ entonces;
 D_{n}=-D_{n-2}
 \end{equation}
  y además $D_{0}=0$ y $D_{1}=-1$.
-Resolvamos la ecuación resolvente que es $$r^{2}=-1$$ y asi las soluciones son $y_{n}=i$ y  $z_{n}=-i$.
+Resolvamos la ecuación resolvente que es $$r^{2}=-1$$ y asi las soluciones son $r_{1}=i$ y  $r_{2}=-i$.
 
 Veamos que  $|i|=\sqrt{1}=1$ y que $\arg(\theta)$ y $\theta= \frac{\pi}{2}$, de ahí:
 $$i=\cos(\frac{\pi}{2})+i\sin(\frac{\pi}{2})$$
 Elevando a la $n$ se obtiene
-$$i^n=\cos(\frac{\pi}{2})+i\sin(\frac{\pi}{2})$$
-Usando la Formula de Moivre se obtiene:
-$$i^n=(\cos(\frac{n\pi}{2})+i\sin(\frac{n\pi}{2}))$$
+$$i^n=(\cos(\frac{\pi}{2})+i\sin(\frac{\pi}{2}))^{n}$$
+Usando la Formula de De Moivre se obtiene:
+$$i^n=\cos(\frac{n\pi}{2})+i\sin(\frac{n\pi}{2})$$
 
-$\cos(\frac{\pi}{2})$ y  $\sin(\frac{\pi}{2})$ son soluciones de la ecuacion en diferencias, entonces: 
-$$D_{n}=\lambda_{1}\cos(\frac{n\pi}{2})+\lambda_{2}\sin(\frac{n\pi}{2})$$
-Ahora resolvamos un pequeño sistema de ecuaciones para conocer los valores de $\lambda_1$ y $\lambda_2$:
-  $$D_{0}=\lambda_{1}(1)+\lambda_{2}(0)=\lambda_{1}=1$$
-  $$D_{1}=\lambda_{1}(0)+\lambda_{2}(1)=\lambda_{2}=0$$
+De lo cual se tiene que, $\cos(\frac{\pi}{2})$ y  $\sin(\frac{\pi}{2})$ son soluciones de la ecuación en diferencias, entonces: 
+$$D_{n}=\alpha_{1}\cos(\frac{n\pi}{2})+\alpha_{2}\sin(\frac{n\pi}{2})$$
+Ahora resolvamos un pequeño sistema de ecuaciones para conocer los valores de $\alpha_1$ y $\alpha_2$:
+  $$D_{0}=\alpha_{1}(1)+\alpha_{2}(0)=\alpha_{1}=1$$
+  $$D_{1}=\alpha_{1}(0)+\alpha_{2}(1)=\alpha_{2}=0$$
 
-Finalmente la solución general a la ecuacion en diferencias es:
+Finalmente la solución general a la ecuación en diferencias es:
 \begin{equation}
   \label{solucion determinante}
 D_{n}=\cos(\frac{n\pi}{2}).
@@ -522,7 +536,7 @@ Para calcular $D_{n}$ utilisamos la ecuación en diferencias;
 D_{n+2}=(b)D_{n+1}-(b^2)D_{n}
 \end{equation}
  y además $D_{1}=b$ y $D_{2}=0$.
-Resolvemos la ecuación resolvente $$r^{2}-br+b^2=0$$ y así las solución es $r=\frac{b(1+i \sqrt{3})}{2}$.
+Resolvemos la ecuación resolvente $$r^{2}-br+b^2=0$$ y así una solución es $r=\frac{b(1+i \sqrt{3})}{2}$.
 
 De ahí que
   $$r=b(\cos(\frac{\pi}{3})+i\sin(\frac{\pi}{3}))$$
@@ -557,11 +571,12 @@ duplicación.
 
 Cuando el término no homogéneo es exponencial debemos proponer una
 solución de dicho sistema. Por ejemplo: la ecuacion en diferencias
-$x_{n+2}+3x_{n+1}+2x_n=3^n$ al resolver el sistema homogéneo
-obtenemos la solucion: $x_n=\lambda_1(-2)^n+\lambda_2(-1)^n$, ahora,
+$$x_{n+2}+3x_{n+1}+2x_n=3^n$$ al resolver el sistema homogéneo
+obtenemos la solucion:
+$$x_n=\lambda_1(-2)^n+\lambda_2(-1)^n$$, ahora,
 para el sistema no homogéneo, debemos proponer una solución la
-cual es un múltiplo del termino exponencial, en este ejemplo la
-solución del sistema no homogéneo es de la forma $A(3)^n$, ya que
+cual es un múltiplo del termino exponencial. En este ejemplo la
+solución del sistema no homogéneo es de la forma $A(3)^n$ ya que
 tenemos una propuesta, debemos resolver el sistema con $x_n=A(3)^n$,
 veamos la solución:
 
@@ -575,9 +590,9 @@ De ahí, concluimos que $A=\frac{1}{20}$.
 Luego, a nuestra solución del sistema no homogéneo  $x_n=\frac{1}{20}(3)^n$ le debemos sumar las soluciones del sistema homogéneo, de lo cual se obtiene:
 $$x_n=\alpha_1(-2)^n+\alpha_2(-1)^n+\frac{1}{20}(3)^n.$$
 
-Lo único que nos hace falta es encontrar los valores de $\alpha_1$ y $\alpha_2$ de acuerdo a las condiciones iniciales tal y como se ha realizado en ejemplos anteriores.
+Lo único que nos hace falta es encontrar los valores de $\alpha_1$ y $\alpha_2$ de acuerdo a las condiciones iniciales.
 
-También puede pasar que la solución del sistema homogéneo sea la misma del sistema no homogéneo. Por ejemplo: tomando el ejemplo de arriba pero cambiándolo un poco tenemos la ecuacion en diferencias $x_{n+2}+3x_{n+1}+2x_n=(-2)^n$, vemos que $(-2)^n$ es solución del sistema homogéneo y del no homogéneo, en este caso, la solución del sistema no homogéneo se propone así $x_n=An(-2)^n$ (el mismo argumento es para cuando el sistema homogéneo tiene un sola solución y el sistema no homogéneo tiene la misma solución, en ese caso la solución de sistema no homogéneo se propone como $x_n=An^2(-2)^n$), y al resolver queda la siguiente manera:
+También puede pasar que la solución del sistema homogéneo sea la misma del sistema no homogéneo. Por ejemplo: tomando el ejemplo de arriba pero cambiándolo un poco tenemos la ecuacion en diferencias $x_{n+2}+3x_{n+1}+2x_n=(-2)^n$, vemos que $(-2)^n$ es solución del sistema homogéneo y del no homogéneo, en este caso, la solución del sistema no homogéneo se propone así $x_n=An(-2)^n$ (el mismo argumento es para cuando el sistema homogéneo tiene una sola solución y el sistema no homogéneo tiene la misma solución, en ese caso la solución de sistema no homogéneo se propone como $x_n=An^2(-2)^n$), y al resolver queda la siguiente manera:
 \begin{align*}
   A(n+2)(-2)^{n+2}+3A(n+1)(-2)^{n+1}+2An(-2)^n&=(-2)^n\\
   A(n+2)(-2)^2+3A(n+1)(-2)+2An&=1\\
@@ -615,7 +630,7 @@ Usaremos la siguiente expresión:
 \end{equation}
 
 Realizando algunas operaciones se llega a:
-$3An^2+(-3A+2B)n+A-B+C=n^2$.
+$$3An^2+(-3A+2B)n+A-B+C=n^2$$.
 Como ambos polinomios deben ser iguales, se resuelve el siguiente sistema de ecuaciones:
 $3A=1$,
 $-3A+2B=0$,
