@@ -469,22 +469,22 @@ que $D_{n}=(0)D_{n-1}-(1)D_{n-2}$ entonces;
 D_{n}=-D_{n-2}
 \end{equation}
  y además $D_{0}=0$ y $D_{1}=-1$.
-Resolvamos la ecuación resolvente que es $$r^{2}=-1$$ y asi las soluciones son $y_{n}=i$ y  $z_{n}=-i$.
+Resolvamos la ecuación resolvente que es $$r^{2}=-1$$ y asi las soluciones son $r_{1}=i$ y  $r_{2}=-i$.
 
 Veamos que  $|i|=\sqrt{1}=1$ y que $\arg(\theta)$ y $\theta= \frac{\pi}{2}$, de ahí:
 $$i=\cos(\frac{\pi}{2})+i\sin(\frac{\pi}{2})$$
 Elevando a la $n$ se obtiene
-$$i^n=\cos(\frac{\pi}{2})+i\sin(\frac{\pi}{2})$$
-Usando la Formula de Moivre se obtiene:
-$$i^n=(\cos(\frac{n\pi}{2})+i\sin(\frac{n\pi}{2}))$$
+$$i^n=(\cos(\frac{\pi}{2})+i\sin(\frac{\pi}{2}))^{n}$$
+Usando la Formula de De Moivre se obtiene:
+$$i^n=\cos(\frac{n\pi}{2})+i\sin(\frac{n\pi}{2})$$
 
-$\cos(\frac{\pi}{2})$ y  $\sin(\frac{\pi}{2})$ son soluciones de la ecuacion en diferencias, entonces: 
-$$D_{n}=\lambda_{1}\cos(\frac{n\pi}{2})+\lambda_{2}\sin(\frac{n\pi}{2})$$
-Ahora resolvamos un pequeño sistema de ecuaciones para conocer los valores de $\lambda_1$ y $\lambda_2$:
-  $$D_{0}=\lambda_{1}(1)+\lambda_{2}(0)=\lambda_{1}=1$$
-  $$D_{1}=\lambda_{1}(0)+\lambda_{2}(1)=\lambda_{2}=0$$
+De lo cual se tiene que, $\cos(\frac{\pi}{2})$ y  $\sin(\frac{\pi}{2})$ son soluciones de la ecuación en diferencias, entonces: 
+$$D_{n}=\alpha_{1}\cos(\frac{n\pi}{2})+\alpha_{2}\sin(\frac{n\pi}{2})$$
+Ahora resolvamos un pequeño sistema de ecuaciones para conocer los valores de $\alpha_1$ y $\alpha_2$:
+  $$D_{0}=\alpha_{1}(1)+\alpha_{2}(0)=\alpha_{1}=1$$
+  $$D_{1}=\alpha_{1}(0)+\alpha_{2}(1)=\alpha_{2}=0$$
 
-Finalmente la solución general a la ecuacion en diferencias es:
+Finalmente la solución general a la ecuación en diferencias es:
 \begin{equation}
   \label{solucion determinante}
 D_{n}=\cos(\frac{n\pi}{2}).
