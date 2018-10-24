@@ -261,7 +261,7 @@ resolver el sistema:
 \alpha_{1}(\frac{1+\sqrt{5}}{2}) + \alpha_{2}(\frac{1+\sqrt{5}}{2})&=1
 \end{align*}
 Para obtener finalmente:
-$F_{n}= \frac{5+\sqrt{5}}{10}(\frac{1+\sqrt{5}}{2})^n +
+$a_{n}= \frac{5+\sqrt{5}}{10}(\frac{1+\sqrt{5}}{2})^n +
 \frac{5-\sqrt{5}}{10}(\frac{1-\sqrt{5}}{2})^n$.
 
 \section{Una única solución}
@@ -271,12 +271,12 @@ Para resolver una ecuación en diferencias de segundo orden cuya
 ecuación resolvente tenga dos raíces iguales usamos la siguiente fórmula:
 \begin{equation}
  \label{raicesiguales}
- a_n=\lambda_1x_1^n +\lambda_2nx_2^n,
+ a_n=\alpha_1r_1^n +\alpha_2nr_2^n,
 \end{equation}
 donde $r_1=r_2$ son soluciones de la ecuación de segundo orden y
 $\alpha_1$ y $\alpha_2$ son escalares reales.
 
-\subsection{Ejemplo}
+\subsection{Primer ejemplo}
 
 En la siguiente ecuación en diferencias
 \begin{equation}
@@ -291,7 +291,11 @@ $$x_n=\alpha_12^n+\alpha_2n2^n$$
 y a continuación se deben considerar los valores iniciales para que
 nos dé los valores de $\alpha_1$ y $\alpha_2$.
 
-\subsection{Ejemplo}
+Por ejemplo, si tuviéramos $x_0=-1,x_1=5$ y una ecuacion en diferencias como:
+
+$x_{n+2}=2x_{n+1}-x_n$
+
+\subsection{Segundo ejemplo}
 
 Se plantea la siguiente ecuación en diferencias:
 $a_{n+2}=2a_{n+1}-a_{n}$ con condiciones iniciales: $a_{0}=4, a_{1}=7$.
@@ -299,10 +303,12 @@ $a_{n+2}=2a_{n+1}-a_{n}$ con condiciones iniciales: $a_{0}=4, a_{1}=7$.
 Para resolver este problema, primero igualamos la ecuación en diferencias a
 cero: $a_{n+2}-2a_{n+1}+a_{n}=0$.
 
-Esto último nos genera una ecuación resolvente. Al factorizarlos y
-resolverlo se obtiene: $r^2-2r+1=0$, $(r-1)^2=0$, ${r=1}$.
+Esto último nos genera una ecuación resolvente. Al factorizarlas y
+resolverla se obtiene: $r^2-2r+1=0$, $(r-1)^2=0$, ${r=1}$.
 
 La solución general a esta ecuación en diferencias sería:
+
+
 
 $$a_{n}=\alpha_{1}(1)^n+n\alpha_{2}(1)^n=\alpha_{1}+n\alpha_{2}$$
 
