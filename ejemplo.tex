@@ -93,26 +93,25 @@ Un elemento radioactivo decae a una razón de $2\%$ cada 20 años.
  \item ¿Cuál es la vida media de este elemento?
 \end{itemize}
 
-\textit{Solución:}  
-Sabemos que la condición inicial es de 165 gramos y que decae un $2\%$
-cada 20 años, lo cual implica que se mantiene en un $98\%$ con
-respecto a al valor anterior, entonces la ecuación de diferencias de
-primer orden se ve de la forma:
+\textit{Solución:} Sabemos que la condición inicial es de 165 gramos y
+que decae un $2\%$ cada 20 años, lo cual implica que se mantiene en un
+$98\%$ con respecto a al valor anterior, entonces la solución de la
+ecuación en diferencia es la siguiente:
+
 $$x_{n}=(.98)^n(165).$$
 
-Ahora solo sustituimos la $n$ por el número deseado, en este caso
-buscamos el valor del elemento cuando han pasado 60 años,
-equivalentemente a $n=3$, quedando finalmente:
+Donde $n=3$, pues buscamos el valor del elemento cuando han pasado 60
+años, y éste, decae cada 20 años, por lo tanto el resultado es:
 $$x_{3}=(.98)^3(165)= 155.29.$$
 
 \section{Ejemplo de propagación de rumor}
 
 Se esparce nuestro trabajo colaborativo dentro de la universidad. Al
-tiempo~0, el trabajo es conocido por 13 personas. Cada día, por
-persona que ya lo conoce se le agrega otra (nueva).
+tiempo~0, el trabajo es conocido por 13 personas, además cada persona que
+conoce el trabajo le trasmite la informacion a una nueva.
 
-Si $X_n$ es la cantidad de personas con información nueva al día $n$,
-determinar~$X_n$ en términos de $n$ y $X_0$.
+Si $X_n$ es la cantidad de personas que conoce eln trabajo al dia  $n$,
+determinar~$X_n$ en términos de $n$ y $X_0=13$.
 
 \textit{Solución:} La ecuación en diferencias está dada por
 $X_{n+1}=aX_n$, con el valor~$a=2$.
