@@ -217,7 +217,7 @@ $a_{k}=\alpha_{1}(\frac{1+\sqrt{5}}{2})^{k} +
 Ahora resolvemos un sistema de ecuaciones tal que:
 \begin{align*}
 \alpha_{1} + \alpha_{2} &= 1\\
-\alpha_{1}(\frac{1+\sqrt{5}}{2}) + \alpha_{2}(\frac{1+\sqrt{5}}{2})&=1
+(\frac{1+\sqrt{5}}{2})\alpha_{1} + (\frac{1+\sqrt{5}}{2})\alpha_{2}&=1
 \end{align*}
 Para obtener finalmente:
 $F_{n}= \frac{5+\sqrt{5}}{10}(\frac{1+\sqrt{5}}{2})^n +
@@ -241,13 +241,13 @@ anterior. Por lo tanto solo consideramos el caso restante, obteniendo
 así la siguiente ecuación en diferencias de segundo orden:
 $a_{n+2}=a_{n+1}+a_n$. Por la ecuación \eqref{eq:fibonacci}, tenemos
 que $r_1=(\frac{1+\sqrt{5}}{2})^n$ y $r_2=(\frac{1-\sqrt{5}}{2})^n$
-son soluciones de la ecuacion, por lo tanto
+son soluciones de la ecuación, por lo tanto
 $a_n=\alpha_1(\frac{1+\sqrt{5}}{2})^n +
-\alpha_2(\frac{1-\sqrt{5}}{2})^n$ es solucion general de la ecuacion.
+\alpha_2(\frac{1-\sqrt{5}}{2})^n$ es solución general de la ecuación.
 
 
-Es facil deducir que para $n=1$ solo hay una manera de cubrir el
-tablero, y para $n=2$ hay 2 maneras de cubrir eltrablero, por lo tanto
+Es fácil deducir que para $n=1$ solo hay una manera de cubrir el
+tablero, y para $n=2$ hay 2 maneras de cubrir el tablero, por lo tanto
 las condiciones iniciales son $a_1=1$ y $a_2=2$
 
 Ahora, para resolver el problema tenemos que encontrar $\alpha_1$ y
@@ -256,7 +256,7 @@ resolver el sistema:
 
 \begin{align*}
 \alpha_{1} + \alpha_{2} &= 1\\
-\alpha_{1}(\frac{1+\sqrt{5}}{2}) + \alpha_{2}(\frac{1+\sqrt{5}}{2})&=1
+(\frac{1+\sqrt{5}}{2})\alpha_{1} + (\frac{1+\sqrt{5}}{2})\alpha_{2}&=1
 \end{align*}
 Para obtener finalmente:
 $F_{n}= \frac{5+\sqrt{5}}{10}(\frac{1+\sqrt{5}}{2})^n +
@@ -467,22 +467,22 @@ que $D_{n}=(0)D_{n-1}-(1)D_{n-2}$ entonces;
 D_{n}=-D_{n-2}
 \end{equation}
  y además $D_{0}=0$ y $D_{1}=-1$.
-Resolvamos la ecuación resolvente que es $$r^{2}=-1$$ y asi las soluciones son $y_{n}=i$ y  $z_{n}=-i$.
+Resolvamos la ecuación resolvente que es $$r^{2}=-1$$ y asi las soluciones son $r_{1}=i$ y  $r_{2}=-i$.
 
 Veamos que  $|i|=\sqrt{1}=1$ y que $\arg(\theta)$ y $\theta= \frac{\pi}{2}$, de ahí:
 $$i=\cos(\frac{\pi}{2})+i\sin(\frac{\pi}{2})$$
 Elevando a la $n$ se obtiene
-$$i^n=\cos(\frac{\pi}{2})+i\sin(\frac{\pi}{2})$$
-Usando la Formula de Moivre se obtiene:
-$$i^n=(\cos(\frac{n\pi}{2})+i\sin(\frac{n\pi}{2}))$$
+$$i^n=(\cos(\frac{\pi}{2})+i\sin(\frac{\pi}{2}))^{n}$$
+Usando la Formula de De Moivre se obtiene:
+$$i^n=\cos(\frac{n\pi}{2})+i\sin(\frac{n\pi}{2})$$
 
-$\cos(\frac{\pi}{2})$ y  $\sin(\frac{\pi}{2})$ son soluciones de la ecuacion en diferencias, entonces: 
-$$D_{n}=\lambda_{1}\cos(\frac{n\pi}{2})+\lambda_{2}\sin(\frac{n\pi}{2})$$
-Ahora resolvamos un pequeño sistema de ecuaciones para conocer los valores de $\lambda_1$ y $\lambda_2$:
-  $$D_{0}=\lambda_{1}(1)+\lambda_{2}(0)=\lambda_{1}=1$$
-  $$D_{1}=\lambda_{1}(0)+\lambda_{2}(1)=\lambda_{2}=0$$
+De lo cual se tiene que, $\cos(\frac{\pi}{2})$ y  $\sin(\frac{\pi}{2})$ son soluciones de la ecuación en diferencias, entonces: 
+$$D_{n}=\alpha_{1}\cos(\frac{n\pi}{2})+\alpha_{2}\sin(\frac{n\pi}{2})$$
+Ahora resolvamos un pequeño sistema de ecuaciones para conocer los valores de $\alpha_1$ y $\alpha_2$:
+  $$D_{0}=\alpha_{1}(1)+\alpha_{2}(0)=\alpha_{1}=1$$
+  $$D_{1}=\alpha_{1}(0)+\alpha_{2}(1)=\alpha_{2}=0$$
 
-Finalmente la solución general a la ecuacion en diferencias es:
+Finalmente la solución general a la ecuación en diferencias es:
 \begin{equation}
   \label{solucion determinante}
 D_{n}=\cos(\frac{n\pi}{2}).
@@ -514,7 +514,7 @@ Para calcular $D_{n}$ utilisamos la ecuación en diferencias;
 D_{n+2}=(b)D_{n+1}-(b^2)D_{n}
 \end{equation}
  y además $D_{1}=b$ y $D_{2}=0$.
-Resolvemos la ecuación resolvente $$r^{2}-br+b^2=0$$ y así las solución es $r=\frac{b(1+i \sqrt{3})}{2}$.
+Resolvemos la ecuación resolvente $$r^{2}-br+b^2=0$$ y así una solución es $r=\frac{b(1+i \sqrt{3})}{2}$.
 
 De ahí que
   $$r=b(\cos(\frac{\pi}{3})+i\sin(\frac{\pi}{3}))$$
@@ -549,11 +549,12 @@ duplicación.
 
 Cuando el término no homogéneo es exponencial debemos proponer una
 solución de dicho sistema. Por ejemplo: la ecuacion en diferencias
-$x_{n+2}+3x_{n+1}+2x_n=3^n$ al resolver el sistema homogéneo
-obtenemos la solucion: $x_n=\lambda_1(-2)^n+\lambda_2(-1)^n$, ahora,
+$$x_{n+2}+3x_{n+1}+2x_n=3^n$$ al resolver el sistema homogéneo
+obtenemos la solucion:
+$$x_n=\lambda_1(-2)^n+\lambda_2(-1)^n$$, ahora,
 para el sistema no homogéneo, debemos proponer una solución la
-cual es un múltiplo del termino exponencial, en este ejemplo la
-solución del sistema no homogéneo es de la forma $A(3)^n$, ya que
+cual es un múltiplo del termino exponencial. En este ejemplo la
+solución del sistema no homogéneo es de la forma $A(3)^n$ ya que
 tenemos una propuesta, debemos resolver el sistema con $x_n=A(3)^n$,
 veamos la solución:
 
@@ -567,9 +568,9 @@ De ahí, concluimos que $A=\frac{1}{20}$.
 Luego, a nuestra solución del sistema no homogéneo  $x_n=\frac{1}{20}(3)^n$ le debemos sumar las soluciones del sistema homogéneo, de lo cual se obtiene:
 $$x_n=\alpha_1(-2)^n+\alpha_2(-1)^n+\frac{1}{20}(3)^n.$$
 
-Lo único que nos hace falta es encontrar los valores de $\alpha_1$ y $\alpha_2$ de acuerdo a las condiciones iniciales tal y como se ha realizado en ejemplos anteriores.
+Lo único que nos hace falta es encontrar los valores de $\alpha_1$ y $\alpha_2$ de acuerdo a las condiciones iniciales.
 
-También puede pasar que la solución del sistema homogéneo sea la misma del sistema no homogéneo. Por ejemplo: tomando el ejemplo de arriba pero cambiándolo un poco tenemos la ecuacion en diferencias $x_{n+2}+3x_{n+1}+2x_n=(-2)^n$, vemos que $(-2)^n$ es solución del sistema homogéneo y del no homogéneo, en este caso, la solución del sistema no homogéneo se propone así $x_n=An(-2)^n$ (el mismo argumento es para cuando el sistema homogéneo tiene un sola solución y el sistema no homogéneo tiene la misma solución, en ese caso la solución de sistema no homogéneo se propone como $x_n=An^2(-2)^n$), y al resolver queda la siguiente manera:
+También puede pasar que la solución del sistema homogéneo sea la misma del sistema no homogéneo. Por ejemplo: tomando el ejemplo de arriba pero cambiándolo un poco tenemos la ecuacion en diferencias $x_{n+2}+3x_{n+1}+2x_n=(-2)^n$, vemos que $(-2)^n$ es solución del sistema homogéneo y del no homogéneo, en este caso, la solución del sistema no homogéneo se propone así $x_n=An(-2)^n$ (el mismo argumento es para cuando el sistema homogéneo tiene una sola solución y el sistema no homogéneo tiene la misma solución, en ese caso la solución de sistema no homogéneo se propone como $x_n=An^2(-2)^n$), y al resolver queda la siguiente manera:
 \begin{align*}
   A(n+2)(-2)^{n+2}+3A(n+1)(-2)^{n+1}+2An(-2)^n&=(-2)^n\\
   A(n+2)(-2)^2+3A(n+1)(-2)+2An&=1\\
@@ -607,7 +608,7 @@ Usaremos la siguiente expresión:
 \end{equation}
 
 Realizando algunas operaciones se llega a:
-$3An^2+(-3A+2B)n+A-B+C=n^2$.
+$$3An^2+(-3A+2B)n+A-B+C=n^2$$.
 Como ambos polinomios deben ser iguales, se resuelve el siguiente sistema de ecuaciones:
 $3A=1$,
 $-3A+2B=0$,
