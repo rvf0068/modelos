@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass{report}
 
 \usepackage[spanish, mexico]{babel}
 
@@ -18,7 +18,7 @@
 \maketitle
 \tableofcontents
 
-\section{Ecuaciones en diferencias}
+\chapter{Ecuaciones en diferencias}
 \label{sec:ecuaciones}
 
 En este documento veremos ecuaciones en diferencias, en especial de
@@ -38,9 +38,9 @@ donde $k$ es fijo y $n$ varía en $\mathbb{N}\cup\{0\}$.
 Si en una ecuación en diferencias, la función $f$ no depende de $n$,
 la ecuación en diferencias es autónoma.
 
-\section{Ecuaciones de primer orden}
+\chapter{Ecuaciones de primer orden}
 
-\subsection{Ecuaciones lineales}
+\section{Ecuaciones lineales}
 
 Una \emph{ecuación lineal en diferencias de primer orden} tiene la forma:
 \begin{equation}
@@ -84,7 +84,7 @@ cambio es de $1\%$ entonces $\text{cambio}=0.01x_n$.  Ocupando
 Sabemos que las ecuaciones que se ven de esta forma se resuelven con
 la fórmula (2).  Entonces $x_n=(1.01)^nx_0$ donde $x_0=1000$.
 
-\subsection{Ejemplo de elemento radioactivo}
+\section{Ejemplo de elemento radioactivo}
 
 Un elemento radioactivo decae a una razón de $2\%$ cada 20 años.
 \begin{itemize}
@@ -105,7 +105,7 @@ buscamos el valor del elemento cuando han pasado 60 años,
 equivalentemente a $n=3$, quedando finalmente:
 $$x_{3}=(.98)^3(165)= 155.29.$$
 
-\subsection{Ejemplo de propagación de rumor}
+\section{Ejemplo de propagación de rumor}
 
 Se esparce nuestro trabajo colaborativo dentro de la universidad. Al
 tiempo~0, el trabajo es conocido por 13 personas. Cada día, por
@@ -129,7 +129,7 @@ Como $X_0=13$, tendríamos el siguiente razonamiento:
 \end{itemize}
 
 
-\subsection{Ecuaciones de primer orden no homogéneas}
+\section{Ecuaciones de primer orden no homogéneas}
 Encuentre la solución a la siguiente ecuación en diferencias $a_{n+1}=2a_{n}+1$. Con condición inicial x$a_{0}=1$.
 solución homogénea es $a_{n}=C*2^n$
 Observe que la solución homogénea de la ecuación en diferencias  es $a_{n}h=C*2^n$.
@@ -152,7 +152,7 @@ por lo tanto, la solución general a la ecuación en diferencias no homogénea e
 $a_{n}=2^n-1$
 
 
-\section{Ecuaciones de segundo orden}
+\chapter{Ecuaciones de segundo orden}
 
 Una ecuación en diferencias de segundo orden tiene la forma
 \begin{equation}
@@ -184,7 +184,7 @@ $x^n=r^n$ es solución de la ecuación \eqref{ecsegorden}.
 
 
 
-\subsection{Dos soluciones distintas}
+\section{Dos soluciones distintas}
 \label{sec:distintas}
 La forma en la que resolvemos una ecuación de segundo orden cuya
 ecuación resolvente tenga dos raíces distintas es mediante la
@@ -195,7 +195,7 @@ siguiente formula:
 \end{equation}
 donde $r_1$ y $r_2$ son soluciones de la ecuación de segundo orden y
 $\alpha_1$ y $\alpha_2$ son escalares reales.
-\subsubsection{Ejemplo}
+\subsection{Ejemplo}
 
 Una de las ecuaciones de segundo grado más famosas es la \textit{sucesión de
   Fibonacci}, la cual se ve de la forma:
@@ -225,7 +225,7 @@ Para obtener finalmente:
 $F_{n}= \frac{5+\sqrt{5}}{10}(\frac{1+\sqrt{5}}{2})^n +
 \frac{5-\sqrt{5}}{10}(\frac{1-\sqrt{5}}{2})^n$
 
-\subsubsection{Ejemplo}
+\subsection{Ejemplo}
 \label{sec:fichas}
 
 ¿De cuántas maneras se puede cubrir un tablero de $2\times n$ usando
@@ -264,7 +264,7 @@ Para obtener finalmente:
 $F_{n}= \frac{5+\sqrt{5}}{10}(\frac{1+\sqrt{5}}{2})^n +
 \frac{5-\sqrt{5}}{10}(\frac{1-\sqrt{5}}{2})^n$.
 
-\subsection{Una única solución}
+\section{Una única solución}
 \label{sec:unica}
 
 Para resolver una ecuación en diferencias de segundo orden cuya
@@ -276,7 +276,7 @@ ecuación resolvente tenga dos raíces iguales usamos la siguiente fórmula:
 donde $r_1=r_2$ son soluciones de la ecuación de segundo orden y
 $\alpha_1$ y $\alpha_2$ son escalares reales.
 
-\subsubsection{Ejemplo}
+\subsection{Ejemplo}
 
 En la siguiente ecuación en diferencias
 \begin{equation}
@@ -291,7 +291,7 @@ $$x_n=\alpha_12^n+\alpha_2n2^n$$
 y a continuación se deben considerar los valores iniciales para que
 nos dé los valores de $\alpha_1$ y $\alpha_2$.
 
-\subsubsection{Ejemplo}
+\subsection{Ejemplo}
 
 Se plantea la siguiente ecuación en diferencias:
 $a_{n+2}=2a_{n+1}-a_{n}$ con condiciones iniciales: $a_{0}=4, a_{1}=7$.
@@ -319,7 +319,7 @@ $\alpha_{1}=4$ y $\alpha_{2}=3$, con lo que la solución final será:
 $a_{n}=4+3n$.
 
 
-\subsection{Los números  complejos}
+\section{Los números  complejos}
 
 Un \textit{complejo} es un número de la forma $z=a+bi$, $a,b\in\mathbb{R}$ ,
 con $i^2=-1$, y donde $a$ recibe el nombre de \textit{parte real} y $b$ el de
@@ -345,7 +345,7 @@ $n$ tenemos que elevar toda nuestra fórmula a la $n$, es decir
 $z^n=(\cos(\theta)+i\sin(\theta))^n$, esto es igual que decir
 $z^n=\cos(n\theta)+i\sin(n\theta)$ (utilizando la fórmula de Moivre).
 
-\subsection{Soluciones complejas}
+\section{Soluciones complejas}
 \label{sec:complejas}
 
 Algunas ocasiones las ecuaciones de segundo orden no tendrán solución
@@ -387,7 +387,7 @@ con lo que la solución final es:
 $x_n=2^n\cos(\frac{n\pi}{2})$
 \bigskip
 
-\subsubsection{Ejemplo}
+\subsection{Ejemplo}
 
 Ecuación en diferencias con suluciones complejas
 $x_{n+2}=4x_{n+1}-8x_{n}$ , con condiciones iniciales $x_{0}=-1$ y $x_{1}=1$
@@ -443,7 +443,7 @@ con lo que la solución final es:
 
 $x_n=\lambda_1\sqrt{8}^1\cos(\frac{1\pi}{2})$.
 
-\subsubsection{Ejemplo}
+\subsection{Ejemplo}
 
 Para cada $n$, considera $D_{n}$ el determinante $n\times n$ dado por:
 
@@ -491,7 +491,7 @@ D_{n}=\cos(\frac{n\pi}{2}).
 \end{equation}
 
 
-\subsubsection{Ejemplo}
+\subsection{Ejemplo}
 
 Para cada $n$, considera $D_{n}$ el determinante $n\times n$ dado por:
 
@@ -533,7 +533,7 @@ D_{n}=b^n(\cos(\frac{n\pi}{3})+\frac{\sin(\frac{n\pi}{3})}{\sqrt{3}}).
 \end{equation}
 
 
-\subsection{Ecuaciones de segundo orden no homogéneas}
+\section{Ecuaciones de segundo orden no homogéneas}
 \label{sec:nohomogeneas}
 
 Para resolver la ecuación representada por la expresión
@@ -546,7 +546,7 @@ presentando también es solución de la parte homogénea, se multiplica
 por la menor potencia entera positiva de $n$ hasta eliminar toda
 duplicación.
 
-\subsubsection{El término no homogéneo es exponencial}
+\subsection{El término no homogéneo es exponencial}
 \label{sec:exponencial}
 
 Cuando el término no homogéneo es exponencial debemos proponer una
@@ -583,7 +583,7 @@ También puede pasar que la solución del sistema homogéneo sea la misma del si
 \end{align*}
 Ahora, procedemos igual que en el ejemplo anterior. Es decir, a las soluciones del sistema homogéneo le sumamos una solución del sistema no homogéneo (la solución particular). De esta manera ya tendrémos todas las soluciones del sistema no homogéneo, quedando así, la solución del sistema homogéneo:
 $$x_n=\alpha_1(-2)^n+\alpha_2(-1)^n+\frac{n}{2}(-2)^n$$
-\subsubsection{El término no homogéneo es polinomial}
+\subsection{El término no homogéneo es polinomial}
 \label{sec:polinomial}
 
 Hay ecuaciones en diferencias que son de la siguiente forma: $ax_{n+2}+bx_{n+1}+cx_n=f(n)$, donde $f(n)$ es un polinomio. Por ejemplo, la siguiente suma: $1^2+2^2+...+n^2$, su fórmula puede obtenerse usando una relación de recurrencia, notando que:
