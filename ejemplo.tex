@@ -130,26 +130,39 @@ Como $X_0=13$, tendríamos el siguiente razonamiento:
 
 
 \section{Ecuaciones de primer orden no homogéneas}
-Encuentre la solución a la siguiente ecuación en diferencias $a_{n+1}=2a_{n}+1$. Con condición inicial x$a_{0}=1$.
-solución homogénea es $a_{n}=C*2^n$
-Observe que la solución homogénea de la ecuación en diferencias  es $a_{n}h=C*2^n$.
-Ahora, tenemos que proponer una solución particular a la ecuación no homogénea, veamos el procedimiento:
+Encuentre la solución a la siguiente ecuación en diferencias
+\begin{equation}
+  \label{nohom}
+  a_{n+1}=2a_{n}+1,
+\end{equation}
+
+con condición inicial $a_{0}=1$.
+Observe que la solución homogénea de la ecuación en diferencias  es $a_{n}^h=C2^n$.
+Ahora, tenemos que proponer una solución particular a la ecuación no homogénea.
+Propongamos:
 \begin{align*}
-  a_{n+1}-2a_{n}&=1^n&=1
-  a_{n}&=A
-  a_{n+1}&=A
-  A-2A&=1
-  A&=-1
+  A&=a_n,\\
+  A&=a_{n+1}.
+\end{align*}
+Sustituyendo en \ref{nohom} nos queda lo siguiente,
+
+\begin{align*}
+  a_{n+1}-2a_{n}&=1\\
+  1&=A-2A\\
+  1&=-A\\
+  -1&=A
 \end{align*}
 De ahi, concluimos que $A=-1$.
-Luego, nuestra solucion $a_np=-1$ la tenemos que sumar a las soluciones del sistema homogéneo las cuales quedaran así:
-$a_{n}h=C*2^n-1$
+Luego, nuestra solucion $a_n^p=-1$ la tenemos que sumar a la solucion del sistema homogéneo las cuales quedaran así:
+$a_{n}^h=C2^n-1$
 Recuerde nuestra condición inicial $a_{0}=1$. Veamos que:
-$1=a_{1}=2C-1$
-$2C=2$
-$C=1$
+\begin{align*}
+1&=a_{0}=2C-1\\
+2C&=2\\
+  C&=1
+\end{align*}  
 por lo tanto, la solución general a la ecuación en diferencias no homogénea es:
-$a_{n}=2^n-1$
+$$a_{n}=2^n-1$$
 
 
 \chapter{Ecuaciones de segundo orden}
