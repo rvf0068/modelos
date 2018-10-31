@@ -223,12 +223,12 @@ $\alpha_1$ y $\alpha_2$ son escalares reales.
 \subsection{Ejemplo}
 
 Una de las ecuaciones de segundo grado más famosas es la \textit{sucesión de
-  Fibonacci}, la cual se ve de la forma:
+  Fibonacci}, la cual es:
 \begin{equation}
   \label{eq:fibonacci}
-a_{k+2}=a_{k+1}+a_{k},  
+F_{n+2}=F_{n+1}+F_{n},  
 \end{equation}
-en donde usualmente se toman como condiciones iniciales a: $a_{0}=1$ y $a_{1}=1$
+en donde usualmente se toman como condiciones iniciales a: $F_{0}=1$ y $F_{1}=1$
 
 Es inmediato calcular los primeros términos, pero ¿cómo calcularlos
 cuando los términos son demasiado grandes?  Para obtenerlos,
@@ -239,16 +239,15 @@ $$r^2-r-1=0$$
 Obtenemos después ambas raíces, las cuales son:
 $r_{1}= \frac{1+\sqrt{5}}{2}$ y $r_{2}=\frac{1-\sqrt{5}}{2}$. La
 solución general es entonces:
-$a_{k}=\alpha_{1}(\frac{1+\sqrt{5}}{2})^{k} +
-\alpha_{2}(\frac{1-\sqrt{5}}{2})^k$.
+$F_{n}=\alpha_{1}(\frac{1+\sqrt{5}}{2})^{n} +
+\alpha_{2}(\frac{1-\sqrt{5}}{2})^n$.
 Ahora resolvemos un sistema de ecuaciones tal que:
 \begin{align*}
 \alpha_{1} + \alpha_{2} &= 1\\
 (\frac{1+\sqrt{5}}{2})\alpha_{1} + (\frac{1+\sqrt{5}}{2})\alpha_{2}&=1
 \end{align*}
 Para obtener finalmente:
-$F_{n}= \frac{5+\sqrt{5}}{10}(\frac{1+\sqrt{5}}{2})^n +
-\frac{5-\sqrt{5}}{10}(\frac{1-\sqrt{5}}{2})^n$
+  $$F_{n} &= \frac{1}{\sqrt{5}}((\frac{1+\sqrt{5}}{2})^{n+1}-(\frac{1-\sqrt{5}}{2})^{n+1})$$
 
 \subsection{Ejemplo}
 \label{sec:fichas}
