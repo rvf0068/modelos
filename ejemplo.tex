@@ -34,7 +34,28 @@ Una ecuación en diferencias es de la forma:
 $$X_{n+k}=f(n,X_n,...,X_{n+k-1}),$$
 donde $k,n$ son fijos.
 \section{Ejemplo}
-Si en una ecuación en diferencias, la función $f$ no depende de $n$,
+
+Si nos dan la ecuación en diferencias:
+$$x_{n+1}=2x_n$$
+Con condición inicial  $x_0=5$. Calcularemos los primeros valores de la ecuación, dando valores para $n$, comenzando con $n=0$ y entonces tenemos:
+$$x_{0+1}=x_1=2x_0=2(5)=10$$
+De lo cual tenemos que $x_1=10$, y procediendo de la misma manera para otros valores de $n$.
+
+ $$ n=1,  x_{1+1}=2x_1=2(10)=20$$
+ $$ n=2,  x_{2+1}=2x_2=2(20)=40$$
+ $$ n=3,  x_{3+1}=2x_3=2(40)=80$$
+
+ Continuando de esta manera podriamos obtener más valores, sin embargo, sería convenite
+ tener una formula en la cual al ingresar el $n$ deseado obtengamos el valor correspondiente
+ sin tener que calcular los valores anteriores, para eso observemos que:
+
+ $$x_2=2x_1=2(2x_0)=2^2x_0=(5)2^2$$
+ $$x_3=2x_2=2(2^2x_0)=2^3x_0=(5)2^35$$
+ De esta manera podremos conjeturar la formula:
+ $$x_n=2^nx_0=(5)2^n$$
+Y usar un argumento induccctivo para probar la forumula.
+
+ Si en una ecuación en diferencias, la función $f$ no depende de $n$,
 la ecuación en diferencias es \emph{autónoma}.
 
 \chapter{Ecuaciones de primer orden}
