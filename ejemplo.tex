@@ -86,7 +86,7 @@ de la inversión cuando han pasado $n$ meses.  Note que:
   \text{cambio}=\text{valor futuro}-\text{valor presente},
 \end{equation}
 donde $x_n=\text{valor presente}$ y $x_{n+1}=\text{valor futuro}$.
-Como el cambio es de $1\%$ entonces $\text{cambio}=0.01x_n$.  Ocupando
+Como el cambio es de $1\%$ entonces $\text{cambio}=0.01x_n$.  Ocupando la ecuación
 \eqref{eq:2} nos queda que:
 \begin{align*}
   0.01x_n&=x_{n+1}-x_n\\
@@ -108,14 +108,31 @@ Un elemento radioactivo decae a una razón de $2\%$ cada 20 años.
 
 \textit{Solución:} Sabemos que la condición inicial es de 165 gramos y
 que decae un $2\%$ cada 20 años, lo cual implica que se mantiene en un
-$98\%$ con respecto a al valor anterior, entonces la solución de la
-ecuación en diferencia es la siguiente:
-
-$$x_{n}=(.98)^n(165).$$
+$98\%$ con respecto al valor anterior, entonces la solución de la
+ecuación en diferencias es la siguiente:
+\begin{equation}
+  \label{rad}
+  x_n=(0.98)^n(165)
+\end{equation}
 
 Donde $n=3$, pues buscamos el valor del elemento cuando han pasado 60
 años, y éste, decae cada 20 años, por lo tanto el resultado es:
-$$x_{3}=(.98)^3(165)= 155.29.$$
+$$x_{3}=(0.98)^3(165)= 155.29.$$
+
+Note que la vida media del elemento es $82.5$, ocupando la ecuación
+\ref{rad} nos queda que:
+\begin{align*}
+  x_n=(.98)^n165&=82.5\\
+  (0.98)^n&=\frac{82.5}{\ 165}\\
+  (0.98)^n&=0.5\\
+  \log{(0.98)^n}&=\log{(0.5)}\\
+  n\log{(0.98)}&=\log{(0.5)}\\
+  n&=\frac{\log(0.5)}{\log(0.98)}\\
+  n&=34.3096     
+\end{align*}  
+
+Deben de pasar 686.1923698 años para que el elemento radiactivo tenga
+vida media.
 
 \section{Ejemplo de propagación de rumor}
 
