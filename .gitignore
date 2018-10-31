@@ -1,3 +1,6 @@
 *.aux
 *.log
 *.pdf
+auto/
+/ejemplo.toc
+/dibujito.tex
