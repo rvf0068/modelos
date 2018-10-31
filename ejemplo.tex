@@ -50,7 +50,7 @@ donde $a$ es una constante.
 
 La fórmula para resolver ecuaciones lineales es:
 \begin{equation}
-  \label{lineal}
+  \label{rum}
   x_n=a^nx_0.
 \end{equation}
 Demostración (Por inducción):
@@ -123,7 +123,7 @@ Se esparce nuestro trabajo colaborativo dentro de la universidad. Al
 tiempo~0, el trabajo es conocido por 13 personas, además cada persona que
 conoce el trabajo le trasmite la informacion a una nueva.
 
-Si $X_n$ es la cantidad de personas que conoce eln trabajo al dia  $n$,
+Si $X_n$ es la cantidad de personas que conoce el trabajo al día  $n$,
 determinar~$X_n$ en términos de $n$ y $X_0=13$.
 
 \textit{Solución:} La ecuación en diferencias está dada por
@@ -132,48 +132,44 @@ $X_{n+1}=aX_n$, con el valor~$a=2$.
 Note que es conveniente tomar $a=2$ porque se observa que el cambio
 está dado por la ecuación $X_{n+1}-X_{n}=X_{n}$, entonces despejando
 $X_{n+1}$ se tiene que~$X_{n+1}=2X_n$.
-
-Como $X_0=13$, tendríamos el siguiente razonamiento:
-\begin{itemize}
-\item $X_0=2^013=13$,
-\item $X_1=2^113=26$, siguiendo, llegamos a:
-\item $X_n=2^n13=a^nX_0$, quedando de esta manera la solución.
-\end{itemize}
+ \label{rum}
+ Como $X_0=13$, sustituyendo en \ref{rum} tendríamos como solución lo siguiente:
+ $X_n=2^n13=a^nX_0$.
 
 
 \section{Ecuaciones de primer orden no homogéneas}
-Encuentre la solución a la siguiente ecuación en diferencias
+Encuentre la solución a la siguiente ecuación en diferencias con
+condición inicial $a_{0}=1$.
 \begin{equation}
   \label{nohom}
   a_{n+1}=2a_{n}+1,
 \end{equation}
-
-con condición inicial $a_{0}=1$.
-Observe que la solución homogénea de la ecuación en diferencias  es $a_{n}^h=C2^n$.
-Ahora, tenemos que proponer una solución particular a la ecuación no homogénea.
-Propongamos:
+Observe que la solución de la ecuación en diferencias homogénea es
+$a_{n}^h=C2^n$.  Ahora, tenemos que proponer una solución particular a
+la ecuación no homogénea.  Propongamos:
 \begin{align*}
-  A&=a_n,\\
-  A&=a_{n+1}.
+ a_n&=A,\\
+  a_{n+1}&=A.
 \end{align*}
 Sustituyendo en \ref{nohom} nos queda lo siguiente,
 
 \begin{align*}
   a_{n+1}-2a_{n}&=1\\
-  1&=A-2A\\
-  1&=-A\\
-  -1&=A
+  A-2A&=1\\
+  -A&=1\\
+  A&=-1
 \end{align*}
-De ahi, concluimos que $A=-1$.
-Luego, nuestra solucion $a_n^p=-1$ la tenemos que sumar a la solucion del sistema homogéneo las cuales quedaran así:
-$a_{n}^h=C2^n-1$
-Recuerde nuestra condición inicial $a_{0}=1$. Veamos que:
+De ahí, concluimos que $A=-1$.  Luego, nuestra solución $a_n^p=-1$ la
+tenemos que sumar a la solucion del sistema homogéneo de modo que
+$a_{n}=C2^n-1$.  Recuerde que nuestra condición inicial
+$a_{0}=1$. Luego para hallar la constante C se tiene el siguiente
+razonamiento:
 \begin{align*}
 1&=a_{0}=2C-1\\
 2C&=2\\
   C&=1
 \end{align*}  
-por lo tanto, la solución general a la ecuación en diferencias no homogénea es:
+por lo tanto, la solución a la ecuación en diferencias original es:
 $$a_{n}=2^n-1$$
 
 
