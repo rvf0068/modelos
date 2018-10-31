@@ -34,6 +34,7 @@ Una ecuación en diferencias es de la forma:
 $$X_{n+k}=f(n,X_n,...,X_{n+k-1}),$$
 donde $k,n$ son fijos.
 \section{Ejemplo}
+
 Si en una ecuación en diferencias, la función $f$ no depende de $n$,
 la ecuación en diferencias es \emph{autónoma}.
 
@@ -182,27 +183,26 @@ $$a_{n}=2^n-1$$
 Una ecuación en diferencias de segundo orden tiene la forma
 \begin{equation}
   \label{ecsegorden1}
-  a_{k+2}=f(a_k,a_{k+1}),
+  a_{n+2}=f(a_n,a_{n+1}),
 \end{equation}
 El método para resolver estas ecuaciones está inspirado en la fórmula \eqref{lineal} 
 
 Para resolver una ecuación en diferencias de segundo orden se usa la
 ecuación resolvente, la cual se dedujo de la siguiente manera:
 
-En general una ecuación en diferencias de segundo orden líneal y homogénea con coeficientes constates se ve de la
-siguiente manera $ax_{n+2}=-bx_{n+1}-cx_{n}$, ésto implica que
+En general una ecuación en diferencias de segundo orden líneal y homogénea con coeficientes constates se ve asi: $$ax_{n+2}=-bx_{n+1}-cx_{n}$$ Ésto implica que
 \begin{equation}
   \label{ecsegorden}
   ax_{n+2}+bx_{n+1}+cx_{n}=0,
 \end{equation}
 con $a$, $b$ y $c$ en los reales, entonces como ya mencionamos, el método
 para resolver éstas ecuaciones está inspirado en la fórmula \eqref{lineal}
-. Ahora, ¿qué deben cumplir $r$ y~$s$ para que $x_n=sr^n$
+. Ahora, ¿qué deben cumplir~$r$ y~$s$ para que $x_n=sr^n$
 sea solución de la ecuación \eqref{ecsegorden}?
 
 Tenemos entonces que: $x_{n+2}=sr^{n+2}$, $x_{n+1}=sr^{n+1}$ y
-$x_{n}=sr^{n}$, luego $asr^{n+2}+bsr^{n+1}+csr^n=0$, ésto implica que
-$s(r^{n+2}+br^{n+1}+cr^n)=0$, se sigue $r^n(r^2+br+c)=0$, para todo
+$x_{n}=sr^{n}$, luego~$asr^{n+2}+bsr^{n+1}+csr^n=0$, ésto implica que
+$s(r^{n+2}+br^{n+1}+cr^n)=0$, se sigue $r^n (r^2+br+c)=0$, para todo
 $n$, así tenemos que $r^2+br+c=0$ a la cual llamaremos
 \textit{ecuación resolvente} de la ecuación \eqref{ecsegorden} y
 $x^n=r^n$ es solución de la ecuación \eqref{ecsegorden}.
@@ -565,6 +565,68 @@ Finalmente la solución es:
 D_{n}=b^n(\cos(\frac{n\pi}{3})+\frac{\sin(\frac{n\pi}{3})}{\sqrt{3}}).
 \end{equation}
 
+\subsubsection{Ejemplo 2}
+REsuelve la ecuación en diferencias $x_{n+2}=4x_{n+1}-8x_n$ con condiciones iniciales $x_0=-1$ y $x_1=1$.
+
+\textit{Solución:} 
+Igualamos la ecuación a cero.
+$$x_{n+2}-4x_{n+1}+8x_n=0$$
+
+Y obtenemos la ecuación resolvente, que es: 
+$$r^2-4r+8=0$$
+
+Pra encontrar las raíces de la ecuación aplicamos la fórmula general de segundo grado, con los valores $a=1$, $b=-4$ y $c=8$
+
+\begin{align*}
+  r_{1,2}&=\frac{-(-4)\pm\sqrt{(-4)^2-4(1)(8)}}{2(1)}\\
+  &=\frac{4\pm\sqrt{16-32}}{2}\\
+  &=\frac{4\pm\sqrt{-16}}{2}\\
+  &=\frac{4\pm i\sqrt{16}}{2}\\
+  &=\frac{4\pm i4}{2}\\
+  &=2\pm 2i
+\end{align*}
+
+Entonces las raíces serían:
+\begin{align*}
+  r_1&=2+2i\\
+  r_2&=2-2i
+\end{align*}
+
+Para poder encontrar la formula que resuelva la ecuación solo necesitamos trabajar con una de sus raíces. Gráficamos entonces $2+2i$ en el plano complejo y notamos que el ángulo de dicho número complejo es $\alpha=\frac{\pi}{4}$.
+
+Calculamos el módulo.
+\begin{align*}
+  |r|&=\sqrt{2^2+2^2}\\
+     &=\sqrt{4+4}\\
+     &=\sqrt{8}
+\end{align*}
+
+\begin{align*}
+  x_n=(2+2i)&=(\sqrt{8}(\cos(\frac{\pi}{4}))+i \sin(\frac{\pi}{4}))^n\\
+  &=(\sqrt{8})^n(\cos(\frac{n\pi}{4})+i \sin(\frac{n\pi}{4})))\\
+  &=(\sqrt{8})^n(\cos(\frac{n\pi}{4}))+i (\sqrt{8})^n(\sin(\frac{n\pi}{4}))\\
+  &=\alpha_1(\sqrt{8})^n(\cos(\frac{n\pi}{4}))+\alpha_2(\sqrt{8})^n(\sin(\frac{n\pi}{4}))
+\end{align*}
+
+Para $n=0$, cuando $x_0=-1$:
+\begin{align*}
+  x_0&=\alpha_1(\sqrt{8})^0(\cos(\frac{0\pi}{4}))+\alpha_2(\sqrt{8})^0(\sin(\frac{0\pi}{4}))\\
+  &=\alpha_1(1)(\cos(0))+\alpha_2(1)(\sin(0))\\
+  &=\alpha_1(1)(1)+\alpha_2(1)(0)\\
+  &=\alpha_1
+\end{align*}
+
+Para $n=1$, cuando $x_1=1$:
+\begin{align*}
+  x_0&=\alpha_1(\sqrt{8})^1(\cos(\frac{\pi}{4}))+\alpha_2(\sqrt{8})^1(\sin(\frac{\pi}{4}))\\
+  &=\alpha_1(\sqrt{8})(\frac{\sqrt{2}}{2})+\alpha_2(\sqrt{8})(\frac{\sqrt{2}}{2})\\
+  &=(-1)(\sqrt{8})(\frac{\sqrt{2}}{2})+\alpha_2(\sqrt{8})(\frac{\sqrt{2}}{2})\\
+  &=-(\sqrt{8})(\frac{\sqrt{2}}{2})+\alpha_2(\sqrt{8})(\frac{\sqrt{2}}{2})\\
+  &=\alpha_2
+\end{align*}
+
+Finalmente, la formula que resuelve la ecuación es:
+$$x_n=-(\sqrt{8})^n(\cos(\frac{n\pi}{4}))+(\sqrt{8})^n(\sin(\frac{n\pi}{4}))$$.
 
 \section{Ecuaciones de segundo orden no homogéneas}
 \label{sec:nohomogeneas}
