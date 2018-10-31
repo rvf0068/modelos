@@ -182,27 +182,26 @@ $$a_{n}=2^n-1$$
 Una ecuación en diferencias de segundo orden tiene la forma
 \begin{equation}
   \label{ecsegorden1}
-  a_{k+2}=f(a_k,a_{k+1}),
+  a_{n+2}=f(a_n,a_{n+1}),
 \end{equation}
 El método para resolver estas ecuaciones está inspirado en la fórmula \eqref{lineal} 
 
 Para resolver una ecuación en diferencias de segundo orden se usa la
 ecuación resolvente, la cual se dedujo de la siguiente manera:
 
-En general una ecuación en diferencias de segundo orden líneal y homogénea con coeficientes constates se ve de la
-siguiente manera $ax_{n+2}=-bx_{n+1}-cx_{n}$, ésto implica que
+En general una ecuación en diferencias de segundo orden líneal y homogénea con coeficientes constates se ve asi: $$ax_{n+2}=-bx_{n+1}-cx_{n}$$ Ésto implica que
 \begin{equation}
   \label{ecsegorden}
   ax_{n+2}+bx_{n+1}+cx_{n}=0,
 \end{equation}
 con $a$, $b$ y $c$ en los reales, entonces como ya mencionamos, el método
 para resolver éstas ecuaciones está inspirado en la fórmula \eqref{lineal}
-. Ahora, ¿qué deben cumplir $r$ y~$s$ para que $x_n=sr^n$
+. Ahora, ¿qué deben cumplir~$r$ y~$s$ para que $x_n=sr^n$
 sea solución de la ecuación \eqref{ecsegorden}?
 
 Tenemos entonces que: $x_{n+2}=sr^{n+2}$, $x_{n+1}=sr^{n+1}$ y
-$x_{n}=sr^{n}$, luego $asr^{n+2}+bsr^{n+1}+csr^n=0$, ésto implica que
-$s(r^{n+2}+br^{n+1}+cr^n)=0$, se sigue $r^n(r^2+br+c)=0$, para todo
+$x_{n}=sr^{n}$, luego~$asr^{n+2}+bsr^{n+1}+csr^n=0$, ésto implica que
+$s(r^{n+2}+br^{n+1}+cr^n)=0$, se sigue $r^n (r^2+br+c)=0$, para todo
 $n$, así tenemos que $r^2+br+c=0$ a la cual llamaremos
 \textit{ecuación resolvente} de la ecuación \eqref{ecsegorden} y
 $x^n=r^n$ es solución de la ecuación \eqref{ecsegorden}.
