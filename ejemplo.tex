@@ -34,6 +34,7 @@ Una ecuación en diferencias es de la forma:
 $$X_{n+k}=f(n,X_n,...,X_{n+k-1}),$$
 donde $k,n$ son fijos.
 \section{Ejemplo}
+
 Si en una ecuación en diferencias, la función $f$ no depende de $n$,
 la ecuación en diferencias es \emph{autónoma}.
 
@@ -564,6 +565,68 @@ Finalmente la solución es:
 D_{n}=b^n(\cos(\frac{n\pi}{3})+\frac{\sin(\frac{n\pi}{3})}{\sqrt{3}}).
 \end{equation}
 
+\subsubsection{Ejemplo 2}
+REsuelve la ecuación en diferencias $x_{n+2}=4x_{n+1}-8x_n$ con condiciones iniciales $x_0=-1$ y $x_1=1$.
+
+\textit{Solución:} 
+Igualamos la ecuación a cero.
+$$x_{n+2}-4x_{n+1}+8x_n=0$$
+
+Y obtenemos la ecuación resolvente, que es: 
+$$r^2-4r+8=0$$
+
+Pra encontrar las raíces de la ecuación aplicamos la fórmula general de segundo grado, con los valores $a=1$, $b=-4$ y $c=8$
+
+\begin{align*}
+  r_{1,2}&=\frac{-(-4)\pm\sqrt{(-4)^2-4(1)(8)}}{2(1)}\\
+  &=\frac{4\pm\sqrt{16-32}}{2}\\
+  &=\frac{4\pm\sqrt{-16}}{2}\\
+  &=\frac{4\pm i\sqrt{16}}{2}\\
+  &=\frac{4\pm i4}{2}\\
+  &=2\pm 2i
+\end{align*}
+
+Entonces las raíces serían:
+\begin{align*}
+  r_1&=2+2i\\
+  r_2&=2-2i
+\end{align*}
+
+Para poder encontrar la formula que resuelva la ecuación solo necesitamos trabajar con una de sus raíces. Gráficamos entonces $2+2i$ en el plano complejo y notamos que el ángulo de dicho número complejo es $\alpha=\frac{\pi}{4}$.
+
+Calculamos el módulo.
+\begin{align*}
+  |r|&=\sqrt{2^2+2^2}\\
+     &=\sqrt{4+4}\\
+     &=\sqrt{8}
+\end{align*}
+
+\begin{align*}
+  x_n=(2+2i)&=(\sqrt{8}(\cos(\frac{\pi}{4}))+i \sin(\frac{\pi}{4}))^n\\
+  &=(\sqrt{8})^n(\cos(\frac{n\pi}{4})+i \sin(\frac{n\pi}{4})))\\
+  &=(\sqrt{8})^n(\cos(\frac{n\pi}{4}))+i (\sqrt{8})^n(\sin(\frac{n\pi}{4}))\\
+  &=\alpha_1(\sqrt{8})^n(\cos(\frac{n\pi}{4}))+\alpha_2(\sqrt{8})^n(\sin(\frac{n\pi}{4}))
+\end{align*}
+
+Para $n=0$, cuando $x_0=-1$:
+\begin{align*}
+  x_0&=\alpha_1(\sqrt{8})^0(\cos(\frac{0\pi}{4}))+\alpha_2(\sqrt{8})^0(\sin(\frac{0\pi}{4}))\\
+  &=\alpha_1(1)(\cos(0))+\alpha_2(1)(\sin(0))\\
+  &=\alpha_1(1)(1)+\alpha_2(1)(0)\\
+  &=\alpha_1
+\end{align*}
+
+Para $n=1$, cuando $x_1=1$:
+\begin{align*}
+  x_0&=\alpha_1(\sqrt{8})^1(\cos(\frac{\pi}{4}))+\alpha_2(\sqrt{8})^1(\sin(\frac{\pi}{4}))\\
+  &=\alpha_1(\sqrt{8})(\frac{\sqrt{2}}{2})+\alpha_2(\sqrt{8})(\frac{\sqrt{2}}{2})\\
+  &=(-1)(\sqrt{8})(\frac{\sqrt{2}}{2})+\alpha_2(\sqrt{8})(\frac{\sqrt{2}}{2})\\
+  &=-(\sqrt{8})(\frac{\sqrt{2}}{2})+\alpha_2(\sqrt{8})(\frac{\sqrt{2}}{2})\\
+  &=\alpha_2
+\end{align*}
+
+Finalmente, la formula que resuelve la ecuación es:
+$$x_n=-(\sqrt{8})^n(\cos(\frac{n\pi}{4}))+(\sqrt{8})^n(\sin(\frac{n\pi}{4}))$$.
 
 \section{Ecuaciones de segundo orden no homogéneas}
 \label{sec:nohomogeneas}
