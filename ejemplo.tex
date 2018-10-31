@@ -34,7 +34,30 @@ Una ecuación en diferencias es de la forma:
 $$X_{n+k}=f(n,X_n,...,X_{n+k-1}),$$
 donde $k,n$ son fijos.
 \section{Ejemplo}
+
+
+Si nos dan la ecuación en diferencias:
+$$x_{n+1}=2x_n$$
+Con condición inicial  $x_0=5$. Calcularemos los primeros valores de la ecuación, dando valores para $n$, comenzando con $n=0$ y entonces tenemos:
+$$x_{0+1}=x_1=2x_0=2(5)=10$$
+De lo cual tenemos que $x_1=10$, y procediendo de la misma manera para otros valores de $n$.
+
+ $$ n=1,  x_{1+1}=2x_1=2(10)=20$$
+ $$ n=2,  x_{2+1}=2x_2=2(20)=40$$
+ $$ n=3,  x_{3+1}=2x_3=2(40)=80$$
+
+ Continuando de esta manera podriamos obtener más valores, sin embargo, sería convenite
+ tener una formula en la cual al ingresar el $n$ deseado obtengamos el valor correspondiente
+ sin tener que calcular los valores anteriores, para eso observemos que:
+
+ $$x_2=2x_1=2(2x_0)=2^2x_0=(5)2^2$$
+ $$x_3=2x_2=2(2^2x_0)=2^3x_0=(5)2^35$$
+ De esta manera podremos conjeturar la formula:
+ $$x_n=2^nx_0=(5)2^n$$
+Y usar un argumento induccctivo para probar la forumula.
+
 Si en una ecuación en diferencias, la función $f$ no depende de $n$,
+
 la ecuación en diferencias es \emph{autónoma}.
 
 \chapter{Ecuaciones de primer orden}
@@ -50,14 +73,14 @@ donde $a$ es una constante.
 
 La fórmula para resolver ecuaciones lineales es:
 \begin{equation}
-  \label{lineal}
+  \label{rum}
   x_n=a^nx_0.
 \end{equation}
 Demostración (Por inducción):
 
 Tenemos la condición inicial $x_0$, note que $x_1=ax_0$.  Supongamos
-válida la forma para n, es decir $x_n=a^nx_0$ ahora falta mostrar que
-la fórmula es válida para n+1.
+válida la forma para $n$, es decir $x_n=a^nx_0$.Ahora falta mostrar que
+la fórmula es válida para $n+1$.
 
 Entonces
 \begin{align*}
@@ -66,8 +89,8 @@ Entonces
        &=a^{n+1}x_0
 \end{align*}
 
-Por lo tanto la fórmula $x_n=a^nx_0$ resuelve la ecuacion en
-diferencias $$x_{n+1}=ax_n.$$
+Por lo tanto la fórmula $x_n=a^nx_0$ resuelve la ecuación en
+diferencias; $$x_{n+1}=ax_n.$$
 Por ejemplo, si consideramos el valor de una inversión de $1000$ pesos
 que acumula un interés mensual de $1\%$, obtenemos la gráfica mostrada
 en la figura~\ref{inversion}.
@@ -86,7 +109,7 @@ de la inversión cuando han pasado $n$ meses.  Note que:
   \text{cambio}=\text{valor futuro}-\text{valor presente},
 \end{equation}
 donde $x_n=\text{valor presente}$ y $x_{n+1}=\text{valor futuro}$.
-Como el cambio es de $1\%$ entonces $\text{cambio}=0.01x_n$.  Ocupando
+Como el cambio es de $1\%$ entonces $\text{cambio}=0.01x_n$.  Ocupando la ecuación
 \eqref{eq:2} nos queda que:
 \begin{align*}
   0.01x_n&=x_{n+1}-x_n\\
@@ -108,14 +131,31 @@ Un elemento radioactivo decae a una razón de $2\%$ cada 20 años.
 
 \textit{Solución:} Sabemos que la condición inicial es de 165 gramos y
 que decae un $2\%$ cada 20 años, lo cual implica que se mantiene en un
-$98\%$ con respecto a al valor anterior, entonces la solución de la
-ecuación en diferencia es la siguiente:
-
-$$x_{n}=(.98)^n(165).$$
+$98\%$ con respecto al valor anterior, entonces la solución de la
+ecuación en diferencias es la siguiente:
+\begin{equation}
+  \label{rad}
+  x_n=(0.98)^n(165)
+\end{equation}
 
 Donde $n=3$, pues buscamos el valor del elemento cuando han pasado 60
 años, y éste, decae cada 20 años, por lo tanto el resultado es:
-$$x_{3}=(.98)^3(165)= 155.29.$$
+$$x_{3}=(0.98)^3(165)= 155.29.$$
+
+Note que la vida media del elemento es $82.5$, ocupando la ecuación
+\ref{rad} nos queda que:
+\begin{align*}
+  x_n=(.98)^n165&=82.5\\
+  (0.98)^n&=\frac{82.5}{\ 165}\\
+  (0.98)^n&=0.5\\
+  \log{(0.98)^n}&=\log{(0.5)}\\
+  n\log{(0.98)}&=\log{(0.5)}\\
+  n&=\frac{\log(0.5)}{\log(0.98)}\\
+  n&=34.3096     
+\end{align*}  
+
+Deben de pasar 686.1923698 años para que el elemento radiactivo tenga
+vida media.
 
 \section{Ejemplo de propagación de rumor}
 
@@ -123,7 +163,7 @@ Se esparce nuestro trabajo colaborativo dentro de la universidad. Al
 tiempo~0, el trabajo es conocido por 13 personas, además cada persona que
 conoce el trabajo le trasmite la informacion a una nueva.
 
-Si $X_n$ es la cantidad de personas que conoce eln trabajo al dia  $n$,
+Si $X_n$ es la cantidad de personas que conoce el trabajo al día  $n$,
 determinar~$X_n$ en términos de $n$ y $X_0=13$.
 
 \textit{Solución:} La ecuación en diferencias está dada por
@@ -132,48 +172,44 @@ $X_{n+1}=aX_n$, con el valor~$a=2$.
 Note que es conveniente tomar $a=2$ porque se observa que el cambio
 está dado por la ecuación $X_{n+1}-X_{n}=X_{n}$, entonces despejando
 $X_{n+1}$ se tiene que~$X_{n+1}=2X_n$.
-
-Como $X_0=13$, tendríamos el siguiente razonamiento:
-\begin{itemize}
-\item $X_0=2^013=13$,
-\item $X_1=2^113=26$, siguiendo, llegamos a:
-\item $X_n=2^n13=a^nX_0$, quedando de esta manera la solución.
-\end{itemize}
+ \label{rum}
+ Como $X_0=13$, sustituyendo en \ref{rum} tendríamos como solución lo siguiente:
+ $X_n=2^n13=a^nX_0$.
 
 
 \section{Ecuaciones de primer orden no homogéneas}
-Encuentre la solución a la siguiente ecuación en diferencias
+Encuentre la solución a la siguiente ecuación en diferencias con
+condición inicial $a_{0}=1$.
 \begin{equation}
   \label{nohom}
   a_{n+1}=2a_{n}+1,
 \end{equation}
-
-con condición inicial $a_{0}=1$.
-Observe que la solución homogénea de la ecuación en diferencias  es $a_{n}^h=C2^n$.
-Ahora, tenemos que proponer una solución particular a la ecuación no homogénea.
-Propongamos:
+Observe que la solución de la ecuación en diferencias homogénea es
+$a_{n}^h=C2^n$.  Ahora, tenemos que proponer una solución particular a
+la ecuación no homogénea.  Propongamos:
 \begin{align*}
-  A&=a_n,\\
-  A&=a_{n+1}.
+ a_n&=A,\\
+  a_{n+1}&=A.
 \end{align*}
 Sustituyendo en \ref{nohom} nos queda lo siguiente,
 
 \begin{align*}
   a_{n+1}-2a_{n}&=1\\
-  1&=A-2A\\
-  1&=-A\\
-  -1&=A
+  A-2A&=1\\
+  -A&=1\\
+  A&=-1
 \end{align*}
-De ahi, concluimos que $A=-1$.
-Luego, nuestra solucion $a_n^p=-1$ la tenemos que sumar a la solucion del sistema homogéneo las cuales quedaran así:
-$a_{n}^h=C2^n-1$
-Recuerde nuestra condición inicial $a_{0}=1$. Veamos que:
+De ahí, concluimos que $A=-1$.  Luego, nuestra solución $a_n^p=-1$ la
+tenemos que sumar a la solucion del sistema homogéneo de modo que
+$a_{n}=C2^n-1$.  Recuerde que nuestra condición inicial
+$a_{0}=1$. Luego para hallar la constante C se tiene el siguiente
+razonamiento:
 \begin{align*}
 1&=a_{0}=2C-1\\
 2C&=2\\
   C&=1
 \end{align*}  
-por lo tanto, la solución general a la ecuación en diferencias no homogénea es:
+por lo tanto, la solución a la ecuación en diferencias original es:
 $$a_{n}=2^n-1$$
 
 
@@ -182,27 +218,26 @@ $$a_{n}=2^n-1$$
 Una ecuación en diferencias de segundo orden tiene la forma
 \begin{equation}
   \label{ecsegorden1}
-  a_{k+2}=f(a_k,a_{k+1}),
+  a_{n+2}=f(a_n,a_{n+1}),
 \end{equation}
 El método para resolver estas ecuaciones está inspirado en la fórmula \eqref{lineal} 
 
 Para resolver una ecuación en diferencias de segundo orden se usa la
 ecuación resolvente, la cual se dedujo de la siguiente manera:
 
-En general una ecuación en diferencias de segundo orden líneal y homogénea con coeficientes constates se ve de la
-siguiente manera $ax_{n+2}=-bx_{n+1}-cx_{n}$, ésto implica que
+En general una ecuación en diferencias de segundo orden líneal y homogénea con coeficientes constates se ve asi: $$ax_{n+2}=-bx_{n+1}-cx_{n}$$ Ésto implica que
 \begin{equation}
   \label{ecsegorden}
   ax_{n+2}+bx_{n+1}+cx_{n}=0,
 \end{equation}
 con $a$, $b$ y $c$ en los reales, entonces como ya mencionamos, el método
 para resolver éstas ecuaciones está inspirado en la fórmula \eqref{lineal}
-. Ahora, ¿qué deben cumplir $r$ y~$s$ para que $x_n=sr^n$
+. Ahora, ¿qué deben cumplir~$r$ y~$s$ para que $x_n=sr^n$
 sea solución de la ecuación \eqref{ecsegorden}?
 
 Tenemos entonces que: $x_{n+2}=sr^{n+2}$, $x_{n+1}=sr^{n+1}$ y
-$x_{n}=sr^{n}$, luego $asr^{n+2}+bsr^{n+1}+csr^n=0$, ésto implica que
-$s(r^{n+2}+br^{n+1}+cr^n)=0$, se sigue $r^n(r^2+br+c)=0$, para todo
+$x_{n}=sr^{n}$, luego~$asr^{n+2}+bsr^{n+1}+csr^n=0$, ésto implica que
+$s(r^{n+2}+br^{n+1}+cr^n)=0$, se sigue $r^n (r^2+br+c)=0$, para todo
 $n$, así tenemos que $r^2+br+c=0$ a la cual llamaremos
 \textit{ecuación resolvente} de la ecuación \eqref{ecsegorden} y
 $x^n=r^n$ es solución de la ecuación \eqref{ecsegorden}.
@@ -213,7 +248,7 @@ $x^n=r^n$ es solución de la ecuación \eqref{ecsegorden}.
 \label{sec:distintas}
 La forma en la que resolvemos una ecuación de segundo orden cuya
 ecuación resolvente tenga dos raíces distintas es mediante la
-siguiente formula:
+siguiente fórmula:
 \begin{equation}
  \label{raicesdistintas}
  a_n=\alpha_1r_1^n +\alpha_2r_2^n,
@@ -223,12 +258,12 @@ $\alpha_1$ y $\alpha_2$ son escalares reales.
 \subsection{Ejemplo}
 
 Una de las ecuaciones de segundo grado más famosas es la \textit{sucesión de
-  Fibonacci}, la cual se ve de la forma:
+  Fibonacci}, la cual es:
 \begin{equation}
   \label{eq:fibonacci}
-a_{k+2}=a_{k+1}+a_{k},  
+F_{n+2}=F_{n+1}+F_{n},  
 \end{equation}
-en donde usualmente se toman como condiciones iniciales a: $a_{0}=1$ y $a_{1}=1$
+en donde usualmente se toman como condiciones iniciales a: $F_{0}=1$ y $F_{1}=1$
 
 Es inmediato calcular los primeros términos, pero ¿cómo calcularlos
 cuando los términos son demasiado grandes?  Para obtenerlos,
@@ -239,16 +274,15 @@ $$r^2-r-1=0$$
 Obtenemos después ambas raíces, las cuales son:
 $r_{1}= \frac{1+\sqrt{5}}{2}$ y $r_{2}=\frac{1-\sqrt{5}}{2}$. La
 solución general es entonces:
-$a_{k}=\alpha_{1}(\frac{1+\sqrt{5}}{2})^{k} +
-\alpha_{2}(\frac{1-\sqrt{5}}{2})^k$.
+$F_{n}=\alpha_{1}(\frac{1+\sqrt{5}}{2})^{n} +
+\alpha_{2}(\frac{1-\sqrt{5}}{2})^n$.
 Ahora resolvemos un sistema de ecuaciones tal que:
 \begin{align*}
 \alpha_{1} + \alpha_{2} &= 1\\
 (\frac{1+\sqrt{5}}{2})\alpha_{1} + (\frac{1+\sqrt{5}}{2})\alpha_{2}&=1
 \end{align*}
 Para obtener finalmente:
-$F_{n}= \frac{5+\sqrt{5}}{10}(\frac{1+\sqrt{5}}{2})^n +
-\frac{5-\sqrt{5}}{10}(\frac{1-\sqrt{5}}{2})^n$
+  $$F_{n} = \frac{1}{\sqrt{5}}((\frac{1+\sqrt{5}}{2})^{n+1}-(\frac{1-\sqrt{5}}{2})^{n+1})$$
 
 \subsection{Ejemplo}
 \label{sec:fichas}
@@ -395,8 +429,9 @@ en los reales, sin embargo en los complejos sí y no por manejar
 números complejos su nivel de dificultad será mayor. Aquí mostramos un
 ejemplo de soluciones complejas: 
 
-$x_{n+2}=-4x_{n}$ con $x_0=1$ y $x_1=0$.
-
+\begin{align*}
+x_{n+2}=-4x_{n} con x_0=1 y x_1=0.
+\end{align*}
 La ecuación resolvente es: $r^2+4=0$, la cual tiene raíces complejas.
 Resolvemos igual que en ecuaciones de segundo orden entonces aplicamos
 la formula general para buscar sus raíces y tenemos: $r_1=2i,r_2=-2i$.
@@ -404,8 +439,8 @@ la formula general para buscar sus raíces y tenemos: $r_1=2i,r_2=-2i$.
 y como la forma polar de $r_1$
 se ve como:
 
-$$2i=|2|(cos((\frac{\pi}{2}))+isen((\frac{n\pi}{2}))$$
 
+$$2i=|2|(\cos((\frac{\pi}{2}))+i\sen((\frac{n\pi}{2}))$$
 
 Ahora buscaremos su módulo: $|r_{1}|=\sqrt{2^2}=2$
 
@@ -413,12 +448,11 @@ Llegado a este punto hacemos uso de la fórmula resolvente y la fórmula de De M
 
 $$x_n=\lambda_12^n\cos(\frac{n\pi}{2})+\lambda_22^n\sin(\frac{n\pi}{2})$$.
 
-
-Y buscamos el valor de los escalares con un sistema de ecuaciones:
-
-$$\lambda_12^0\cos(\frac{0\pi}{2})+\lambda_22^0\sin(\frac{0\pi}{2})=1$$
-
-$$\lambda_12^1\cos(\frac{1\pi}{2})+\lambda_22^1\sin(\frac{1\pi}{2})=0$$
+Y buscamos el valor de los lambdas con un sistema de ecuaciones:
+\begin{align*}
+\lambda_12^0\cos(\frac{0\pi}{2})+\lambda_22^0\sin(\frac{0\pi}{2})&=1\\
+\lambda_12^1\cos(\frac{1\pi}{2})+\lambda_22^1\sin(\frac{1\pi}{2})&=0
+\end{align*}
 
 Al resolver obtenemos los siguientes valores:
 
@@ -577,6 +611,68 @@ Finalmente la solución es:
 D_{n}=b^n(\cos(\frac{n\pi}{3})+\frac{\sin(\frac{n\pi}{3})}{\sqrt{3}}).
 \end{equation}
 
+\subsubsection{Ejemplo 2}
+REsuelve la ecuación en diferencias $x_{n+2}=4x_{n+1}-8x_n$ con condiciones iniciales $x_0=-1$ y $x_1=1$.
+
+\textit{Solución:} 
+Igualamos la ecuación a cero.
+$$x_{n+2}-4x_{n+1}+8x_n=0$$
+
+Y obtenemos la ecuación resolvente, que es: 
+$$r^2-4r+8=0$$
+
+Pra encontrar las raíces de la ecuación aplicamos la fórmula general de segundo grado, con los valores $a=1$, $b=-4$ y $c=8$
+
+\begin{align*}
+  r_{1,2}&=\frac{-(-4)\pm\sqrt{(-4)^2-4(1)(8)}}{2(1)}\\
+  &=\frac{4\pm\sqrt{16-32}}{2}\\
+  &=\frac{4\pm\sqrt{-16}}{2}\\
+  &=\frac{4\pm i\sqrt{16}}{2}\\
+  &=\frac{4\pm i4}{2}\\
+  &=2\pm 2i
+\end{align*}
+
+Entonces las raíces serían:
+\begin{align*}
+  r_1&=2+2i\\
+  r_2&=2-2i
+\end{align*}
+
+Para poder encontrar la formula que resuelva la ecuación solo necesitamos trabajar con una de sus raíces. Gráficamos entonces $2+2i$ en el plano complejo y notamos que el ángulo de dicho número complejo es $\alpha=\frac{\pi}{4}$.
+
+Calculamos el módulo.
+\begin{align*}
+  |r|&=\sqrt{2^2+2^2}\\
+     &=\sqrt{4+4}\\
+     &=\sqrt{8}
+\end{align*}
+
+\begin{align*}
+  x_n=(2+2i)&=(\sqrt{8}(\cos(\frac{\pi}{4}))+i \sin(\frac{\pi}{4}))^n\\
+  &=(\sqrt{8})^n(\cos(\frac{n\pi}{4})+i \sin(\frac{n\pi}{4})))\\
+  &=(\sqrt{8})^n(\cos(\frac{n\pi}{4}))+i (\sqrt{8})^n(\sin(\frac{n\pi}{4}))\\
+  &=\alpha_1(\sqrt{8})^n(\cos(\frac{n\pi}{4}))+\alpha_2(\sqrt{8})^n(\sin(\frac{n\pi}{4}))
+\end{align*}
+
+Para $n=0$, cuando $x_0=-1$:
+\begin{align*}
+  x_0&=\alpha_1(\sqrt{8})^0(\cos(\frac{0\pi}{4}))+\alpha_2(\sqrt{8})^0(\sin(\frac{0\pi}{4}))\\
+  &=\alpha_1(1)(\cos(0))+\alpha_2(1)(\sin(0))\\
+  &=\alpha_1(1)(1)+\alpha_2(1)(0)\\
+  &=\alpha_1
+\end{align*}
+
+Para $n=1$, cuando $x_1=1$:
+\begin{align*}
+  x_0&=\alpha_1(\sqrt{8})^1(\cos(\frac{\pi}{4}))+\alpha_2(\sqrt{8})^1(\sin(\frac{\pi}{4}))\\
+  &=\alpha_1(\sqrt{8})(\frac{\sqrt{2}}{2})+\alpha_2(\sqrt{8})(\frac{\sqrt{2}}{2})\\
+  &=(-1)(\sqrt{8})(\frac{\sqrt{2}}{2})+\alpha_2(\sqrt{8})(\frac{\sqrt{2}}{2})\\
+  &=-(\sqrt{8})(\frac{\sqrt{2}}{2})+\alpha_2(\sqrt{8})(\frac{\sqrt{2}}{2})\\
+  &=\alpha_2
+\end{align*}
+
+Finalmente, la formula que resuelve la ecuación es:
+$$x_n=-(\sqrt{8})^n(\cos(\frac{n\pi}{4}))+(\sqrt{8})^n(\sen(\frac{n\pi}{4}))$$.
 
 \section{Ecuaciones de segundo orden no homogéneas}
 \label{sec:nohomogeneas}
@@ -588,8 +684,7 @@ homogénea.
 
 Cuando la solución particular del problema no homogéneo que estamos
 presentando también es solución de la parte homogénea, se multiplica
-por la menor potencia entera positiva de $n$ hasta eliminar toda
-duplicación.
+por la menor potencia entera positiva de $n$ hasta que la solucion propuesta no sea solucion del sistema homogeneo.
 
 \subsection{El término no homogéneo es exponencial}
 \label{sec:exponencial}
@@ -598,7 +693,7 @@ Cuando el término no homogéneo es exponencial debemos proponer una
 solución de dicho sistema. Por ejemplo: la ecuacion en diferencias
 $$x_{n+2}+3x_{n+1}+2x_n=3^n$$ al resolver el sistema homogéneo
 obtenemos la solucion:
-$$x_n=\lambda_1(-2)^n+\lambda_2(-1)^n$$, ahora,
+$$x_n=\lambda_1(-2)^n+\lambda_2(-1)^n$$  ahora,
 para el sistema no homogéneo, debemos proponer una solución la
 cual es un múltiplo del termino exponencial. En este ejemplo la
 solución del sistema no homogéneo es de la forma $A(3)^n$ ya que
