@@ -172,9 +172,9 @@ $X_{n+1}=aX_n$, con el valor~$a=2$.
 Note que es conveniente tomar $a=2$ porque se observa que el cambio
 está dado por la ecuación $X_{n+1}-X_{n}=X_{n}$, entonces despejando
 $X_{n+1}$ se tiene que~$X_{n+1}=2X_n$.
- \label{rum}
- Como $X_0=13$, sustituyendo en \ref{rum} tendríamos como solución lo siguiente:
- $X_n=2^n13=a^nX_0$.
+
+Como $X_0=13$, sustituyendo en \ref{rum} tendríamos como solución lo
+siguiente: $X_n=2^n13=a^nX_0$.
 
 
 \section{Ecuaciones de primer orden no homogéneas}
@@ -399,8 +399,7 @@ siempre es positivo.
 El \textit{argumento} de un número complejo se denota así: $\arg(z)=\theta$. Es
 el ángulo comprendido en el plano tanto en el eje real
 ($x\in\mathbb{R}$) como el eje imaginario ($y\in\mathbb{R}$), como se puede observar en la figura~\ref{argumento}.
-\begin{figure}
-\label{argumento}
+\begin{figure}[htp]
 \centering
 \begin{tikzpicture}
   \draw (0,0) circle(2);
@@ -413,6 +412,7 @@ el ángulo comprendido en el plano tanto en el eje real
   \draw(1.8,1.5) node {$z$};
 \end{tikzpicture}
 \caption{Argumento de un número complejo.}
+\label{argumento}
 \end{figure}
 
 Para calcularlo decimos que:
@@ -435,12 +435,15 @@ en los reales, sin embargo en los complejos sí y no por manejar
 números complejos su nivel de dificultad será mayor. Aquí mostramos un
 ejemplo de soluciones complejas:
 \begin{equation}
-  \label{eq:2}
+  \label{eq:20}
   x_{n+2}=-4x_{n} \text{ con }  x_0=1 \text{ y } x_1=0.
 \end{equation}
 
-\begin{figure}
-\label{argum}
+
+La ecuación resolvente es: $r^2+4=0$, la cual tiene raíces complejas.
+Resolvemos igual que en ecuaciones de segundo orden entonces aplicamos
+la fórmula general para buscar sus raíces y tenemos: $r_1=2i,r_2=-2i$, donde el argumento de $r_1$ se puede observar en la figura~\ref{argum}.
+\begin{figure}[htp]
 \centering
 \begin{tikzpicture}
   \draw (0,0) circle(2);
@@ -453,11 +456,9 @@ ejemplo de soluciones complejas:
   \draw(0.3,2.3) node {$2i$};
 \end{tikzpicture}
 \caption{Argumento de un número complejo.}
+\label{argum}
 \end{figure}
 
-La ecuación resolvente es: $r^2+4=0$, la cual tiene raíces complejas.
-Resolvemos igual que en ecuaciones de segundo orden entonces aplicamos
-la fórmula general para buscar sus raíces y tenemos: $r_1=2i,r_2=-2i$, donde el argumento de $r_1$ se puede observar en la figura~\ref{argum}.
 La forma polar de $r_1$ se ve como:
 
 
@@ -502,9 +503,22 @@ con condiciones iniciales $x_{0}=-1$ y $x_{1}=1$
 
  Tomamos a $r_{1}$ para que una solución particular de la ecuación en diferencias sea $$x_{n}=(2+2i)^n$$
 
- Necesitamos a la parte real y la parte imaginaria de $(2+2i)^n$. Obtenemos el módulo de $r_{1}$ que resultaría $|r|= \sqrt{32}$ y obtenemos el $\arg(r_{1})=\frac{\pi}{4}$(fig.1).
+ Necesitamos a la parte real y la parte imaginaria de $(2+2i)^n$. Obtenemos el módulo de $r_{1}$ que resultaría $|r|= \sqrt{32}$ y obtenemos el $\arg(r_{1})=\frac{\pi}{4}$, como se ve en la figura \ref{fig:1}.
 
-
+ \begin{figure}[htp]
+   \centering
+ \begin{tikzpicture}
+  \draw(-2.3,0)--(2.3,0);
+  \draw(0,-1.3)--(0,2.3);
+  \draw(0,0)--(2,2);
+  \draw(0.5,0) arc (0:60:0.33);
+  \draw(0.7,0.2)node{$\frac{\pi}{4}$};
+  \draw(1.7,2)node{$2+2i$};
+  \draw(2,2) circle (.01);
+\end{tikzpicture}
+   \caption{Argumento de $2+2i$}
+   \label{fig:1}
+ \end{figure}
 
 Entonces, ocupando la fórmula de De Moivre, se tiene que
 
@@ -532,16 +546,8 @@ $$\mathrm{Re}(r_{1})=(\sqrt{32})^n\cos{\frac{n\pi}{4}}$$  $$\mathrm{Im}(r_{1})=(
 
          $$x_{n}=\-(\sqrt{32})^n\cos{\frac{n\pi}{4}} + \frac{5}{4}(\sqrt{32})^n\sin{\frac{n\pi}{4}}$$
 
- \begin{tikzpicture}
-  \draw(-2.3,0)--(2.3,0);
-  \draw(0,-1.3)--(0,2.3);
-  \draw(0,0)--(2,2);
-  \draw(0.5,0) arc (0:60:0.33);
-  \draw(0.7,0.2)node{$\frac{\pi}{4}$};
-  \draw(1.7,2)node{$i+i$};
-  \draw(2,2) circle (.01);
-  \draw(0,-1.5)node{fig.1};
-\end{tikzpicture}
+
+         
 
 \subsection{Ejemplo}
 
@@ -612,7 +618,7 @@ Para cada $n$, considera $D_{n}$ el determinante $n\times n$ dado por:
 
 Para calcular $D_{n}$ utilizamos la ecuación en diferencias;
 \begin{equation}
-  \label{determinante}
+  \label{determinante2}
 D_{n+2}=(b)D_{n+1}-(b^2)D_{n}
 \end{equation}
  y además $D_{1}=b$ y $D_{2}=0$.
@@ -628,7 +634,7 @@ De ahí que
   $$\alpha_{2}=\frac{1}{\sqrt{3}}$$
 Finalmente la solución es:
 \begin{equation}
-  \label{solucion determinante}
+  \label{solucion determinante2}
 D_{n}=b^n(\cos(\frac{n\pi}{3})+\frac{\sin(\frac{n\pi}{3})}{\sqrt{3}}).
 \end{equation}
 
