@@ -1,4 +1,4 @@
-\documentclass{report}
+\documentclass{tufte-book}
 
 \usepackage[spanish, mexico]{babel}
 
@@ -6,7 +6,11 @@
 \usepackage{graphicx}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{tikz}
+
+\newtheorem{teorema}{Teorema}[chapter]
+\newtheorem{definicion}{Definición}[chapter]
 
 \title{Ecuaciones en diferencias}
 
@@ -30,9 +34,12 @@ ecuaciones tanto de primer como de segundo orden calcularemos su
 ecuación resolvente.
 En el caso de las de segundo orden tenemos los casos en donde tenemos una o dos soluciones y tendremos que distinguir los casos en donde obtenemos raíces reales distintas, raíces reales de multiplicidad dos o raíces complejas.
 
+\begin{definicion}
 Una ecuación en diferencias es de la forma:
 $$X_{n+k}=f(n,X_n,...,X_{n+k-1}),$$
 donde $k,n$ son fijos.
+\end{definicion}
+
 \section{Ejemplo}
 
 
@@ -56,9 +63,10 @@ De lo cual tenemos que $x_1=10$, y procediendo de la misma manera para otros val
  $$x_n=2^nx_0=(5)2^n$$
 Y usar un argumento inductivo para probar la fórmula.
 
-Si en una ecuación en diferencias, la función $f$ no depende de $n$,
-
+\begin{definicion}
+Si en una ecuación en diferencias, la función $f$ no depende de~$n$,
 la ecuación en diferencias es \emph{autónoma}.
+\end{definicion}
 
 \chapter{Ecuaciones de primer orden}
 
@@ -71,11 +79,14 @@ Una \emph{ecuación lineal en diferencias de primer orden} tiene la forma:
 \end{equation}
 donde $a$ es una constante.
 
+\begin{teorema}
 La fórmula para resolver ecuaciones lineales es:
 \begin{equation}
   \label{rum}
   x_n=a^nx_0.
 \end{equation}
+\end{teorema}
+
 Demostración (Por inducción):
 
 Tenemos la condición inicial $x_0$, note que $x_1=ax_0$.  Supongamos
@@ -638,7 +649,7 @@ Finalmente la solución es:
 D_{n}=b^n(\cos(\frac{n\pi}{3})+\frac{\sin(\frac{n\pi}{3})}{\sqrt{3}}).
 \end{equation}
 
-\subsubsection{Ejemplo 2}
+Ejemplo 2
 Resuelve la ecuación en diferencias $x_{n+2}=4x_{n+1}-8x_n$ con condiciones iniciales $x_0=-1$ y $x_1=1$.
 
 \textit{Solución:} 
