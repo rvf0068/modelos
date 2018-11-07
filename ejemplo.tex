@@ -23,9 +23,9 @@
 \label{sec:ecuaciones}
 
 En este documento veremos ecuaciones en diferencias, en especial de
-primer y segundo orden homógeneas, al igual que la solución de una
-ecuación en diferencias no homógenea que se representa como una suma
-de una solución homógenea y una particular. Para dar solución a las
+primer y segundo orden homogéneas, al igual que la solución de una
+ecuación en diferencias no homogénea que se representa como una suma
+de una solución homogénea y una particular. Para dar solución a las
 ecuaciones tanto de primer como de segundo orden calcularemos su
 ecuación resolvente.
 En el caso de las de segundo orden tenemos los casos en donde tenemos una o dos soluciones y tendremos que distinguir los casos en donde obtenemos raíces reales distintas, raíces reales de multiplicidad dos o raíces complejas.
@@ -46,15 +46,15 @@ De lo cual tenemos que $x_1=10$, y procediendo de la misma manera para otros val
  $$ n=2,  x_{2+1}=2x_2=2(20)=40$$
  $$ n=3,  x_{3+1}=2x_3=2(40)=80$$
 
- Continuando de esta manera podriamos obtener más valores, sin embargo, sería convenite
- tener una formula en la cual al ingresar el $n$ deseado obtengamos el valor correspondiente
+ Continuando de esta manera podríamos obtener más valores, sin embargo, sería conveniente
+ tener una fórmula en la cual al ingresar el $n$ deseado obtengamos el valor correspondiente
  sin tener que calcular los valores anteriores, para eso observemos que:
 
  $$x_2=2x_1=2(2x_0)=2^2x_0=(5)2^2$$
  $$x_3=2x_2=2(2^2x_0)=2^3x_0=(5)2^35$$
- De esta manera podremos conjeturar la formula:
+ De esta manera podremos conjeturar la fórmula:
  $$x_n=2^nx_0=(5)2^n$$
-Y usar un argumento induccctivo para probar la forumula.
+Y usar un argumento inductivo para probar la fórmula.
 
 Si en una ecuación en diferencias, la función $f$ no depende de $n$,
 
@@ -161,7 +161,7 @@ vida media.
 
 Se esparce nuestro trabajo colaborativo dentro de la universidad. Al
 tiempo~0, el trabajo es conocido por 13 personas, además cada persona que
-conoce el trabajo le trasmite la informacion a una nueva.
+conoce el trabajo le trasmite la información a una nueva.
 
 Si $X_n$ es la cantidad de personas que conoce el trabajo al día  $n$,
 determinar~$X_n$ en términos de $n$ y $X_0=13$.
@@ -200,7 +200,7 @@ Sustituyendo en \ref{nohom} nos queda lo siguiente,
   A&=-1
 \end{align*}
 De ahí, concluimos que $A=-1$.  Luego, nuestra solución $a_n^p=-1$ la
-tenemos que sumar a la solucion del sistema homogéneo de modo que
+tenemos que sumar a la solución del sistema homogéneo de modo que
 $a_{n}=C2^n-1$.  Recuerde que nuestra condición inicial
 $a_{0}=1$. Luego para hallar la constante C se tiene el siguiente
 razonamiento:
@@ -225,7 +225,9 @@ El método para resolver estas ecuaciones está inspirado en la fórmula \eqref{
 Para resolver una ecuación en diferencias de segundo orden se usa la
 ecuación resolvente, la cual se dedujo de la siguiente manera:
 
-En general una ecuación en diferencias de segundo orden líneal y homogénea con coeficientes constates se ve asi: $$ax_{n+2}=-bx_{n+1}-cx_{n}$$ Ésto implica que
+En general una ecuación en diferencias de segundo orden lineal y homogénea con coeficientes constantes se ve así:
+$$ax_{n+2}=-bx_{n+1}-cx_{n}.$$
+Ésto implica que
 \begin{equation}
   \label{ecsegorden}
   ax_{n+2}+bx_{n+1}+cx_{n}=0,
@@ -350,7 +352,7 @@ $$x_n=\alpha_12^n+\alpha_2n2^n$$
 y a continuación se deben considerar los valores iniciales para que
 nos dé los valores de $\alpha_1$ y $\alpha_2$.
 
-Por ejemplo, si tuviéramos $x_0=-1,x_1=5$ y una ecuacion en diferencias como:
+Por ejemplo, si tuviéramos $x_0=-1,x_1=5$ y una ecuación en diferencias como:
 
 $x_{n+2}=2x_{n+1}-x_n$
 
@@ -423,7 +425,7 @@ valor de $\theta$ podemos sustituirla en nuestra ecuación principal
 $z=\cos(\theta)+i\sin(\theta)$. Para tener una solución en términos de
 $n$ tenemos que elevar toda nuestra fórmula a la $n$, es decir
 $z^n=(\cos(\theta)+i\sin(\theta))^n$, esto es igual que decir
-$z^n=\cos(n\theta)+i\sin(n\theta)$ (utilizando la fórmula de Moivre).
+$z^n=\cos(n\theta)+i\sin(n\theta)$ (utilizando la fórmula de De Moivre).
 
 \section{Soluciones complejas}
 \label{sec:complejas}
@@ -431,7 +433,6 @@ $z^n=\cos(n\theta)+i\sin(n\theta)$ (utilizando la fórmula de Moivre).
 Algunas ocasiones las ecuaciones de segundo orden no tendrán solución
 en los reales, sin embargo en los complejos sí y no por manejar
 números complejos su nivel de dificultad será mayor. Aquí mostramos un
-<<<<<<< HEAD
 ejemplo de soluciones complejas:
 \begin{equation}
   \label{eq:2}
@@ -453,16 +454,10 @@ ejemplo de soluciones complejas:
 \end{tikzpicture}
 \caption{Argumento de un número complejo.}
 \end{figure}
-=======
-ejemplo de soluciones complejas: 
 
-\begin{align*}
-x_{n+2}=-4x_{n} con x_0=1 y x_1=0.
-\end{align*}
->>>>>>> 3b0c7c86ee701f963426adb19dcc0860ac594d1f
 La ecuación resolvente es: $r^2+4=0$, la cual tiene raíces complejas.
 Resolvemos igual que en ecuaciones de segundo orden entonces aplicamos
-la formula general para buscar sus raíces y tenemos: $r_1=2i,r_2=-2i$, donde el argumento de $r_1$ se puede observar en la figura~\ref{argum}.
+la fórmula general para buscar sus raíces y tenemos: $r_1=2i,r_2=-2i$, donde el argumento de $r_1$ se puede observar en la figura~\ref{argum}.
 La forma polar de $r_1$ se ve como:
 
 
@@ -491,7 +486,7 @@ $$x_n=2^n\cos(\frac{n\pi}{2})$$
 \bigskip
 \subsection{Ejemplo}
 
-consideremos la sigiente ecuación en diferencias de segundo orden con soluciones complejas
+Consideremos la siguiente ecuación en diferencias de segundo orden con soluciones complejas
 
 $$x_{n+2}=4x_{n+1}-8x_{n}$$,
 
@@ -511,7 +506,7 @@ con condiciones iniciales $x_{0}=-1$ y $x_{1}=1$
 
 
 
-Entonces, ocupando la fórmula de Moivre, se tiene que
+Entonces, ocupando la fórmula de De Moivre, se tiene que
 
 $$r_{1}^n=(\sqrt{32})^n(\cos{\frac{n\pi}{4}}+i\sin{\frac{n\pi}{4}})$$
 
@@ -574,13 +569,13 @@ que $D_{n}=(0)D_{n-1}-(1)D_{n-2}$ entonces;
 D_{n}=-D_{n-2}
 \end{equation}
  y además $D_{0}=0$ y $D_{1}=-1$.
-Resolvamos la ecuación resolvente que es $$r^{2}=-1$$ y asi las soluciones son $r_{1}=i$ y  $r_{2}=-i$.
+Resolvamos la ecuación resolvente que es $$r^{2}=-1$$ y así las soluciones son $r_{1}=i$ y  $r_{2}=-i$.
 
 Veamos que  $|i|=\sqrt{1}=1$ y que $\arg(\theta)$ y $\theta= \frac{\pi}{2}$, de ahí:
 $$i=\cos(\frac{\pi}{2})+i\sin(\frac{\pi}{2})$$
 Elevando a la $n$ se obtiene
 $$i^n=(\cos(\frac{\pi}{2})+i\sin(\frac{\pi}{2}))^{n}$$
-Usando la Formula de De Moivre se obtiene:
+Usando la fórmula de De Moivre se obtiene:
 $$i^n=\cos(\frac{n\pi}{2})+i\sin(\frac{n\pi}{2})$$
 
 De lo cual se tiene que, $\cos(\frac{\pi}{2})$ y  $\sin(\frac{\pi}{2})$ son soluciones de la ecuación en diferencias, entonces: 
@@ -615,7 +610,7 @@ Para cada $n$, considera $D_{n}$ el determinante $n\times n$ dado por:
 \end{equation*}
 
 
-Para calcular $D_{n}$ utilisamos la ecuación en diferencias;
+Para calcular $D_{n}$ utilizamos la ecuación en diferencias;
 \begin{equation}
   \label{determinante}
 D_{n+2}=(b)D_{n+1}-(b^2)D_{n}
@@ -638,7 +633,7 @@ D_{n}=b^n(\cos(\frac{n\pi}{3})+\frac{\sin(\frac{n\pi}{3})}{\sqrt{3}}).
 \end{equation}
 
 \subsubsection{Ejemplo 2}
-REsuelve la ecuación en diferencias $x_{n+2}=4x_{n+1}-8x_n$ con condiciones iniciales $x_0=-1$ y $x_1=1$.
+Resuelve la ecuación en diferencias $x_{n+2}=4x_{n+1}-8x_n$ con condiciones iniciales $x_0=-1$ y $x_1=1$.
 
 \textit{Solución:} 
 Igualamos la ecuación a cero.
@@ -647,7 +642,7 @@ $$x_{n+2}-4x_{n+1}+8x_n=0$$
 Y obtenemos la ecuación resolvente, que es: 
 $$r^2-4r+8=0$$
 
-Pra encontrar las raíces de la ecuación aplicamos la fórmula general de segundo grado, con los valores $a=1$, $b=-4$ y $c=8$
+Para encontrar las raíces de la ecuación aplicamos la fórmula general de segundo grado, con los valores $a=1$, $b=-4$ y $c=8$
 
 \begin{align*}
   r_{1,2}&=\frac{-(-4)\pm\sqrt{(-4)^2-4(1)(8)}}{2(1)}\\
@@ -664,7 +659,7 @@ Entonces las raíces serían:
   r_2&=2-2i
 \end{align*}
 
-Para poder encontrar la formula que resuelva la ecuación solo necesitamos trabajar con una de sus raíces. Gráficamos entonces $2+2i$ en el plano complejo y notamos que el ángulo de dicho número complejo es $\alpha=\frac{\pi}{4}$.
+Para poder encontrar la fórmula que resuelva la ecuación solo necesitamos trabajar con una de sus raíces. Graficamos entonces $2+2i$ en el plano complejo y notamos que el ángulo de dicho número complejo es $\alpha=\frac{\pi}{4}$.
 
 Calculamos el módulo.
 \begin{align*}
@@ -697,30 +692,31 @@ Para $n=1$, cuando $x_1=1$:
   &=\alpha_2
 \end{align*}
 
-Finalmente, la formula que resuelve la ecuación es:
+Finalmente, la fórmula que resuelve la ecuación es:
 $$x_n=-(\sqrt{8})^n(\cos(\frac{n\pi}{4}))+(\sqrt{8})^n(\sen(\frac{n\pi}{4}))$$.
 
 \section{Ecuaciones de segundo orden no homogéneas}
 \label{sec:nohomogeneas}
 
 Para resolver la ecuación representada por la expresión
-$$ax_{n+2}+bx_{n+1}+cx_{n}=f(n)$$ debemos sumar una solución particular
-del problema no homogéneo a la solución obtenida de resolver la parte
-homogénea.
+$$ax_{n+2}+bx_{n+1}+cx_{n}=f(n)$$
+debemos sumar una solución particular del problema no homogéneo a la
+solución obtenida de resolver la parte homogénea.
 
 Cuando la solución particular del problema no homogéneo que estamos
 presentando también es solución de la parte homogénea, se multiplica
-por la menor potencia entera positiva de $n$ hasta que la solucion propuesta no sea solucion del sistema homogeneo.
+por la menor potencia entera positiva de $n$ hasta que la solución
+propuesta no sea solución del sistema homogéneo.
 
 \subsection{El término no homogéneo es exponencial}
 \label{sec:exponencial}
 
 Cuando el término no homogéneo es exponencial debemos proponer una
-solución de dicho sistema. Por ejemplo: la ecuacion en diferencias
-$$x_{n+2}+3x_{n+1}+2x_n=3^n$$ al resolver el sistema homogéneo
-obtenemos la solucion:
-$$x_n=\lambda_1(-2)^n+\lambda_2(-1)^n$$  ahora,
-para el sistema no homogéneo, debemos proponer una solución la
+solución de dicho sistema. Por ejemplo: la ecuación en diferencias
+$$x_{n+2}+3x_{n+1}+2x_n=3^n$$
+al resolver el sistema homogéneo obtenemos la solución:
+$$x_n=\lambda_1(-2)^n+\lambda_2(-1)^n$$
+ahora, para el sistema no homogéneo, debemos proponer una solución la
 cual es un múltiplo del termino exponencial. En este ejemplo la
 solución del sistema no homogéneo es de la forma $A(3)^n$ ya que
 tenemos una propuesta, debemos resolver el sistema con $x_n=A(3)^n$,
@@ -738,7 +734,7 @@ $$x_n=\alpha_1(-2)^n+\alpha_2(-1)^n+\frac{1}{20}(3)^n.$$
 
 Lo único que nos hace falta es encontrar los valores de $\alpha_1$ y $\alpha_2$ de acuerdo a las condiciones iniciales.
 
-También puede pasar que la solución del sistema homogéneo sea la misma del sistema no homogéneo. Por ejemplo: tomando el ejemplo de arriba pero cambiándolo un poco tenemos la ecuacion en diferencias $x_{n+2}+3x_{n+1}+2x_n=(-2)^n$, vemos que $(-2)^n$ es solución del sistema homogéneo y del no homogéneo, en este caso, la solución del sistema no homogéneo se propone así $x_n=An(-2)^n$ (el mismo argumento es para cuando el sistema homogéneo tiene una sola solución y el sistema no homogéneo tiene la misma solución, en ese caso la solución de sistema no homogéneo se propone como $x_n=An^2(-2)^n$), y al resolver queda la siguiente manera:
+También puede pasar que la solución del sistema homogéneo sea la misma del sistema no homogéneo. Por ejemplo: tomando el ejemplo de arriba pero cambiándolo un poco tenemos la ecuación en diferencias $x_{n+2}+3x_{n+1}+2x_n=(-2)^n$, vemos que $(-2)^n$ es solución del sistema homogéneo y del no homogéneo, en este caso, la solución del sistema no homogéneo se propone así $x_n=An(-2)^n$ (el mismo argumento es para cuando el sistema homogéneo tiene una sola solución y el sistema no homogéneo tiene la misma solución, en ese caso la solución de sistema no homogéneo se propone como $x_n=An^2(-2)^n$), y al resolver queda la siguiente manera:
 \begin{align*}
   A(n+2)(-2)^{n+2}+3A(n+1)(-2)^{n+1}+2An(-2)^n&=(-2)^n\\
   A(n+2)(-2)^2+3A(n+1)(-2)+2An&=1\\
@@ -748,7 +744,7 @@ También puede pasar que la solución del sistema homogéneo sea la misma del si
   A(2)&=1\\
   A&=\frac{1}{2}
 \end{align*}
-Ahora, procedemos igual que en el ejemplo anterior. Es decir, a las soluciones del sistema homogéneo le sumamos una solución del sistema no homogéneo (la solución particular). De esta manera ya tendrémos todas las soluciones del sistema no homogéneo, quedando así, la solución del sistema homogéneo:
+Ahora, procedemos igual que en el ejemplo anterior. Es decir, a las soluciones del sistema homogéneo le sumamos una solución del sistema no homogéneo (la solución particular). De esta manera ya tendremos todas las soluciones del sistema no homogéneo, quedando así, la solución del sistema homogéneo:
 $$x_n=\alpha_1(-2)^n+\alpha_2(-1)^n+\frac{n}{2}(-2)^n$$
 \subsection{El término no homogéneo es polinomial}
 \label{sec:polinomial}
