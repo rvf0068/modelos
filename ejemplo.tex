@@ -732,7 +732,7 @@ propuesta no sea solución del sistema homogéneo.
 
 Cuando el término no homogéneo es exponencial debemos proponer una
 solución de dicho sistema.
-\subsection{ejemplo} la ecuación en diferencias
+\begin{ejemplo} la ecuación en diferencias
 $$x_{n+2}+3x_{n+1}+2x_n=3^n$$
 al resolver el sistema homogéneo obtenemos la solución:
 $$x_n=\lambda_1(-2)^n+\lambda_2(-1)^n$$
@@ -751,10 +751,12 @@ veamos la solución:
 De ahí, concluimos que $A=\frac{1}{20}$.
 Luego, a nuestra solución del sistema no homogéneo  $x_n=\frac{1}{20}(3)^n$ le debemos sumar las soluciones del sistema homogéneo, de lo cual se obtiene:
 $$x_n=\alpha_1(-2)^n+\alpha_2(-1)^n+\frac{1}{20}(3)^n.$$
-
+\end{ejemplo}
 Lo único que nos hace falta es encontrar los valores de $\alpha_1$ y $\alpha_2$ de acuerdo a las condiciones iniciales.
 
-También puede pasar que la solución del sistema homogéneo sea la misma del sistema no homogéneo. Por ejemplo: tomando el ejemplo de arriba pero cambiándolo un poco tenemos la ecuación en diferencias $x_{n+2}+3x_{n+1}+2x_n=(-2)^n$, vemos que $(-2)^n$ es solución del sistema homogéneo y del no homogéneo, en este caso, la solución del sistema no homogéneo se propone así $x_n=An(-2)^n$ (el mismo argumento es para cuando el sistema homogéneo tiene una sola solución y el sistema no homogéneo tiene la misma solución, en ese caso la solución de sistema no homogéneo se propone como $x_n=An^2(-2)^n$), y al resolver queda la siguiente manera:
+También puede pasar que la solución del sistema homogéneo sea la misma del sistema no homogéneo.
+
+\begin{ejemplo} Tomando el ejemplo de arriba pero cambiándolo un poco tenemos la ecuación en diferencias $x_{n+2}+3x_{n+1}+2x_n=(-2)^n$, vemos que $(-2)^n$ es solución del sistema homogéneo y del no homogéneo, en este caso, la solución del sistema no homogéneo se propone así $x_n=An(-2)^n$ (el mismo argumento es para cuando el sistema homogéneo tiene una sola solución y el sistema no homogéneo tiene la misma solución, en ese caso la solución de sistema no homogéneo se propone como $x_n=An^2(-2)^n$), y al resolver queda la siguiente manera:
 \begin{align*}
   A(n+2)(-2)^{n+2}+3A(n+1)(-2)^{n+1}+2An(-2)^n&=(-2)^n\\
   A(n+2)(-2)^2+3A(n+1)(-2)+2An&=1\\
@@ -766,12 +768,12 @@ También puede pasar que la solución del sistema homogéneo sea la misma del si
 \end{align*}
 Ahora, procedemos igual que en el ejemplo anterior. Es decir, a las soluciones del sistema homogéneo le sumamos una solución del sistema no homogéneo (la solución particular). De esta manera ya tendremos todas las soluciones del sistema no homogéneo, quedando así, la solución del sistema homogéneo:
 $$x_n=\alpha_1(-2)^n+\alpha_2(-1)^n+\frac{n}{2}(-2)^n.$$
-
+\end{ejemplo}
 \subsection{El término no homogéneo es polinomial}
 \label{sec:polinomial}
 
 Hay ecuaciones en diferencias que son de la siguiente forma: $ax_{n+2}+bx_{n+1}+cx_n=f(n)$, donde $f(n)$ es un polinomio.
-\subsection{ejemplo} la siguiente suma: $1^2+2^2+...+n^2$, su fórmula puede obtenerse usando una relación de recurrencia, notando que:
+\begin{ejemplo} la siguiente suma: $1^2+2^2+...+n^2$, su fórmula puede obtenerse usando una relación de recurrencia, notando que:
 $a_1=1$, $a_2=a_1+2^2$, \dots, $a_n=a_{n-1}+n^2$.
 
 
@@ -807,10 +809,11 @@ $a^p_n=\frac{n^3}{3}$$+\frac{n^2}{2}$$+\frac{n}{6}=$$\frac{n(n+1)(2n+1)}{6}$
 Para concluir con el problema, se suman ambas soluciones, obteniendo que:
 $a_n=\frac{n(n+1)(2n+1)}{6}$$+\lambda$.
 Con lo cual, evaluando con las condiciones iniciales, se obtiene que $\lambda$$=0$.
-Así, la solución del problema es:
-$a_n=\frac{n(n+1)(2n+1)}{6}$.
-%%% ???????????
 
+Así, la solución del problema es:
+$$a_n=\frac{n(n+1)(2n+1)}{6}$$.
+
+\end{ejemplo}
 \end{document}
 
 
