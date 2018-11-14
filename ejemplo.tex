@@ -41,7 +41,7 @@ $$X_{n+k}=f(n,X_n,...,X_{n+k-1}),$$
 donde $k,n$ son fijos.
 \end{definicion}
 
-\section{Ejemplo}
+\begin{Ejemplo}
 
 
 Si nos dan la ecuación en diferencias:
@@ -62,7 +62,8 @@ De lo cual tenemos que $x_1=10$, y procediendo de la misma manera para otros val
  $$x_3=2x_2=2(2^2x_0)=2^3x_0=(5)2^35$$
  De esta manera podremos conjeturar la fórmula:
  $$x_n=2^nx_0=(5)2^n$$
-Y usar un argumento inductivo para probar la fórmula.
+ Y usar un argumento inductivo para probar la fórmula.
+ \end{Ejemplo}
 
 \begin{definicion}
 Si en una ecuación en diferencias, la función $f$ no depende de~$n$,
@@ -73,13 +74,14 @@ la ecuación en diferencias es \emph{autónoma}.
 
 \section{Ecuaciones lineales}
 
+\begin{definicion}
 Una \emph{ecuación lineal en diferencias de primer orden} tiene la forma:
 \begin{equation}
   \label{lineal}
   x_{n+1}=ax_n,
 \end{equation}
 donde $a$ es una constante.
-
+\end{definicion}
 \begin{teorema}
 La fórmula para resolver ecuaciones lineales es:
 \begin{equation}
@@ -131,10 +133,11 @@ Como el cambio es de $1\%$ entonces $\text{cambio}=0.01x_n$.  Ocupando la ecuaci
 \end{align*}
 
 Sabemos que las ecuaciones que se ven de esta forma se resuelven con
-la fórmula (2).  Entonces $x_n=(1.01)^nx_0$ donde $x_0=1000$.
+la fórmula \ref{rum} Entonces $x_n=(1.01)^nx_0$ donde $x_0=1000$.
 
-\section{Ejemplo de elemento radioactivo}
 
+
+\begin{ejemplo}
 Un elemento radioactivo decae a una razón de $2\%$ cada 20 años.
 \begin{itemize}
 \item Si inicialmente se tenían 165 gramos de este elemento, ¿cuánto
@@ -169,6 +172,8 @@ Note que la vida media del elemento es $82.5$, ocupando la ecuación
 
 Deben de pasar 686.1923698 años para que el elemento radiactivo tenga
 vida media.
+\end{ejemplo}
+
 
 \section{Ejemplo de propagación de rumor}
 
@@ -651,7 +656,7 @@ Finalmente la solución es:
 D_{n}=b^n(\cos(\frac{n\pi}{3})+\frac{\sin(\frac{n\pi}{3})}{\sqrt{3}}).
 \end{equation}
 
-Ejemplo 2
+\begin{ejemplo}
 Resuelve la ecuación en diferencias $x_{n+2}=4x_{n+1}-8x_n$ con condiciones iniciales $x_0=-1$ y $x_1=1$.
 
 \textit{Solución:} 
@@ -713,6 +718,7 @@ Para $n=1$, cuando $x_1=1$:
 
 Finalmente, la fórmula que resuelve la ecuación es:
 $$x_n=-(\sqrt{8})^n(\cos(\frac{n\pi}{4}))+(\sqrt{8})^n(\sen(\frac{n\pi}{4}))$$.
+\end{ejemplo}
 
 \section{Ecuaciones de segundo orden no homogéneas}
 \label{sec:nohomogeneas}
