@@ -41,7 +41,7 @@ $$X_{n+k}=f(n,X_n,...,X_{n+k-1}),$$
 donde $k,n$ son fijos.
 \end{definicion}
 
-\section{Ejemplo}
+\begin{ejemplo}
 
 
 Si nos dan la ecuación en diferencias:
@@ -62,7 +62,8 @@ De lo cual tenemos que $x_1=10$, y procediendo de la misma manera para otros val
  $$x_3=2x_2=2(2^2x_0)=2^3x_0=(5)2^35$$
  De esta manera podremos conjeturar la fórmula:
  $$x_n=2^nx_0=(5)2^n$$
-Y usar un argumento inductivo para probar la fórmula.
+ Y usar un argumento inductivo para probar la fórmula.
+ \end{ejemplo}
 
 \begin{definicion}
 Si en una ecuación en diferencias, la función $f$ no depende de~$n$,
@@ -73,13 +74,14 @@ la ecuación en diferencias es \emph{autónoma}.
 
 \section{Ecuaciones lineales}
 
+\begin{definicion}
 Una \emph{ecuación lineal en diferencias de primer orden} tiene la forma:
 \begin{equation}
   \label{lineal}
   x_{n+1}=ax_n,
 \end{equation}
 donde $a$ es una constante.
-
+\end{definicion}
 \begin{teorema}
 La fórmula para resolver ecuaciones lineales es:
 \begin{equation}
@@ -131,10 +133,11 @@ Como el cambio es de $1\%$ entonces $\text{cambio}=0.01x_n$.  Ocupando la ecuaci
 \end{align*}
 
 Sabemos que las ecuaciones que se ven de esta forma se resuelven con
-la fórmula (2).  Entonces $x_n=(1.01)^nx_0$ donde $x_0=1000$.
+la fórmula \ref{rum} Entonces $x_n=(1.01)^nx_0$ donde $x_0=1000$.
 
-\section{Ejemplo de elemento radioactivo}
 
+
+\begin{ejemplo}
 Un elemento radioactivo decae a una razón de $2\%$ cada 20 años.
 \begin{itemize}
 \item Si inicialmente se tenían 165 gramos de este elemento, ¿cuánto
@@ -169,6 +172,8 @@ Note que la vida media del elemento es $82.5$, ocupando la ecuación
 
 Deben de pasar 686.1923698 años para que el elemento radiactivo tenga
 vida media.
+\end{ejemplo}
+
 
 \section{Ejemplo de propagación de rumor}
 
@@ -230,14 +235,14 @@ $$a_{n}=2^n-1$$
 
 Una ecuación en diferencias de segundo orden tiene la forma
 \begin{equation}
-  \label{ecsegorden1}
+                      \label{ecsegorden1}
   a_{n+2}=f(a_n,a_{n+1}),
-\end{equation}
-El método para resolver estas ecuaciones está inspirado en la fórmula \eqref{lineal} 
+              \end{equation}
+El método para resolver éstas ecuaciones está inspirado en la fórmula \eqref{lineal} 
 
 Para resolver una ecuación en diferencias de segundo orden se usa la
 ecuación resolvente, la cual se dedujo de la siguiente manera:
-
+        
 En general una ecuación en diferencias de segundo orden lineal y homogénea con coeficientes constantes se ve así:
 $$ax_{n+2}=-bx_{n+1}-cx_{n}.$$
 Ésto implica que
@@ -262,7 +267,7 @@ $x^n=r^n$ es solución de la ecuación \eqref{ecsegorden}.
 \section{Dos soluciones distintas}
 \label{sec:distintas}
 La forma en la que resolvemos una ecuación de segundo orden cuya
-ecuación resolvente tenga dos raíces distintas es mediante la
+ecuación resolvente tiene dos raíces distintas es mediante la
 siguiente fórmula:
 \begin{equation}
  \label{raicesdistintas}
@@ -270,8 +275,8 @@ siguiente fórmula:
 \end{equation}
 donde $r_1$ y $r_2$ son soluciones de la ecuación de segundo orden y
 $\alpha_1$ y $\alpha_2$ son escalares reales.
-\subsection{Ejemplo}
 
+\begin{ejemplo}
 Una de las ecuaciones de segundo grado más famosas es la \textit{sucesión de
   Fibonacci}, la cual es:
 \begin{equation}
@@ -281,7 +286,7 @@ F_{n+2}=F_{n+1}+F_{n},
 en donde usualmente se toman como condiciones iniciales a: $F_{0}=1$ y $F_{1}=1$
 
 Es inmediato calcular los primeros términos, pero ¿cómo calcularlos
-cuando los términos son demasiado grandes?  Para obtenerlos,
+cuando los términos son demasiado grandes?.Para obtenerlos,
 consideramos la ecuación resolvente que viene de la ecuación original,
 la cual se ve de la siguiente manera:
 $$r^2-r-1=0$$
@@ -298,8 +303,9 @@ Ahora resolvemos un sistema de ecuaciones tal que:
 \end{align*}
 Para obtener finalmente:
   $$F_{n} = \frac{1}{\sqrt{5}}((\frac{1+\sqrt{5}}{2})^{n+1}-(\frac{1-\sqrt{5}}{2})^{n+1})$$
+\end{ejemplo}
 
-\subsection{Ejemplo}
+\begin{ejemplo}
 \label{sec:fichas}
 
 ¿De cuántas maneras se puede cubrir un tablero de $2\times n$ usando
@@ -337,6 +343,7 @@ resolver el sistema:
 Para obtener finalmente:
 $a_{n}= \frac{5+\sqrt{5}}{10}(\frac{1+\sqrt{5}}{2})^n +
 \frac{5-\sqrt{5}}{10}(\frac{1-\sqrt{5}}{2})^n$.
+\end{ejemplo}
 
 \section{Una única solución}
 \label{sec:unica}
@@ -487,12 +494,12 @@ Ahora buscaremos su módulo: $|r_{1}|=\sqrt{2^2}=2$
 
 Llegado a este punto hacemos uso de la fórmula resolvente y la fórmula de De Moivre para obtener lo siguiente:
 
-$$x_n=\lambda_12^n\cos(\frac{n\pi}{2})+\lambda_22^n\sin(\frac{n\pi}{2})$$.
+$$x_n=\lambda_12^n\cos(\frac{n\pi}{2})+\lambda_22^n\sen(\frac{n\pi}{2})$$.
 
 Y buscamos el valor de los lambdas con un sistema de ecuaciones:
 \begin{align*}
-\lambda_12^0\cos(\frac{0\pi}{2})+\lambda_22^0\sin(\frac{0\pi}{2})&=1\\
-\lambda_12^1\cos(\frac{1\pi}{2})+\lambda_22^1\sin(\frac{1\pi}{2})&=0
+  \lambda_12^0\cos(\frac{0\pi}{2})+\lambda_22^0\sen(\frac{0\pi}{2})&=1\\
+\lambda_12^1\cos(\frac{1\pi}{2})+\lambda_22^1\sen(\frac{1\pi}{2})&=0
 \end{align*}
 
 Al resolver obtenemos los siguientes valores:
@@ -504,7 +511,7 @@ con lo que la solución final es:
 $$x_n=2^n\cos(\frac{n\pi}{2})$$
 \bigskip
 \bigskip
-\subsection{Ejemplo}
+\begin{ejemplo}
 
 Consideremos la siguiente ecuación en diferencias de segundo orden con soluciones complejas
 
@@ -565,10 +572,9 @@ $$\mathrm{Re}(r_{1})=(\sqrt{32})^n\cos{\frac{n\pi}{4}}$$  $$\mathrm{Im}(r_{1})=(
 
          $$x_{n}=\-(\sqrt{32})^n\cos{\frac{n\pi}{4}} + \frac{5}{4}(\sqrt{32})^n\sin{\frac{n\pi}{4}}$$
 
-
+\end{ejemplo}
          
-
-\subsection{Ejemplo}
+\begin{ejemplo}
 
 Para cada $n$, considera $D_{n}$ el determinante $n\times n$ dado por:
 
@@ -615,10 +621,12 @@ Finalmente la solución general a la ecuación en diferencias es:
 D_{n}=\cos(\frac{n\pi}{2}).
 \end{equation}
 
+\end{ejemplo}
 
-\subsection{Ejemplo}
 
-Para cada $n$, considera $D_{n}$ el determinante $n\times n$ dado por:
+\begin{ejemplo}
+
+  Para cada $n$, considera $D_{n}$ el determinante $n\times n$ dado por:
 
 \begin{equation*}
 \begin{pmatrix}
@@ -656,8 +664,9 @@ Finalmente la solución es:
   \label{solucion determinante2}
 D_{n}=b^n(\cos(\frac{n\pi}{3})+\frac{\sin(\frac{n\pi}{3})}{\sqrt{3}}).
 \end{equation}
+\end{ejemplo}
 
-Ejemplo 2
+\begin{ejemplo}
 Resuelve la ecuación en diferencias $x_{n+2}=4x_{n+1}-8x_n$ con condiciones iniciales $x_0=-1$ y $x_1=1$.
 
 \textit{Solución:} 
@@ -719,6 +728,7 @@ Para $n=1$, cuando $x_1=1$:
 
 Finalmente, la fórmula que resuelve la ecuación es:
 $$x_n=-(\sqrt{8})^n(\cos(\frac{n\pi}{4}))+(\sqrt{8})^n(\sen(\frac{n\pi}{4}))$$.
+\end{ejemplo}
 
 \section{Ecuaciones de segundo orden no homogéneas}
 \label{sec:nohomogeneas}
