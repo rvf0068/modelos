@@ -731,7 +731,8 @@ propuesta no sea solución del sistema homogéneo.
 \label{sec:exponencial}
 
 Cuando el término no homogéneo es exponencial debemos proponer una
-solución de dicho sistema. Por ejemplo: la ecuación en diferencias
+solución de dicho sistema.
+\subsection{ejemplo} la ecuación en diferencias
 $$x_{n+2}+3x_{n+1}+2x_n=3^n$$
 al resolver el sistema homogéneo obtenemos la solución:
 $$x_n=\lambda_1(-2)^n+\lambda_2(-1)^n$$
@@ -764,11 +765,13 @@ También puede pasar que la solución del sistema homogéneo sea la misma del si
   A&=\frac{1}{2}
 \end{align*}
 Ahora, procedemos igual que en el ejemplo anterior. Es decir, a las soluciones del sistema homogéneo le sumamos una solución del sistema no homogéneo (la solución particular). De esta manera ya tendremos todas las soluciones del sistema no homogéneo, quedando así, la solución del sistema homogéneo:
-$$x_n=\alpha_1(-2)^n+\alpha_2(-1)^n+\frac{n}{2}(-2)^n$$
+$$x_n=\alpha_1(-2)^n+\alpha_2(-1)^n+\frac{n}{2}(-2)^n.$$
+
 \subsection{El término no homogéneo es polinomial}
 \label{sec:polinomial}
 
-Hay ecuaciones en diferencias que son de la siguiente forma: $ax_{n+2}+bx_{n+1}+cx_n=f(n)$, donde $f(n)$ es un polinomio. Por ejemplo, la siguiente suma: $1^2+2^2+...+n^2$, su fórmula puede obtenerse usando una relación de recurrencia, notando que:
+Hay ecuaciones en diferencias que son de la siguiente forma: $ax_{n+2}+bx_{n+1}+cx_n=f(n)$, donde $f(n)$ es un polinomio.
+\subsection{ejemplo} la siguiente suma: $1^2+2^2+...+n^2$, su fórmula puede obtenerse usando una relación de recurrencia, notando que:
 $a_1=1$, $a_2=a_1+2^2$, \dots, $a_n=a_{n-1}+n^2$.
 
 
