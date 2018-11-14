@@ -350,26 +350,30 @@ ecuación resolvente tenga dos raíces iguales usamos la siguiente fórmula:
 donde $r_1=r_2$ son soluciones de la ecuación de segundo orden y
 $\alpha_1$ y $\alpha_2$ son escalares reales.
 
-\subsection{Primer ejemplo}
 
+\begin{ejemplo}
 En la siguiente ecuación en diferencias
 \begin{equation}
   \label{eq:1}
-  x_{n+2}=4x_{n+1}-4x_{n}
+  x_{n+2}=4x_{n+1}-4x_{n}  
 \end{equation}
+\textit{con condiciones iniciales} $x_o=-1$ y $x_1=5$
+
 veremos que la ecuación resolvente $r^2-4r+4=0$ tiene una sola raíz, a
 saber: $r=2$.
-
 La solución general es entonces:
 $$x_n=\alpha_12^n+\alpha_2n2^n$$
 y a continuación se deben considerar los valores iniciales para que
 nos dé los valores de $\alpha_1$ y $\alpha_2$.
+\begin{align*}
+  x_{0}&=-1=\alpha_{1}(2)^0+\alpha_{2}(0)(2)^0\\
+  x_{1}&=5=\alpha_{1}(2)^1+\alpha_{2}(1)(2)^1
+\end{align*}
+Al resolver lo anterior obtenemos los siguientes valores: $\alpha_{1}=-1$ y $\alpha_{2}=\frac{7}{2}$ , con lo que la solucion final será: $x_n=-(2)^n+\frac{7}{2}n2^n$ 
 
-Por ejemplo, si tuviéramos $x_0=-1,x_1=5$ y una ecuación en diferencias como:
+\end{ejemplo}
 
-$x_{n+2}=2x_{n+1}-x_n$
-
-\subsection{Segundo ejemplo}
+\begin{ejemplo}
 
 Se plantea la siguiente ecuación en diferencias:
 $a_{n+2}=2a_{n+1}-a_{n}$ con condiciones iniciales: $a_{0}=4, a_{1}=7$.
@@ -397,6 +401,8 @@ para poder satisfacer las condiciones iniciales.
 Al resolver lo anterior obtenemos los siguientes valores:
 $\alpha_{1}=4$ y $\alpha_{2}=3$, con lo que la solución final será:
 $a_{n}=4+3n$.
+\end{ejemplo}
+
 
 
 \section{Los números  complejos}
