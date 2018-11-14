@@ -74,13 +74,14 @@ la ecuación en diferencias es \emph{autónoma}.
 
 \section{Ecuaciones lineales}
 
+\begin{definicion}
 Una \emph{ecuación lineal en diferencias de primer orden} tiene la forma:
 \begin{equation}
   \label{lineal}
   x_{n+1}=ax_n,
 \end{equation}
 donde $a$ es una constante.
-
+\end{definicion}
 \begin{teorema}
 La fórmula para resolver ecuaciones lineales es:
 \begin{equation}
@@ -132,10 +133,11 @@ Como el cambio es de $1\%$ entonces $\text{cambio}=0.01x_n$.  Ocupando la ecuaci
 \end{align*}
 
 Sabemos que las ecuaciones que se ven de esta forma se resuelven con
-la fórmula (2).  Entonces $x_n=(1.01)^nx_0$ donde $x_0=1000$.
+la fórmula \ref{rum} Entonces $x_n=(1.01)^nx_0$ donde $x_0=1000$.
 
-\section{Ejemplo de elemento radioactivo}
 
+
+\begin{ejemplo}
 Un elemento radioactivo decae a una razón de $2\%$ cada 20 años.
 \begin{itemize}
 \item Si inicialmente se tenían 165 gramos de este elemento, ¿cuánto
@@ -170,6 +172,8 @@ Note que la vida media del elemento es $82.5$, ocupando la ecuación
 
 Deben de pasar 686.1923698 años para que el elemento radiactivo tenga
 vida media.
+\end{ejemplo}
+
 
 \section{Ejemplo de propagación de rumor}
 
