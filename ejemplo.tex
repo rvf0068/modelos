@@ -10,8 +10,9 @@
 \usepackage{tikz}
 
 \newtheorem{teorema}{Teorema}[chapter]
-\newtheorem{definicion}{Definición}[chapter]
-\newtheorem{ejemplo}{Ejemplo}
+\theoremstyle{definition}
+\newtheorem{definicion}[teorema]{Definición}
+\newtheorem{ejemplo}[teorema]{Ejemplo}
 
 \title{Ecuaciones en diferencias}
 
