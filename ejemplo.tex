@@ -235,14 +235,14 @@ $$a_{n}=2^n-1$$
 
 Una ecuación en diferencias de segundo orden tiene la forma
 \begin{equation}
-  \label{ecsegorden1}
+                      \label{ecsegorden1}
   a_{n+2}=f(a_n,a_{n+1}),
-\end{equation}
-El método para resolver estas ecuaciones está inspirado en la fórmula \eqref{lineal} 
+              \end{equation}
+El método para resolver éstas ecuaciones está inspirado en la fórmula \eqref{lineal} 
 
 Para resolver una ecuación en diferencias de segundo orden se usa la
 ecuación resolvente, la cual se dedujo de la siguiente manera:
-
+        
 En general una ecuación en diferencias de segundo orden lineal y homogénea con coeficientes constantes se ve así:
 $$ax_{n+2}=-bx_{n+1}-cx_{n}.$$
 Ésto implica que
@@ -267,7 +267,7 @@ $x^n=r^n$ es solución de la ecuación \eqref{ecsegorden}.
 \section{Dos soluciones distintas}
 \label{sec:distintas}
 La forma en la que resolvemos una ecuación de segundo orden cuya
-ecuación resolvente tenga dos raíces distintas es mediante la
+ecuación resolvente tiene dos raíces distintas es mediante la
 siguiente fórmula:
 \begin{equation}
  \label{raicesdistintas}
@@ -275,8 +275,8 @@ siguiente fórmula:
 \end{equation}
 donde $r_1$ y $r_2$ son soluciones de la ecuación de segundo orden y
 $\alpha_1$ y $\alpha_2$ son escalares reales.
-\subsection{Ejemplo}
 
+\begin{ejemplo}
 Una de las ecuaciones de segundo grado más famosas es la \textit{sucesión de
   Fibonacci}, la cual es:
 \begin{equation}
@@ -286,7 +286,7 @@ F_{n+2}=F_{n+1}+F_{n},
 en donde usualmente se toman como condiciones iniciales a: $F_{0}=1$ y $F_{1}=1$
 
 Es inmediato calcular los primeros términos, pero ¿cómo calcularlos
-cuando los términos son demasiado grandes?  Para obtenerlos,
+cuando los términos son demasiado grandes?.Para obtenerlos,
 consideramos la ecuación resolvente que viene de la ecuación original,
 la cual se ve de la siguiente manera:
 $$r^2-r-1=0$$
@@ -303,8 +303,9 @@ Ahora resolvemos un sistema de ecuaciones tal que:
 \end{align*}
 Para obtener finalmente:
   $$F_{n} = \frac{1}{\sqrt{5}}((\frac{1+\sqrt{5}}{2})^{n+1}-(\frac{1-\sqrt{5}}{2})^{n+1})$$
+\end{ejemplo}
 
-\subsection{Ejemplo}
+\begin{ejemplo}
 \label{sec:fichas}
 
 ¿De cuántas maneras se puede cubrir un tablero de $2\times n$ usando
@@ -342,6 +343,7 @@ resolver el sistema:
 Para obtener finalmente:
 $a_{n}= \frac{5+\sqrt{5}}{10}(\frac{1+\sqrt{5}}{2})^n +
 \frac{5-\sqrt{5}}{10}(\frac{1-\sqrt{5}}{2})^n$.
+\end{ejemplo}
 
 \section{Una única solución}
 \label{sec:unica}
